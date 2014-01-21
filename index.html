@@ -9,14 +9,17 @@
 	<link rel="stylesheet" id="font-style-css" href="fonts/fonts.css" type="text/css" media="all">
 	<link href="js/bootstrap/css/bootstrap.css" rel="stylesheet">
 	<link rel="stylesheet" id="main-style-css" href="css/style.css" type="text/css" media="all">
-	<script src="https://code.jquery.com/jquery.js"></script>
+	<link rel="stylesheet" id="light-style-css" href="css/light.css" type="text/css" media="all">
+	
+	<script src="js/jquery-1.10.2.min.js"></script>
 	<script src="js/bootstrap/bootstrap.min.js"></script>
 	
 	<script src="js/slider/modernizr.custom.79639.js"></script>
 	<script src="js/slider/jquery.ba-cond.min.js"></script>
 	<script src="js/slider/jquery.slitslider.js"></script>
+	<script src="js/main.js"></script>
 </head>
-<body>
+<body class="home">
 	
 	<div id="container">
 		<!-- START SLIDER  -->
@@ -30,6 +33,8 @@
 						<div class="bg-img bg-img-1"></div>
 						<p>by benign agency</p>
 						<h2>Clean design</h2>
+						
+						<a class="double-button white" href="#"><span>Learn more</span></a>
 					</div>
 						
 				</div>
@@ -39,6 +44,11 @@
 						<div class="bg-img bg-img-2"></div>
 						<p>by benign agency</p>
 						<h2>FULLY RESPONSIVE</h2>
+						
+						
+						<a class="double-button white" href="#"><span>Learn more</span></a>
+						
+						
 					</div>
 				</div>
 		 
@@ -47,6 +57,9 @@
 						<div class="bg-img bg-img-3"></div>
 						<p>by benign agency</p>
 						<h2>WORDPRESS THEMES</h2>
+						
+						<a class="double-button white" href="#"><span>Learn more</span></a>
+						
 					</div>
 				</div>
 		 
@@ -66,104 +79,110 @@
 			</nav>
 			
 		</div>
+		<!-- Bottom line SLIDER  -->
 		<div class="separator-horizontal-line"></div>
-		
-		<script type="text/javascript">	
-			$(function() {
-			
-				var Page = (function() {
-
-					var $navArrows = $( '#nav-arrows' ),
-						$nav = $( '#nav-dots > span' ),
-						slitslider = $( '#slider' ).slitslider( {
-							onBeforeChange : function( slide, pos ) {
-
-								$nav.removeClass( 'nav-dot-current' );
-								$nav.eq( pos ).addClass( 'nav-dot-current' );
-
-							}
-						} ),
-
-						init = function() {
-
-							initEvents();
-							
-						},
-						initEvents = function() {
-
-							// add navigation events
-							$navArrows.children( ':last' ).on( 'click', function() {
-
-								slitslider.next();
-								return false;
-
-							} );
-
-							$navArrows.children( ':first' ).on( 'click', function() {
-								
-								slitslider.previous();
-								return false;
-
-							} );
-
-							$nav.each( function( i ) {
-							
-								$( this ).on( 'click', function( event ) {
-									
-									var $dot = $( this );
-									
-									if( !slitslider.isActive() ) {
-
-										$nav.removeClass( 'nav-dot-current' );
-										$dot.addClass( 'nav-dot-current' );
-									
-									}
-									
-									slitslider.jump( i + 1 );
-									return false;
-								
-								} );
-								
-							} );
-
-						};
-
-						return { init : init };
-
-				})();
-
-				Page.init();
-
-				/**
-				 * Notes: 
-				 * 
-				 * example how to add items:
-				 */
-
-				/*
-				
-				var $items  = $('<div class="sl-slide sl-slide-color-2" data-orientation="horizontal" data-slice1-rotation="-5" data-slice2-rotation="10" data-slice1-scale="2" data-slice2-scale="1"><div class="sl-slide-inner bg-1"><div class="sl-deco" data-icon="t"></div><h2>some text</h2><blockquote><p>bla bla</p><cite>Margi Clarke</cite></blockquote></div></div>');
-				
-				// call the plugin's add method
-				ss.add($items);
-
-				*/
-			
-			});
-		</script>
 		<!-- END SLIDER  -->
-	<header>
-		<div id="main-header">
+		<header>
+			<div id="main-header">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-5">
+							<!-- Site logo -->
+							<div id="site-logo">Benign</div> 
+						</div>
+						
+						<div class="col-md-7">
+							<!-- Main menu -->
+							<nav role="navigation" class="main-navigation"> 
+								<div class="menu-container">
+									<ul id="menu-mainmenu" class="menu">
+										<li class="current-menu-item"><a href="#">about</a></li>
+										<li><a href="#">Services</a>
+											<ul class="sub-menu">
+												<li><a href="#">Web design</a></li>
+												<li><a href="#">Web development development</a></li>
+												<li><a href="#">Support</a>
+													<ul class="sub-menu">
+														<li><a href="#">Web design</a></li>
+														<li><a href="#">Web development</a></li>
+														<li><a href="#">Support</a></li>
+													</ul>
+												</li>
+											</ul>
+										</li>
+										<li><a href="#">Works</a></li>
+										<li><a href="#">Price</a>
+											<ul class="sub-menu">
+												<li><a href="#">small</a></li>
+												<li><a href="#">standart</a></li>
+												<li><a href="#">big</a></li>
+											</ul>
+										</li>
+										<li><a href="#">blog</a></li>
+										<li><a href="#">Contacts</a></li>
+									</ul>	
+								</div>					
+							</nav><!-- .main-navigation -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		
+		<!-- Mobile menu -->
+		<nav class="hide_menu">
+			<div class="menu-container">
+				<ul id="menu-mobilemenu" class="nav-menu">
+					<li>
+						<span class="before_link"></span>
+						<a href="#">Home</a>
+						<span class="button_for_submenu"></span>
+					</li>
+					<li>
+						<span class="before_link"></span>
+						<a href="#">Services</a>
+						<span class="button_for_submenu"></span>
+						<ul class="sub-menu">
+							<li>
+								<span class="before_link"></span>
+								<a href="#">Web design</a>
+								<span class="button_for_submenu"></span>
+							</li>
+							<li>
+								<span class="before_link"></span>
+								<a href="#">Web design</a>
+								<span class="button_for_submenu"></span>
+							</li><li>
+								<span class="before_link"></span>
+								<a href="#">Web design</a>
+								<span class="button_for_submenu"></span>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<span class="before_link"></span>
+						<a href="#">Home</a>
+						<span class="button_for_submenu"></span>
+					</li>
+				</ul>
+			</div>	
+		</nav>
+		
+		<!-- About Us -->
+		<div id="about-us">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12">
-						<div id="site-logo">Benign</div>
+						<h3 class="title-underlined">
+							<span>About us</span>
+						</h3>
+						
 					</div>
 				</div>
 			</div>
 		</div>
-	</header>
+		
 
-	</div>
+	</div><!-- #container -->
 
 </body>
