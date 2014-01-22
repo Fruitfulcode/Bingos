@@ -1,15 +1,15 @@
 body {
-    background:none no-repeat scroll 0 0 #fff;
-    color:#333333;
+    background:none no-repeat scroll 0 0 #202020;
+    color:#fff;
 }
 a {
-    color:#333333;
+    color:#fff;
 }
 a:visited {
-    color:#333333;
+    color:#fff;
 }
 a:hover,a:focus,a:active {
-    color:#333333;
+    color:#fff;
 }
 table {     
 	background: #fff; 
@@ -17,7 +17,7 @@ table {
 }
 table thead th, 
 table th {
-	color:#333333; 
+	color:#202020; 
 	border-bottom: 1px solid #d6d6d6; 
 } 
 table tbody td { 
@@ -31,62 +31,63 @@ table tfoot td div {
 	border-top: 1px solid #8C8C8C;
 	background: #EBEBEB;
 } 
+
 /* Buttons */
 .double-button {
-	border:3px solid #333;
+	border:3px solid #fff;
 }
 .double-button span {
-	color:#333;
-	border:1px solid #333;
+	color:#fff;
+	border:1px solid #fff;
 }
 .double-button:hover span {
-	background: #333;
-	color:#fff;
+	background: #fff;
+	color:#333;
 }
 /* Titles */
 .title-underlined  {
-	border-bottom:7px solid #333;
+	border-bottom:7px solid #fff;
 }
 .title-underlined span {
-	border-bottom:1px solid #333;
+	border-bottom:1px solid #fff;
 }
-/* Lists */
+/* Lists */	
 ul.list-arrows li {
-	background:url("../images/li-arrow-black.png") no-repeat 0 5px transparent;
+	background:url("../images/li-arrow-white.png") no-repeat 0 5px transparent;
 }
 /* Progress bars */
 .progress {
-    background-color: #eaeaea;
+    background-color: #666;
 }
 .progress-bar {
-	background-color: #333;
-	color: #333;
+	background-color: #fff;
+	color: #fff;
 }
 
 /*=== Header ===*/
 .separator-horizontal-line {
-	background: url(../images/hor-white-arrowed-line.png) no-repeat center top transparent;
+	background: url(../images/hor-black-arrowed-line.png) no-repeat center top transparent;
 }
 #site-logo {
-	color:#fff;
+	color:#202020;
 }
 #main-header {
-	background: #333333;
-	color:#ffffff;
+	background: #fff;
+	color:#202020;
 }
 /* Menu */
 .main-navigation a {
-	color:#ffffff;
+	color:#202020;
 }
 .main-navigation a:visited {
-    color:#ffffff;
+    color:#202020;
 }
 .main-navigation ul ul {
-	background:none #333333;
+	background:none #fff;
 }
 .main-navigation ul li:hover > a {
 	background:none repeat scroll 0 0 #ccc;
-    color:#333;
+    color:#202020;
 }
 .main-navigation ul li.current_page_item > a,
 .main-navigation ul li.current-menu-item > a,
@@ -94,5 +95,5 @@ ul.list-arrows li {
 .main-navigation ul li.current_page_parent > a,
 .main-navigation ul li.current-menu-ancestor > a {
     background:none repeat scroll 0 0 #ccc;
-    color:#333;
+    color:#202020;
 }

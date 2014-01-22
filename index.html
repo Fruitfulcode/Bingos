@@ -7,9 +7,9 @@
 	<meta name="description" content="">
     <link rel="shortcut icon" href="" type="image/x-icon">
 	<link rel="stylesheet" id="font-style-css" href="fonts/fonts.css" type="text/css" media="all">
-	<link href="js/bootstrap/css/bootstrap.css" rel="stylesheet">
+	<link rel="stylesheet" href="js/bootstrap/css/bootstrap.css" type="text/css" media="all">
 	<link rel="stylesheet" id="main-style-css" href="css/style.css" type="text/css" media="all">
-	<link rel="stylesheet" id="light-style-css" href="css/light.css" type="text/css" media="all">
+	<link rel="stylesheet" class="color-scheme" href="css/light.css" type="text/css" media="all">
 	
 	<script src="js/jquery-1.10.2.min.js"></script>
 	<script src="js/bootstrap/bootstrap.min.js"></script>
@@ -88,7 +88,8 @@
 					<div class="row">
 						<div class="col-md-5">
 							<!-- Site logo -->
-							<div id="site-logo">Benign</div> 
+							<a href="#" id="site-logo">Benign</a>
+							
 						</div>
 						
 						<div class="col-md-7">
@@ -173,16 +174,76 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12">
-						<h3 class="title-underlined">
-							<span>About us</span>
-						</h3>
+						<div class="chapter-title">
+							<h3 class="title-underlined">
+								<span>About us</span>
+							</h3>
+						</div>
 						
+						<div class="row">
+							<div class="col-md-6">
+								<h4 class="section-title">our history</h4>
+								<p>	Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+									
+								<ul class="list-arrows">
+									<li>Ut id nibh eu neque dapibus lobortis.</li>
+									<li>Aenean nec lacus tempor, vestibulum nisi in, imperdiet leo. Aenean Aenean Aenean Aenean Aenean</li>
+									<li>Aenean sed molestie quam.</li>
+								</ul>
+								<p>Curabitur eget libero vel mi hendrerit interdum at ac tortor. Phasellus rhoncus nunc id pellentesque luctus. In id diam porta, lacinia erat in, rutrum enim.</p>
+		
+								<a class="double-button" href="#"><span>Read more</span></a>
+							</div>
+								
+							<div class="col-md-6">
+								<h4 class="section-title">our skills</h4>
+								<h4>photoshop</h4>
+								<div class="progress">
+									<div class="progress-bar" role="progressbar" aria-valuenow="86" aria-valuemin="0" aria-valuemax="100" style="width: 86%;">
+										<span class="sr-only">86%</span>
+									</div>
+								</div>
+								<h4>illustrator</h4>
+								<div class="progress">
+									<div class="progress-bar" role="progressbar" aria-valuenow="76" aria-valuemin="0" aria-valuemax="100" style="width: 76%;">
+										<span class="sr-only">76%</span>
+									</div>
+								</div>
+								<h4>html & css</h4>
+								<div class="progress">
+									<div class="progress-bar" role="progressbar" aria-valuenow="86" aria-valuemin="0" aria-valuemax="100" style="width: 86%;">
+										<span class="">86%</span>
+									</div>
+								</div>
+								<h4>javascript</h4>
+								<div class="progress">
+									<div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">
+										<span class="sr-only">50%</span>
+									</div>
+								</div>
+								<h4>wordpress</h4>
+								<div class="progress">
+									<div class="progress-bar" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100" style="width: 92%;">
+										<span class="sr-only">92%</span>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 		
-
+		
+		<div class="style-switcher">
+			<!-- Switcher of Color scheme of Site via 'rel' attribute -->
+			<h4>Color Skins</h4>
+			<ul class="color-switch">
+				<li><a class="light-theme" rel="css/light.css" href="#">Light</a></li>
+				<li><a class="dark-theme" rel="css/dark.css" href="#">Dark</a></li>
+			</ul>
+		</div>
+		
 	</div><!-- #container -->
 
 </body>
