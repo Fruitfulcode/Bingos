@@ -46,6 +46,21 @@ jQuery(document).ready(function($) {
 		Page.init();
 	});
 
+	/* Carousel initialozation */
+	$(document).ready(function() {
+ 
+		$("#team-carousel").owlCarousel({
+			items : 5,
+			itemsDesktop : [1199,4],
+			itemsDesktopSmall : [979,3],
+			itemsTablet :	[768,2],
+			itemsMobile :	[479,1],
+			pagination :	false
+
+		});
+	 
+	});
+	
 	/* Switcher of Color Themes */
 	$(".color-switch a").click(function(){
 		$rel = $(this).attr('rel');
@@ -62,5 +77,48 @@ jQuery(document).ready(function($) {
 		}
 		return false;
 	});
+	
+});
+
+var counters_finished = false;
+
+jQuery(window).bind('scroll', function() {	
+	/* run Counters on elements appear */
+	if (jQuery('.counter-number').length > 0 && document.body.clientWidth > 1024 ) {
+		if(jQuery(".counter-number").offset().top < (jQuery(window).scrollTop() + jQuery(window).outerHeight()) && !counters_finished && jQuery(".counter-number").offset().top + jQuery(".counter-number").outerHeight() > (jQuery(window).scrollTop() ) ) {
+			
+			jQuery('.counter-number').each(function(){
+				jQuery(this).initCounter(50);
+			});
+			counters_finished = true;		
+		} else {
+			return false;
+		}
+	}
+});
+
+
+/* counter Functions */	
+jQuery.fn.extend({	
+	
+	initCounter: function (interval) {
+		interval = typeof(interval) != 'undefined' ? interval : 5;
+		var counterElement = jQuery(this);
+		var final_number = parseInt(counterElement.html());
+		var showing_number = 0;
+		function updateCounter()
+		{
+			if(showing_number <= final_number)
+			{
+				counterElement.html(showing_number);
+				showing_number++;
+			}
+			else
+			{
+			  window.clearInterval(timerID); // stop firing the timer 
+			}
+		}
+		var timerID = window.setInterval(updateCounter, interval, showing_number); // timer interval
+	}
 	
 });

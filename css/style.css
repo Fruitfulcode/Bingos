@@ -1121,7 +1121,116 @@ header {
 	text-align:center;
 	margin:0 0 90px;
 }
+#about-us {
+	margin:0 0 80px;
+}
 #about-us .double-button {
 	margin:25px 0 0;
 	float:right;
+}
+
+.owl-carousel .owl-item img{
+  display: block;
+  width: 100%;
+  height: auto;
+  cursor:url("../images/grabbing.png") 40 18, pointer;
+}
+.owl-carousel .owl-wrapper.grabbing .owl-item img{ 
+    cursor:url("../images/grabbing-move.png") 40 18, move;
+}
+
+.about-person{
+	position:absolute;
+	bottom:-37px;
+	width:100%;
+	text-align:center;
+	-webkit-transition: bottom 0.2s ease-in-out; 
+	-moz-transition: bottom 0.2s ease-in-out; 
+	-khtml-transition: bottom 0.2s ease-in-out; 
+	-o-transition: bottom 0.2s ease-in-out; 
+	-ms-transition: bottom 0.2s ease-in-out; 
+	transition: bottom 0.2s ease-in-out; 
+}
+.owl-item:hover > div > .about-person{
+	bottom:0;
+}
+
+
+.about-person .person-name{
+	font-size:24px;
+	line-height:24px;
+	margin:15px 0 10px;
+	font-family:'opensans-regular', sans-serif;
+}
+.about-person .profession{
+	font-size:18px;
+	line-height:18px;
+}
+
+.owl-theme .owl-controls{
+	margin-top: 10px;
+	text-align: center;
+}
+
+.person-social{
+	margin:8px 0;
+}
+.person-social a{
+	display:inline-block;
+	width:30px;
+	height:30px;
+	margin:0 10px;
+	background:url("../images/social-logos.png") no-repeat transparent;
+}
+
+a.link-facebook:hover{ background-position:0 -30px; }
+a.link-tweet:hover{ background-position:-30px -30px; }
+a.link-google:hover{ background-position:-60px -30px; }
+
+/* Counters */
+#done-counters{
+	text-align:center;
+	margin:95px 0;
+}
+.counter-number{
+	font-size:80px;
+	line-height:80px;
+	font-family:'opensans-regular', sans-serif;
+}
+.down-arrow{
+	height:60px;
+	width:60px;
+	background:url("../images/arrows.png") no-repeat transparent;
+}
+#done-counters .down-arrow{
+	margin:2px auto 5px;
+}
+.counter-name{
+	font-size:24px;
+	line-height:24px;
+	font-family:'opensans-italic', sans-serif;
+}
+
+/* Our advantages */
+#our-advantages{
+	height:465px;
+	background-image:url("../images/advantages.jpg");
+	background-attachment:fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover; 
+	background-position: 0 top;
+}
+
+
+
+
+
+.background{
+	color:#ffffff;
+}
+
+
+.style-switcher{
+	height:600px;
 }

@@ -96,3 +96,16 @@ ul.list-arrows li {
     background:none repeat scroll 0 0 #ccc;
     color:#333;
 }
+
+/* About Us */
+.about-person{
+	color: #fff;
+	background: rgba(0,0,0,0.8);
+}
+a.link-facebook{ background-position:0 0; }
+a.link-tweet{ background-position:-30px 0; }
+a.link-google{ background-position:-60px 0; }
+
+.down-arrow{
+	background-position:0 0;
+}
