@@ -1,5 +1,37 @@
 jQuery(document).ready(function($) {
 	
+	
+	
+	/* Isotope initialozation */
+	$('#isotope-container').isotope({
+		// options
+		animationEngine: 'css',
+		itemSelector : '.isotope-item',
+		layoutMode : 'fitRows'}
+		/* ,
+		function( $items ) {
+			var id = this.attr('id'),
+			len = $items.length;
+			console.log( 'Isotope has filtered for ' + len + ' items in #' + id );
+		} */
+	);
+	
+	$(window).load(function() {
+		$('#isotope-container').isotope('reLayout');
+	});
+	
+	$('#isotop-reload').click(function(){
+		$('#isotope-container').isotope('reLayout');
+	});
+	
+	
+	$('.option-set a').click(function(){
+		var selector = $(this).attr('data-filter');
+		$('#isotope-container').isotope({ filter: selector });
+		return false;
+	});
+	
+	
 	/* Slider initialization */
 	$(function() {
 		var Page = (function() {
@@ -47,19 +79,31 @@ jQuery(document).ready(function($) {
 	});
 
 	/* Carousel initialozation */
-	$(document).ready(function() {
- 
-		$("#team-carousel").owlCarousel({
-			items : 5,
-			itemsDesktop : [1199,4],
-			itemsDesktopSmall : [979,3],
-			itemsTablet :	[768,2],
-			itemsMobile :	[479,1],
-			pagination :	false
+	$("#team-carousel").owlCarousel({
+		items : 5,
+		itemsDesktop : [1199,4],
+		itemsDesktopSmall : [979,3],
+		itemsTablet :	[768,2],
+		itemsMobile :	[479,1],
+		pagination :	false
 
-		});
-	 
 	});
+	
+	$("#services-carousel").owlCarousel({
+		items : 1,
+		itemsDesktop : [1199,1],
+		itemsDesktopSmall : [979,1],
+		itemsTablet :	[768,1],
+		itemsMobile :	[479,1],
+		navigation :	true,
+		navigationText: false,
+		
+		pagination :	false
+
+	});
+	
+	
+
 	
 	/* Switcher of Color Themes */
 	$(".color-switch a").click(function(){
@@ -79,6 +123,8 @@ jQuery(document).ready(function($) {
 	});
 	
 });
+
+
 
 var counters_finished = false;
 

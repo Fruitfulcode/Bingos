@@ -110,3 +110,20 @@ a.link-google{ background-position:-60px -60px; }
 .down-arrow{
 	background-position:0 -120px;
 }
+
+/* Services */
+#services-carousel.owl-carousel .owl-controls .owl-buttons div {
+	background-color: #202020;
+}
+#services-carousel.owl-carousel .owl-controls .owl-buttons div.owl-prev{
+	background-position: -120px -120px;
+}
+#services-carousel.owl-carousel .owl-controls .owl-buttons div.owl-next{
+	background-position: -60px -120px;
+}
+#services-carousel.owl-carousel .owl-controls .owl-buttons div.owl-prev:hover{
+	background-position: -120px -180px;
+}
+#services-carousel.owl-carousel .owl-controls .owl-buttons div.owl-next:hover{
+	background-position: -60px -180px;
+}

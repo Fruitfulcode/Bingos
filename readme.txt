@@ -5,3 +5,9 @@ http://tympanus.net/codrops/2012/06/05/fullscreen-slit-slider-with-jquery-and-cs
 
 OWL Carousel:
 http://www.owlgraphic.com/owlcarousel/
+
+
+Isotope
+http://isotope.metafizzy.co/
+
+Bootstrap
