@@ -3,31 +3,24 @@ jQuery(document).ready(function($) {
 	
 	
 	/* Isotope initialozation */
+	
 	$('#isotope-container').isotope({
-		// options
 		animationEngine: 'css',
 		itemSelector : '.isotope-item',
-		layoutMode : 'fitRows'}
-		/* ,
-		function( $items ) {
-			var id = this.attr('id'),
-			len = $items.length;
-			console.log( 'Isotope has filtered for ' + len + ' items in #' + id );
-		} */
-	);
+		/* layoutMode : '' */
+	});
+	
 	
 	$(window).load(function() {
 		$('#isotope-container').isotope('reLayout');
 	});
 	
-	$('#isotop-reload').click(function(){
-		$('#isotope-container').isotope('reLayout');
-	});
 	
-	
-	$('.option-set a').click(function(){
+	$('.isotope-option a').click(function(){
+		$(this).closest('ul').find('li.current').removeClass('current');
 		var selector = $(this).attr('data-filter');
 		$('#isotope-container').isotope({ filter: selector });
+		$(this).parent().addClass('current');
 		return false;
 	});
 	
@@ -85,8 +78,10 @@ jQuery(document).ready(function($) {
 		itemsDesktopSmall : [979,3],
 		itemsTablet :	[768,2],
 		itemsMobile :	[479,1],
-		pagination :	false
-
+		pagination :	false,
+		
+		/* slideSpeed:		300, */
+		dragBeforeAnimFinish: false
 	});
 	
 	$("#services-carousel").owlCarousel({
@@ -97,14 +92,28 @@ jQuery(document).ready(function($) {
 		itemsMobile :	[479,1],
 		navigation :	true,
 		navigationText: false,
+		pagination :	false,
 		
-		pagination :	false
-
+		/* slideSpeed:		300, */
+		dragBeforeAnimFinish: false
 	});
 	
-	
+	$("#testimonial-carousel").owlCarousel({
+		items : 1,
+		itemsDesktop : [1199,1],
+		itemsDesktopSmall : [979,1],
+		itemsTablet :	[768,1],
+		itemsMobile :	[479,1], 
+		navigation :	false,
+		pagination :	true,
+		mouseDrag:		false,
+		touchDrag:		false,
+		/* autoPlay:		5000, */
+		
+		/* slideSpeed:		300, */
+		dragBeforeAnimFinish: false
+	});
 
-	
 	/* Switcher of Color Themes */
 	$(".color-switch a").click(function(){
 		$rel = $(this).attr('rel');
