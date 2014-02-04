@@ -11,10 +11,12 @@
 	<link rel="stylesheet" id="main-style-css" href="css/style.css" type="text/css" media="all">
 	<link rel="stylesheet" id="carousel-css" href="js/carousel/css/owl.carousel.css" type="text/css" media="all">
 	<link rel="stylesheet" id="carousel-theme" href="js/carousel/css/owl.theme.css" type="text/css" media="all">
+	<link rel="stylesheet" id="carousel-trans" href="js/carousel/css/owl.transitions.css" type="text/css" media="all">
 	<link rel="stylesheet" id="isotop-css" href="js/isotope/css/isotope.css" type="text/css" media="all"> 
 	<link rel="stylesheet" class="color-scheme" href="css/light.css" type="text/css" media="all">
 	
 	<script src="js/jquery-1.10.2.min.js"></script>
+	<!-- <script src="http://code.jquery.com/jquery-1.10.2.min.map"></script> -->
 	<script src="js/bootstrap/bootstrap.min.js"></script>
 	<script src="js/isotope/jquery.isotope.min.js"></script>
 	
@@ -88,7 +90,7 @@
 		<!-- Bottom line SLIDER  -->
 		<div class="separator-horizontal-line"></div>
 		<!-- END SLIDER  -->
-		<header>
+		<header id="site-header">
 			<div id="main-header">
 				<div class="container">
 					<div class="row">
@@ -187,7 +189,7 @@
 						</div>
 						
 						<div class="row">
-							<div class="col-md-6 col-sm-6">
+							<div class="column-left col-md-6 col-sm-6">
 								<h4 class="section-title">our history</h4>
 								<p>	Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
 									
@@ -201,7 +203,7 @@
 								<a class="double-button" href="#"><span>Read more</span></a>
 							</div>
 								
-							<div class="col-md-6 col-sm-6">
+							<div class="column-right col-md-6 col-sm-6">
 								<h4 class="section-title">our skills</h4>
 								<h4>photoshop</h4>
 								<div class="progress">
@@ -707,78 +709,79 @@
 							</h3>
 						</div>
 						
-						<div class="price-packet col-md-3 com-sm-3">
-							<div class="price-table">
-								<h4 class="packet-title">basic</h4>
-								<ul>
-									<li>
-										<h4 class="dollars">$ 99</h4>
-										<p class="per-month">per month</p>
-									</li>
-									<li>free setup</li>
-									<li>10 GB storage</li>
-									<li>unlimited users</li>
-									<li>20 GB bandwidth</li>
-									<li>enhanced security</li>
-								</ul>
+						<div class="row">
+							<div class="price-packet col-sm-6 col-md-3">
+								<div class="price-table">
+									<h4 class="packet-title">basic</h4>
+									<ul>
+										<li>
+											<h4 class="dollars">$ 99</h4>
+											<p class="per-month">per month</p>
+										</li>
+										<li>free setup</li>
+										<li>10 GB storage</li>
+										<li>unlimited users</li>
+										<li>20 GB bandwidth</li>
+										<li>enhanced security</li>
+									</ul>
+								</div>
+								<a class="double-button" href="#"><span>Sign up now</span></a>
 							</div>
-							<a class="double-button" href="#"><span>Sign up now</span></a>
-						</div>
-						
-						<div class="price-packet col-md-3 com-sm-3">
-							<div class="price-table">
-								<h4 class="packet-title">standart</h4>
-								<ul>
-									<li>
-										<h4 class="dollars">$ 199</h4>
-										<p class="per-month">per month</p>
-									</li>
-									<li>free setup</li>
-									<li>10 GB storage</li>
-									<li>unlimited users</li>
-									<li>20 GB bandwidth</li>
-									<li>enhanced security</li>
-								</ul>
+							
+							<div class="price-packet col-sm-6 col-md-3">
+								<div class="price-table">
+									<h4 class="packet-title">standart</h4>
+									<ul>
+										<li>
+											<h4 class="dollars">$ 199</h4>
+											<p class="per-month">per month</p>
+										</li>
+										<li>free setup</li>
+										<li>10 GB storage</li>
+										<li>unlimited users</li>
+										<li>20 GB bandwidth</li>
+										<li>enhanced security</li>
+									</ul>
+								</div>
+								<a class="double-button" href="#"><span>Sign up now</span></a>
 							</div>
-							<a class="double-button" href="#"><span>Sign up now</span></a>
-						</div>
-						
-						<div id="most-popular" class="price-packet col-md-3 com-sm-3">
-							<div class="price-table">
-								<h4 class="packet-title">advanced</h4>
-								<ul>
-									<li>
-										<h4 class="dollars">$ 299</h4>
-										<p class="per-month">per month</p>
-									</li>
-									<li>free setup</li>
-									<li>10 GB storage</li>
-									<li>unlimited users</li>
-									<li>20 GB bandwidth</li>
-									<li>enhanced security</li>
-								</ul>
+							
+							<div id="most-popular" class="price-packet col-sm-6 col-md-3">
+								<div class="price-table">
+									<h4 class="packet-title">advanced</h4>
+									<ul>
+										<li>
+											<h4 class="dollars">$ 299</h4>
+											<p class="per-month">per month</p>
+										</li>
+										<li>free setup</li>
+										<li>10 GB storage</li>
+										<li>unlimited users</li>
+										<li>20 GB bandwidth</li>
+										<li>enhanced security</li>
+									</ul>
+								</div>
+								<a class="double-button" href="#"><span>Sign up now</span></a>
 							</div>
-							<a class="double-button" href="#"><span>Sign up now</span></a>
-						</div>
-						
-						<div class="price-packet col-md-3 com-sm-3">
-							<div class="price-table">
-								<h4 class="packet-title">premium</h4>
-								<ul>
-									<li>
-										<h4 class="dollars">$ 399</h4>
-										<p class="per-month">per month</p>
-									</li>
-									<li>free setup</li>
-									<li>10 GB storage</li>
-									<li>unlimited users</li>
-									<li>20 GB bandwidth</li>
-									<li>enhanced security</li>
-								</ul>
+							
+							<div class="price-packet col-sm-6 col-md-3">
+								<div class="price-table">
+									<h4 class="packet-title">premium</h4>
+									<ul>
+										<li>
+											<h4 class="dollars">$ 399</h4>
+											<p class="per-month">per month</p>
+										</li>
+										<li>free setup</li>
+										<li>10 GB storage</li>
+										<li>unlimited users</li>
+										<li>20 GB bandwidth</li>
+										<li>enhanced security</li>
+									</ul>
+								</div>
+								<a class="double-button" href="#"><span>Sign up now</span></a>
 							</div>
-							<a class="double-button" href="#"><span>Sign up now</span></a>
 						</div>
-						
 					</div>
 				</div>
 			</div>
@@ -797,12 +800,12 @@
 								<span class="testimonial-author">- Melissa Doe</span>
 							</div>
 							<div>
-								<p class="testimonial-text">Proin vestibulum erat vitae elit eleifend dapibus. Morbi molestie, mauris sed imperdiet fermentum, tellus nulla eleifend eros, vitae elementum quam ligula a quam.</p>
-								<span class="testimonial-author">- Melissa Doe</span>
+								<p class="testimonial-text">The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
+								<span class="testimonial-author">- John Doe</span>
 							</div>
 							<div>
-								<p class="testimonial-text">Proin vestibulum erat vitae elit eleifend dapibus. Morbi molestie, mauris sed imperdiet fermentum, tellus nulla eleifend eros, vitae elementum quam ligula a quam.</p>
-								<span class="testimonial-author">- Melissa Doe</span>
+								<p class="testimonial-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+								<span class="testimonial-author">- Robert Doe</span>
 							</div>
 							
 						</div>
@@ -813,6 +816,237 @@
 			</div>
 		</div><!-- end #testimonials -->
 						
+		<!-- Blog block -->
+		<div id="blog-recent">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="chapter-title">
+							<h3 class="title-underlined">
+								<span>Blog</span>
+							</h3>
+						</div>
+						
+						<h4 class="section-title">recent news</h4>
+						
+						<div class="row">
+							<div class="column-left col-md-6 col-sm-6">
+								<article class="post">
+									<div class="entry-thumbnail">
+										<a href="#" class="thumbnail-link">
+											<img src="images/post-feature-1.jpg" alt="Featured Image">		
+										</a>
+									</div>
+									
+									<div class="row">
+										<div class="col-md-4 col-sm-4 col-xs-4">
+									
+											<header class="entry-header">
+												<div class="entry-meta">
+													<div class="date">
+														<a href="#" title="" rel="bookmark">
+															<time class="entry-date" datetime="2013-10-31T15:15:12+00:00">31 October</time>
+														</a>
+													</div>
+													
+													<div class="comments-link">
+														<a href="#" title="Comment on The best way to get started is to fill out the form below.">2 comments</a>			
+													</div><!-- .comments-link -->
+													
+													<div class="author">
+														by <a href="#" title="View all posts by John Doe" rel="author">John Doe</a>
+													</div>
+													
+													<div class="categories-links">
+														<ul>
+															<li><a href="#" title="View all posts in Illustration" rel="category tag">Illustration</a>,</li>
+															<li><a href="#" title="View all posts in Web-design" rel="category tag">Web-design</a>,</li>
+															<li><a href="#" title="View all posts in Development" rel="category tag">Development</a>,</li>
+															<li><a href="#" title="View all posts in Plugins" rel="category tag">Plugins</a>,</li>
+															<li><a href="#" title="View all posts in Wordpress" rel="category tag">Wordpress</a></li>
+														</ul>
+													</div>
+													
+													<div class="tag-links">
+														<a href="#" rel="tag">Codex</a>, 
+														<a href="#" rel="tag">edge case</a>, 
+														<a href="#" rel="tag">featured image</a>,
+														<a href="#" rel="tag">image</a>, 
+														<a href="#" rel="tag">template</a>
+													</div>
+													
+												</div><!-- .entry-meta -->
+											</header>
+									
+										</div>
+										
+										<div class="col-md-8 col-sm-8 col-xs-8">
+											<h1 class="entry-title">
+												<a href="#" rel="bookmark">the best way to get started is to fill out the form below.</a>
+											</h1>
+										
+											<div class="entry-summary">
+												<p>Tell us about your project and we will be sure to get back to you as soon as Cred sriracha fixie gastropub. 8-bit id next level gastropub 90's, lo-fi cupidatat. Nesciunt ethnic banh mi lomo. Asymmetrical pug mlkshk dolor. Tell us about your project and we will be sure to get back to you as soon as Cred sriracha fixie gastropub. 8-bit id next level gastropub 90's, lo-fi cupidatat. Nesciunt ethnic banh mi lomo. Asymmetrical pug mlkshk dolor.</p>
+											</div>
+											
+											<!--
+											<span class="edit-link"><a class="post-edit-link" href="#">Edit</a></span>
+											-->
+											
+											<a class="double-button" href="#"><span>Read more</span></a>
+										</div>
+										
+									</div>
+																	
+									
+									
+								</article>
+							
+							</div>
+							
+							<div class="column-right col-md-6 col-sm-6">
+								
+								<article class="post">
+									<div class="entry-thumbnail">
+										<a href="#" class="thumbnail-link">
+											<img src="images/post-feature-2.jpg" alt="Featured Image">		
+										</a>
+									</div>
+									
+									<div class="row">
+										<div class="col-md-4 col-sm-4 col-xs-4">
+									
+											<header class="entry-header">
+												<div class="entry-meta">
+													<div class="date">
+														<a href="#" title="" rel="bookmark">
+															<time class="entry-date" datetime="2013-10-31T15:15:12+00:00">30 October</time>
+														</a>
+													</div>
+													
+													<div class="comments-link">
+														<a href="#" title="Comment on The best way to get started is to fill out the form below.">2 comments</a>			
+													</div><!-- .comments-link -->
+													
+													<div class="author">
+														by <a href="#" title="View all posts by John Doe" rel="author">John Doe Ripburger</a>
+													</div>
+													
+													<div class="categories-links">
+														<ul>
+															<li><a href="#" title="View all posts in Development" rel="category tag">Development</a></li>
+														</ul>
+													</div>
+													
+													<div class="tag-links">
+														<a href="#" rel="tag">Codex</a>, 
+														<a href="#" rel="tag">edge case</a>
+													</div>
+													
+												</div><!-- .entry-meta -->
+											</header>
+									
+										</div>
+										
+										<div class="col-md-8 col-sm-8 col-xs-8">
+											<h1 class="entry-title">
+												<a href="#" rel="bookmark">The best way to get started.</a>
+											</h1>
+										
+											<div class="entry-summary">
+												<p>Tell us about your project and we will be sure to get back to you as soon as Cred sriracha fixie gastropub. 8-bit id next level gastropub 90's, lo-fi cupidatat. Nesciunt ethnic banh mi lomo. Asymmetrical pug mlkshk dolor.</p>
+											</div>
+											
+											<!--
+											<span class="edit-link"><a class="post-edit-link" href="#">Edit</a></span>
+											-->
+											
+											<a class="double-button" href="#"><span>Read more</span></a>
+										</div>
+										
+									</div>
+																	
+									
+									
+								</article>
+							
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</div><!-- #blog-recent -->
+		
+		
+		<!-- Tweets -->
+		<div id="twitter-block" class="background-fix">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						
+						<div class="tweet-bird-overlay"></div>
+						
+						<div id="tweets-carousel" class="owl-carousel">
+							<div>
+								<div class="quote-open"></div>
+								<p class="testimonial-text">Proin vestibulum erat vitae elit eleifend dapibus. Morbi molestie, mauris sed imperdiet fermentum, tellus nulla eleifend eros, vitae elementum quam ligula a quam <span class="author">@benign</span></p>
+								<div class="quote-close"></div>
+							</div>
+							<div>
+								<div class="quote-open"></div>
+								<p class="testimonial-text">The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham. <span class="author">@benign</span></p>
+								<div class="quote-close"></div>
+							</div>
+							<div>
+								<div class="quote-open"></div>
+								<p class="testimonial-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. <span class="author">@benign</span></p>
+								<div class="quote-close"></div>
+							</div>
+							
+						</div>
+						
+						
+					</div>
+				</div>
+			</div>
+		</div><!-- end #twitter-block -->
+		
+		<!-- Contacts -->
+		<div id="contacts-block">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="chapter-title">
+							<h3 class="title-underlined">
+								<span>Contacts</span>
+							</h3>
+						</div>
+						
+						<div class="row">
+							<div class="column-left col-md-6 col-sm-6">
+								<h4 class="section-title">write to us</h4>
+								<form action="#" method="post" class="contact-form">
+									<input type="text" name="first-name" placeholder="Name">
+									<input type="email" name="e-mail" placeholder="e-mail">
+									<textarea name="message" cols="40" rows="6" placeholder="Message"></textarea>
+									<input type="submit" value="Send message" class="submit">
+									
+								</form>
+							</div>
+							
+							<div class="column-right col-md-6 col-sm-6">
+								<h4 class="section-title">contact information</h4>
+								
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
 		
 		<div class="style-switcher">
 			<!-- Switcher of Color scheme of Site via 'rel' attribute -->

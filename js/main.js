@@ -80,6 +80,8 @@ jQuery(document).ready(function($) {
 		itemsMobile :	[479,1],
 		pagination :	false,
 		
+		theme:			"team-theme",
+		
 		/* slideSpeed:		300, */
 		dragBeforeAnimFinish: false
 	});
@@ -94,24 +96,39 @@ jQuery(document).ready(function($) {
 		navigationText: false,
 		pagination :	false,
 		
+		theme:			"services-theme",
+		
 		/* slideSpeed:		300, */
 		dragBeforeAnimFinish: false
 	});
 	
 	$("#testimonial-carousel").owlCarousel({
-		items : 1,
-		itemsDesktop : [1199,1],
-		itemsDesktopSmall : [979,1],
-		itemsTablet :	[768,1],
-		itemsMobile :	[479,1], 
 		navigation :	false,
 		pagination :	true,
 		mouseDrag:		false,
 		touchDrag:		false,
-		/* autoPlay:		5000, */
+		autoPlay:		5000, 
+		stopOnHover:	true, 
+		singleItem : true,
+		transitionStyle : "fade",
+		
+		theme:			"tesimonials-theme", 
 		
 		/* slideSpeed:		300, */
-		dragBeforeAnimFinish: false
+		
+	});
+	
+	$("#tweets-carousel").owlCarousel({
+		navigation :	false,
+		pagination :	false,
+		mouseDrag:		false,
+		touchDrag:		false,
+		autoPlay:		5000, 
+		/* stopOnHover:	true,  */
+		singleItem : true,
+		transitionStyle : "fade",
+		
+		autoHeight:		true
 	});
 
 	/* Switcher of Color Themes */
@@ -143,7 +160,7 @@ jQuery(window).bind('scroll', function() {
 		if(jQuery(".counter-number").offset().top < (jQuery(window).scrollTop() + jQuery(window).outerHeight()) && !counters_finished && jQuery(".counter-number").offset().top + jQuery(".counter-number").outerHeight() > (jQuery(window).scrollTop() ) ) {
 			
 			jQuery('.counter-number').each(function(){
-				jQuery(this).initCounter(50);
+				jQuery(this).initCounter(20);
 			});
 			counters_finished = true;		
 		} else {

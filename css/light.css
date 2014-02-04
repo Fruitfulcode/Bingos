@@ -111,18 +111,44 @@ a.link-google{ background-position:-60px 0; }
 }
 
 /* Services */
-#services-carousel.owl-carousel .owl-controls .owl-buttons div {
+.services-theme .owl-controls .owl-buttons div {
 	background-color: #fff;
 }
-#services-carousel.owl-carousel .owl-controls .owl-buttons div.owl-prev{
+.services-theme .owl-controls .owl-buttons div.owl-prev{
 	background-position: -120px 0;
 }
-#services-carousel.owl-carousel .owl-controls .owl-buttons div.owl-next{
+.services-theme .owl-controls .owl-buttons div.owl-next{
 	background-position: -60px 0;
 }
-#services-carousel.owl-carousel .owl-controls .owl-buttons div.owl-prev:hover{
+.services-theme .owl-controls .owl-buttons div.owl-prev:hover{
 	background-position: -120px -60px;
 }
-#services-carousel.owl-carousel .owl-controls .owl-buttons div.owl-next:hover{
+.services-theme .owl-controls .owl-buttons div.owl-next:hover{
 	background-position: -60px -60px;
+}
+
+/* Works */
+ul.isotope-option li.current a,
+ul.isotope-option li a:hover {
+	color:#000;
+}
+
+/* Price */
+.price-table {
+	border: 1px solid #333;
+}
+.price-table h4.packet-title {
+	color:#fff;
+	background:#333;
+}
+.price-table ul li {
+	border-top: 1px solid #333;
+}
+
+/* Blog */
+.entry-header {
+	border-right: 1px solid #333;
+}
+.entry-meta div {
+	border-bottom: 1px solid #333;
 }
