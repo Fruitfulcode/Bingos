@@ -44,6 +44,66 @@ table tfoot td div {
 	background: #fff;
 	color:#333;
 }
+.input-submit-wrapper {
+	border: 2px solid #fff;
+}
+
+button,html input[type="button"],input[type="reset"],input[type="submit"] {
+    border:1px solid #fff;
+    color: #fff;
+}
+button:hover,html input[type="button"]:hover,input[type="reset"]:hover,input[type="submit"]:hover {
+    background: #fff;
+	color: #202020;
+}
+button:focus,html input[type="button"]:focus,input[type="reset"]:focus,input[type="submit"]:focus,button:active,html input[type="button"]:active,input[type="reset"]:active,input[type="submit"]:active {
+	background:#bbb;
+}
+
+/* Inputs */
+.input-text-wrapper,
+.input-textarea-wrapper {
+	border: 2px solid #fff;
+}
+.contact-form input[type="text"],
+.contact-form input[type="email"] {
+	background: none;
+	color: #fff;
+	border: 1px solid #202020;
+}
+.contact-form textarea {
+	background: none;
+	color: #fff;
+	border: 1px solid #202020;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+	border: 1px solid #fff;
+}
+
+/* Placeholder */
+::-webkit-input-placeholder{
+	color:  #aaa; 
+}
+:-moz-placeholder{
+	
+}
+::-moz-placeholder{
+	
+}
+:-ms-input-placeholder{
+	color:  #aaa; 
+}
+.placeholder{
+	color:  #aaa; 
+}
+
+
+/* Stars */
+.stars .star{
+	background-position: -50px 0;
+}
+
 /* Titles */
 .title-underlined  {
 	border-bottom:7px solid #fff;

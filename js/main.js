@@ -108,7 +108,7 @@ jQuery(document).ready(function($) {
 		mouseDrag:		false,
 		touchDrag:		false,
 		autoPlay:		5000, 
-		stopOnHover:	true, 
+		/* stopOnHover:	true,  */
 		singleItem : true,
 		transitionStyle : "fade",
 		
@@ -126,9 +126,9 @@ jQuery(document).ready(function($) {
 		autoPlay:		5000, 
 		/* stopOnHover:	true,  */
 		singleItem : true,
-		transitionStyle : "fade",
+		transitionStyle : "fade"
 		
-		autoHeight:		true
+		/* autoHeight:		true */
 	});
 
 	/* Switcher of Color Themes */

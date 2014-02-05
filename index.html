@@ -458,6 +458,12 @@
 									</div>
 									<div class="col-md-5">
 										<div class="service-text">
+											<div class="stars">
+												<span class="star"></span>
+												<span class="star"></span>
+												<span class="star"></span>
+											</div>
+											
 											<div class="service-item">
 												<a href="#"><h4 class="service-title">web-sites design</h4></a>
 												<span class="service-description">creation of interfaces, pages in PSD format.</span>
@@ -482,6 +488,12 @@
 									</div>
 									<div class="col-md-5">
 										<div class="service-text">
+											<div class="stars">
+												<span class="star"></span>
+												<span class="star"></span>
+												<span class="star"></span>
+											</div>
+											
 											<div class="service-item">
 												<a href="#"><h4 class="service-title">web-sites design</h4></a>
 												<span class="service-description">creation of interfaces, pages in PSD format.</span>
@@ -506,6 +518,12 @@
 									</div>
 									<div class="col-md-5">
 										<div class="service-text">
+											<div class="stars">
+												<span class="star"></span>
+												<span class="star"></span>
+												<span class="star"></span>
+											</div>
+											
 											<div class="service-item">
 												<a href="#"><h4 class="service-title">web-sites design</h4></a>
 												<span class="service-description">creation of interfaces, pages in PSD format.</span>
@@ -835,7 +853,9 @@
 									<div class="entry-thumbnail">
 										<a href="#" class="thumbnail-link">
 											<img src="images/post-feature-1.jpg" alt="Featured Image">		
+											<div class="thumb-overlay"></div>
 										</a>
+										
 									</div>
 									
 									<div class="row">
@@ -910,6 +930,7 @@
 									<div class="entry-thumbnail">
 										<a href="#" class="thumbnail-link">
 											<img src="images/post-feature-2.jpg" alt="Featured Image">		
+											<div class="thumb-overlay"></div>
 										</a>
 									</div>
 									
@@ -1027,10 +1048,21 @@
 							<div class="column-left col-md-6 col-sm-6">
 								<h4 class="section-title">write to us</h4>
 								<form action="#" method="post" class="contact-form">
-									<input type="text" name="first-name" placeholder="Name">
-									<input type="email" name="e-mail" placeholder="e-mail">
-									<textarea name="message" cols="40" rows="6" placeholder="Message"></textarea>
-									<input type="submit" value="Send message" class="submit">
+									<div class="input-text-wrapper">
+										<input type="text" name="first-name" placeholder="Name">
+									</div>
+									
+									<div class="input-text-wrapper">
+										<input type="email" name="e-mail" placeholder="e-mail">
+									</div>
+									
+									<div class="input-textarea-wrapper">
+										<textarea name="message" cols="40" rows="6" placeholder="Message"></textarea>
+									</div>
+									
+									<div class="input-submit-wrapper">
+										<input type="submit" value="Send message" class="submit">
+									</div>
 									
 								</form>
 							</div>
@@ -1038,14 +1070,146 @@
 							<div class="column-right col-md-6 col-sm-6">
 								<h4 class="section-title">contact information</h4>
 								
+								<div class="contact-info">
+									<p>benign agency</p>
+									<p>office 26, 372 Oxford street</p>
+									<p>Lisben, Portugal  32001</p>
+									
+									<div class="stars">
+										<span class="star"></span>
+										<span class="star"></span>
+										<span class="star"></span>
+									</div>
+									
+									<p>phone: 2323 324 114</p>
+									<p>email: benign-agency@gmail.com</p>
+									<p>skype: benign-agency</p>
+								</div>
+								
 							</div>
 						</div>
 						
 					</div>
 				</div>
 			</div>
-		</div>
+		</div><!-- end #contacts-block -->
 		
+		<!-- Map -->
+		
+		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+		<script>
+			var overlay;
+			USGSOverlay.prototype = new google.maps.OverlayView();
+
+			// Initialize the map and the custom overlay.
+
+			function initialize() {
+			  var image = 'images/map-cursor.png';
+			  var myLatlng = new google.maps.LatLng(38.718181,-9.12578);
+			  
+			  
+			  var mapOptions = {
+				zoom: 16,
+				center: myLatlng
+			  };
+
+			  var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+			  var marker = new google.maps.Marker({
+					position: myLatlng,
+					map: map,
+					icon: image,
+					title: 'We are here'
+				});
+			  
+			  
+			  var swBound = new google.maps.LatLng(38.686816,-9.206979);
+			  var neBound = new google.maps.LatLng(38.762918,-9.057544);
+			  var bounds = new google.maps.LatLngBounds(swBound, neBound);
+			  
+			  
+
+			  // The custom USGSOverlay object contains the USGS image,
+			  // the bounds of the image, and a reference to the map.
+			  overlay = new USGSOverlay(bounds, map);
+			  
+			}
+
+			/** @constructor */
+			function USGSOverlay(bounds, map) {
+
+			  // Initialize all properties.
+			  this.bounds_ = bounds;
+			  this.map_ = map;
+
+			  // Define a property to hold the image's div. We'll
+			  // actually create this div upon receipt of the onAdd()
+			  // method so we'll leave it null for now.
+			  this.div_ = null;
+
+			  // Explicitly call setMap on this overlay.
+			  this.setMap(map);
+			}
+
+			/**
+			 * onAdd is called when the map's panes are ready and the overlay has been
+			 * added to the map.
+			 */
+			USGSOverlay.prototype.onAdd = function() {
+
+			  var div = document.createElement('div');
+			  div.style.borderStyle = 'none';
+			  div.style.borderWidth = '0px';
+			  div.style.backgroundColor = '#000000';
+			  div.style.opacity = '0.4';
+			  div.style.width = '100%';
+			  div.style.height = '100%';
+			  div.style.position = 'absolute';
+
+			  this.div_ = div;
+
+			  // Add the element to the "overlayLayer" pane.
+			  var panes = this.getPanes();
+			  panes.overlayLayer.appendChild(div);
+			};
+
+			USGSOverlay.prototype.draw = function() {
+
+			  // We use the south-west and north-east
+			  // coordinates of the overlay to peg it to the correct position and size.
+			  // To do this, we need to retrieve the projection from the overlay.
+			  var overlayProjection = this.getProjection();
+
+			  // Retrieve the south-west and north-east coordinates of this overlay
+			  // in LatLngs and convert them to pixel coordinates.
+			  // We'll use these coordinates to resize the div.
+			  var sw = overlayProjection.fromLatLngToDivPixel(this.bounds_.getSouthWest());
+			  var ne = overlayProjection.fromLatLngToDivPixel(this.bounds_.getNorthEast());
+
+			  // Resize the image's div to fit the indicated dimensions.
+			  var div = this.div_;
+			  div.style.left = sw.x + 'px';
+			  div.style.top = ne.y + 'px';
+			  div.style.width = (ne.x - sw.x) + 'px';
+			  div.style.height = (sw.y - ne.y) + 'px';
+			};
+
+			// The onRemove() method will be called automatically from the API if
+			// we ever set the overlay's map property to 'null'.
+			USGSOverlay.prototype.onRemove = function() {
+			  this.div_.parentNode.removeChild(this.div_);
+			  this.div_ = null;
+			};
+		
+			google.maps.event.addDomListener(window, 'load', initialize);
+
+		</script>
+		
+		
+		
+		<div id="map-canvas"></div>
+
+
 		
 		
 		<div class="style-switcher">

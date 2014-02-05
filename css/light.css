@@ -43,6 +43,65 @@ table tfoot td div {
 	background: #333;
 	color:#fff;
 }
+.input-submit-wrapper {
+	border: 2px solid #333;
+}
+
+button,html input[type="button"],input[type="reset"],input[type="submit"] {
+    border:1px solid #333;
+    color: #333;
+}
+button:hover,html input[type="button"]:hover,input[type="reset"]:hover,input[type="submit"]:hover {
+    background: #333;
+	color: #fff;
+}
+button:focus,html input[type="button"]:focus,input[type="reset"]:focus,input[type="submit"]:focus,button:active,html input[type="button"]:active,input[type="reset"]:active,input[type="submit"]:active {
+	background:#999;
+}
+
+/* Inputs */
+.input-text-wrapper,
+.input-textarea-wrapper {
+	border: 2px solid #333;
+}
+.contact-form input[type="text"],
+.contact-form input[type="email"] {
+	background: none;
+	color: #333;
+	border: 1px solid #fff;
+}
+.contact-form textarea {
+	background: none;
+	color: #333;
+	border: 1px solid #fff;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+	border: 1px solid #333;
+}
+
+/* Placeholder */
+::-webkit-input-placeholder{
+	color:  #666; 
+}
+:-moz-placeholder{
+	
+}
+::-moz-placeholder{
+	
+}
+:-ms-input-placeholder{
+	color:  #666; 
+}
+.placeholder{
+	color:  #666; 
+}
+
+/* Stars */
+.stars .star{
+	background-position: -50px -25px;
+}
+
 /* Titles */
 .title-underlined  {
 	border-bottom:7px solid #333;
@@ -152,3 +211,5 @@ ul.isotope-option li a:hover {
 .entry-meta div {
 	border-bottom: 1px solid #333;
 }
+
+/* Contact form */
