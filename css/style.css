@@ -1010,7 +1010,7 @@ header#site-header {
 	margin:68px 0 80px;
 }
 .home header#site-header {
-	margin:27px 0 80px;
+	margin:27px 0 0;
 }
 
 #site-logo {
@@ -1141,8 +1141,75 @@ header#site-header {
 .menu-toggle {
     cursor:pointer;
 }
+
+
+a#mob-menu-switch {
+	display:none;
+	float:right;
+	width:80px;
+	height:80px;
+	background-image:url("../images/menu-switch.png");
+	background-repeat:no-repeat;
+	background-position:0 0;
+}
+a#mob-menu-switch.active {
+	background-position:0 -80px;
+}
+
 .hide_menu {
 	display:none;
+}
+.hide_menu ul {
+	list-style:none;
+	margin:0;
+}
+.hide_menu ul ul {
+	display:none;
+}
+
+.hide_menu ul li {
+	position:relative;
+	
+	border-top:4px solid #fff;
+	background:#333;
+}
+.hide_menu ul li a {
+	display:block;
+	text-transform:lowercase;
+	text-align:center;
+	font-family:'opensans-regular', sans-serif;
+	font-size:40px;
+	line-height:40px;
+	
+	color:#fff;
+	padding:37px 0;
+}
+/* .hide_menu li.menu-item-has-children > a {
+	background:url("../images/menu-arrows-white.png") no-repeat 95% 0;
+}
+.hide_menu li.menu-item-has-children.active-parent a {
+	background-position:95% -114px;
+} */
+.hide_menu li.menu-item-has-children .submenu-button {
+	position:absolute;
+	top:0;
+	right:0;
+	width:114px;
+	height:114px;
+	background:url("../images/menu-arrows-white.png") no-repeat center 0;
+	cursor:pointer;
+}
+.hide_menu li.menu-item-has-children.active-parent > .submenu-button {
+	background-position:center -114px;
+}
+
+.hide_menu ul.sub-menu > li {
+	border-top:1px solid #fff;
+}
+.hide_menu ul.sub-menu > li > a{
+	padding:27px 0;
+	font-size:34px;
+	line-height:34px;
 }
 
 /* About Us */
@@ -1151,7 +1218,7 @@ header#site-header {
 	margin:0 0 90px;
 }
 #about-us {
-	margin:0 0 80px;
+	margin:80px 0 80px;
 }
 #about-us .double-button {
 	margin:25px 0 0;
@@ -1162,6 +1229,9 @@ header#site-header {
   display: block;
   width: 100%;
   height: auto;
+}
+body .owl-carousel .owl-item {
+	overflow: hidden;
 }
 .team-theme .owl-item img{
   cursor:url("../images/grabbing.png") 40 18, pointer;
@@ -1562,14 +1632,14 @@ ul.isotope-option li a {
 	line-height:24px;
 	font-family:'opensans-regular', sans-serif;
 }
-.tesimonials-theme .owl-controls {
+.testimonials-theme .owl-controls {
 	margin:65px 0 0;
 }
-.tesimonials-theme .owl-controls .owl-page {
+.testimonials-theme .owl-controls .owl-page {
 	display: inline-block;
 	zoom: 1;
 }
-.tesimonials-theme .owl-controls .owl-page span {
+.testimonials-theme .owl-controls .owl-page span {
 	display: block;
 	width: 36px;
 	height: 36px;
@@ -1581,7 +1651,7 @@ ul.isotope-option li a {
 	border-radius: 0; */
 	background: url('../images/testimon-navigation.png') 0px 0px transparent;
 }
-.tesimonials-theme .owl-controls .owl-page.active span {
+.testimonials-theme .owl-controls .owl-page.active span {
 	background-position: 0px -64px;
 }
 
@@ -1681,12 +1751,12 @@ article.post .double-button {
 #tweets-carousel {
 	padding: 103px 10%;
 }
-#tweets-carousel .tweet-block{
+/* #tweets-carousel .tweet-block{
 	display:none;
 }
 #tweets-carousel .tweet-block.on{
 	display:block;
-}
+} */
 #twitter-block .quote-open,
 #twitter-block .quote-close {
 	width: 28px;
@@ -1888,6 +1958,7 @@ and (max-width:992px) {
 		line-height: 120px;
 		word-wrap: break-word;
 	}
+	a#mob-menu-switch {display:block;}
 	nav.main-navigation{display:none;}
 }
 @media only screen 
@@ -1897,6 +1968,28 @@ and (max-width:992px) {
 }
 @media only screen 
 and (max-width:640px) {
+	body {
+		font-size:20px;
+		
+	}
+	ul.list-arrows li {
+		font-size: 20px;
+		line-height: 32px;
+		padding: 1px 0 5px 35px;
+	}
+	.double-button {
+		padding: 6px;
+	}
+	.double-button span {
+		font-size:33px;
+		line-height:35px;
+		padding:20px 33px;
+	}
+	
+	#about-us .double-button {
+		float: none;
+	}
+	
 	.sl-slider h2 { 
 		font-size: 120px;
 		line-height: 120px;
@@ -1908,4 +2001,33 @@ and (max-width:640px) {
 	.nav-arrows span.nav-arrow-next {
 		right: 4%;
 	}
+	
+	#about-us .container {
+		width:510px;
+	}
+	.column-left {
+		padding-right:15px;
+	}
+	.column-right {
+		padding-left:15px;
+	}
+	.section-title {
+		text-align:center;
+	}
+	#about-us .column-left {
+		text-align:center;
+		margin-bottom:62px;
+	}
+	#about-us .column-left p,
+	#about-us .column-left li {
+		text-align:left;
+	}
+	#team-carousel {
+		width:480px;
+		margin:0 auto;
+	}
+	body .owl-carousel .owl-wrapper-outer {
+		overflow: visible;
+	}
+	
 }

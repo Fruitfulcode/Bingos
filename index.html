@@ -98,7 +98,7 @@
 					<div class="row">
 						<div class="col-lg-5 col-md-5 col-xs-9">
 							<!-- Site logo -->
-							<a href="#" id="site-logo"></a>
+							<a href="/" id="site-logo"></a>
 							
 						</div>
 						
@@ -107,11 +107,11 @@
 							<nav role="navigation" class="main-navigation"> 
 								<div class="menu-container">
 									<ul id="menu-mainmenu" class="menu">
-										<li class="current-menu-item"><a href="#">about</a></li>
-										<li><a href="#">Services</a>
+										<li class="current-menu-item"><a href="#about-us">about</a></li>
+										<li><a href="#services">Services</a>
 											<ul class="sub-menu">
 												<li><a href="#">Web design</a></li>
-												<li><a href="#">Web development development</a></li>
+												<li><a href="#">Web development</a></li>
 												<li><a href="#">Support</a>
 													<ul class="sub-menu">
 														<li><a href="#">Web design</a></li>
@@ -121,20 +121,20 @@
 												</li>
 											</ul>
 										</li>
-										<li><a href="#">Works</a></li>
-										<li><a href="#">Price</a>
+										<li><a href="#works">Works</a></li>
+										<li><a href="#price-block">Price</a>
 											<ul class="sub-menu">
 												<li><a href="#">small</a></li>
 												<li><a href="#">standart</a></li>
 												<li><a href="#">big</a></li>
 											</ul>
 										</li>
-										<li><a href="#">blog</a></li>
-										<li><a href="#">Contacts</a></li>
+										<li><a href="#blog-recent">blog</a></li>
+										<li><a href="#contacts-block">Contacts</a></li>
 									</ul>	
 								</div>					
 							</nav><!-- .main-navigation -->
-							<a id="mob-menu-switch"></a>
+							<a href="#" id="mob-menu-switch"></a>
 						</div>
 					</div>
 				</div>
@@ -146,35 +146,50 @@
 			<div class="menu-container">
 				<ul id="menu-mobilemenu" class="nav-menu">
 					<li>
-						<span class="before_link"></span>
-						<a href="#">Home</a>
-						<span class="button_for_submenu"></span>
+						<a href="#about-us">About</a>
+						<span class="submenu-button"></span>
 					</li>
-					<li>
-						<span class="before_link"></span>
-						<a href="#">Services</a>
-						<span class="button_for_submenu"></span>
+					<li class="menu-item-has-children">
+						<a href="#services">Services</a>
+						<span class="submenu-button"></span>
 						<ul class="sub-menu">
 							<li>
-								<span class="before_link"></span>
 								<a href="#">Web design</a>
-								<span class="button_for_submenu"></span>
 							</li>
 							<li>
-								<span class="before_link"></span>
-								<a href="#">Web design</a>
-								<span class="button_for_submenu"></span>
-							</li><li>
-								<span class="before_link"></span>
-								<a href="#">Web design</a>
-								<span class="button_for_submenu"></span>
+								<a href="#">Web development</a>
+							</li>
+							<li>
+								<a href="#">Support</a>
 							</li>
 						</ul>
 					</li>
 					<li>
-						<span class="before_link"></span>
-						<a href="#">Home</a>
-						<span class="button_for_submenu"></span>
+						<a href="#works">Works</a>
+						<span class="submenu-button"></span>
+					</li>
+					<li class="menu-item-has-children">
+						<a href="#price-block">Price</a>
+						<span class="submenu-button"></span>
+						<ul class="sub-menu">
+							<li>
+								<a href="#">small</a>
+							</li>
+							<li>
+								<a href="#">standart</a>
+							</li>
+							<li>
+								<a href="#">big</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="#blog-recent">Blog</a>
+						<span class="submenu-button"></span>
+					</li>
+					<li>
+						<a href="#contacts-block">Contacts</a>
+						<span class="submenu-button"></span>
 					</li>
 				</ul>
 			</div>	
@@ -192,7 +207,7 @@
 						</div>
 						
 						<div class="row">
-							<div class="column-left col-md-6 col-sm-6">
+							<div class="column-left col-md-6 col-sm-6 clearfix">
 								<h4 class="section-title">our history</h4>
 								<p>	Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
 									

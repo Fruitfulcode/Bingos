@@ -9,9 +9,11 @@
 		});
 		
 		
-		tweet_block = $('#tweets-carousel .tweet-block');
+		/* tweet_block = $('#tweets-carousel .tweet-block');
 		max_tweet_height = max_height_calc(tweet_block);
-		height_set(tweet_block,max_tweet_height);
+		height_set(tweet_block,max_tweet_height); */
+		
+		
 		
 		/* $('#tweets-carousel .tweet-block').each(function(){
 			current_height = $(this).height();
@@ -32,7 +34,7 @@
 
 jQuery(document).ready(function($) {
 		
-	$('.isotope-option a').click(function(){
+	$('.isotope-option a').on("click", function(){
 		$(this).closest('ul').find('li.current').removeClass('current');
 		var selector = $(this).attr('data-filter');
 		$('#isotope-container').isotope({ filter: selector });
@@ -40,6 +42,34 @@ jQuery(document).ready(function($) {
 		return false;
 	});
 	
+	/* Mobile menu */
+	$('a#mob-menu-switch').on("click", function(e){
+		if ( $('.hide_menu').hasClass('active') ){
+			$('.hide_menu').removeClass('active');
+			$(this).removeClass('active');
+			$('.hide_menu').slideUp();
+		} else {
+			$('.hide_menu').addClass('active');
+			$(this).addClass('active');
+			$('.hide_menu').slideDown();
+		}
+		e.preventDefault();
+	});
+	
+	$('.hide_menu li.menu-item-has-children .submenu-button').on("click", function(e){
+		if ( $(this).parent().hasClass('menu-item-has-children') ) {
+			if ( $(this).parent().hasClass('active-parent') ) {
+				$(this).parent().removeClass('active-parent');
+				$(this).parent().children('ul.sub-menu').slideUp();
+			} else {
+				$(this).parent().addClass('active-parent');
+				$(this).parent().children('ul.sub-menu').slideDown();
+			}
+			e.preventDefault();
+		}
+	});
+	
+	/* Slider */
 	$.Slitslider.defaults   = {
 		// transitions speed
 		speed : 800,
@@ -56,7 +86,7 @@ jQuery(document).ready(function($) {
 		// keyboard navigation
 		keyboard : false,
 		// time between transitions
-		interval : 4000,
+		interval : 5900,
 		// callbacks
 		onBeforeChange : function( slide, idx ) { return false; },
 		onAfterChange : function( slide, idx ) { return false; }
@@ -115,7 +145,8 @@ jQuery(document).ready(function($) {
 		itemsDesktop : [1199,4],
 		itemsDesktopSmall : [979,3],
 		itemsTablet :	[768,2],
-		itemsMobile :	[479,1],
+		itemsMobile :	[640,1],
+		itemsScaleUp :	false,
 		pagination :	false,
 		
 		theme:			"team-theme",
@@ -148,50 +179,31 @@ jQuery(document).ready(function($) {
 		autoPlay:		false, 
 		/* stopOnHover:	true,  */
 		singleItem : true,
-		transitionStyle : "fade",
+		transitionStyle : "fadeUp", 
 		
-		theme:			"tesimonials-theme", 
+		theme:			"testimonials-theme",
 		
-		/* slideSpeed:		300, */
+		slideSpeed:		300
+		
+	});
+	
+	$("#tweets-carousel").owlCarousel({
+		navigation :	false,
+		pagination :	false,
+		mouseDrag:		false,
+		touchDrag:		false,
+		autoPlay:		false, 
+		/* stopOnHover:	true,  */
+		singleItem : true,
+		transitionStyle : "fadeUp",
+		
+		theme:			"tweets-theme",
+		
+		slideSpeed:		300
 		
 	});
 	
 	
-	/* Tweets rotation */
-	$(function() {
-			
-		$.fn.random = function() {
-		  var randomIndex = Math.floor(Math.random() * this.length);  
-		  return $(this[randomIndex]);
-		};
-
-		$('#tweets-carousel .tweet-block').random().addClass('on');
-		
-		var timer = setInterval( showTweets, 5000);
-
-		function showTweets() {
-
-			clearInterval(timer); // stop the setInterval()
-
-			if ( $('#tweets-carousel .tweet-block.on').next().length ) {
-				$.when(
-					$('#tweets-carousel .tweet-block.on').fadeOut().removeClass('on')
-				).then(function () { 
-					//$('#tweets-carousel .tweet-block.on').removeClass('on');
-					//.next().fadeIn().addClass('on');
-					$('#tweets-carousel .tweet-block').random().fadeIn().addClass('on');		
-				});					
-			} else {
-				$.when(
-					$('#tweets-carousel .tweet-block.on').fadeOut().removeClass('on')
-				).then(function () { 
-					$('#tweets-carousel .tweet-block').random().fadeIn().addClass('on'); 
-				});
-			}
-			timer = setInterval(showTweets, 5000);
-		}
-
-	});
 	
 
 	/* Switcher of Color Themes */
