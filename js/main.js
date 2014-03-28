@@ -33,7 +33,27 @@
 })(jQuery);   
 
 jQuery(document).ready(function($) {
-		
+	
+	/* Button hide */
+	if (document.body.clientWidth < 992){
+		$('.isotope-item').hover(
+			function(){
+				$(this).find('.double-button').css("display", "inline-block");
+			},
+			function(){
+				$(this).find('.double-button').fadeOut(300);
+			}
+		);
+	}
+	
+	if (document.body.clientWidth >= 992){
+		$('.isotope-item').each(function(){
+			$(this).find('.double-button').css("display", "inline-block");
+		});
+	}
+	
+	
+	
 	$('.isotope-option a').on("click", function(){
 		$(this).closest('ul').find('li.current').removeClass('current');
 		var selector = $(this).attr('data-filter');
@@ -227,6 +247,8 @@ jQuery(document).ready(function($) {
 	
 	
 	
+	
+	
 });
 
 
@@ -257,6 +279,12 @@ function getRows(selector) {
     return Math.round(rows);
 }
 
+
+jQuery(window).bind('resize', function() {	
+
+	jQuery('#isotope-container').isotope('reLayout');
+	
+});
 
 var counters_finished = false;
 
