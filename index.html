@@ -143,7 +143,7 @@
 		</header>
 		
 		<!-- Mobile menu -->
-		<nav class="hide_menu">
+		<nav id="hidden-mobile-menu">
 			<div class="menu-container">
 				<ul id="menu-mobilemenu" class="nav-menu">
 					<li>
@@ -637,116 +637,142 @@
 						
 						<div id="isotope-category-menu" class="category-nav-menu clearfix">
 							<ul class="isotope-option clearfix" data-option-key="filter">
-								<li class="current">
+								<li class="current all">
 									<a data-filter="*" href="#filter">All</a>
 								</li>
-								<li>
+								<li class="option">
 									<a data-filter=".web-design" href="#category-projects">Web Design</a>
 								</li>
-								<li>
+								<li class="option">
 									<a data-filter=".illustrations" href="#category-projects">illustrations</a>
 								</li>
-								<li>
+								<li class="option">
 									<a data-filter=".logo" href="#category-projects">logo</a>
 								</li>
-								<li>
+								<li class="option">
 									<a data-filter=".development" href="#category-projects">development</a>
 								</li>
-								<li>
+								<li class="option">
 									<a data-filter=".wordpress-themes" href="#category-projects">wordpress Themes</a>
 								</li>
+								
+								<li class="option-select">
+									<a href="#">categories</a>
+								</li>
 							</ul>
-						</div>
-
+						</div><!-- end #isotope-category-menu -->
+							
 					</div>
 				</div>
 			</div>
 
-			
-			
-			<div id="isotope-container" class="isotope ">
-				<div class="isotope-item web-design development">
-					<img src="images/work1.jpg" alt=""/>
-					<div class="link-overlay">
-						<a class="double-button white" href="#"><span>view more</span></a>
-						<h4 class="overlay-title">Melissa Doe “City”</h4>
-						<p class="work-category">web design, development</p>
-					</div>
-				</div>
-				<div class="isotope-item web-design logo wordpress-themes">
-					<img src="images/work2.jpg" alt=""/>
-					<div class="link-overlay">
-						<a class="double-button white" href="#"><span>view more</span></a>
-						<h4 class="overlay-title">Melissa Doe “iMac”</h4>
-						<p class="work-category">web design, logo, wordpress themes</p>
-					</div>
-				</div>
-				<div class="isotope-item illustrations development">
-					<img src="images/work3.jpg" alt=""/>
-					<div class="link-overlay">
-						<a class="double-button white" href="#"><span>view more</span></a>
-						<h4 class="overlay-title">John Doe “Water”</h4>
-						<p class="work-category">illustrations, development</p>
-					</div>
-				</div>
-				<div class="isotope-item illustrations logo wordpress-themes">
-					<img src="images/work4.jpg" alt=""/>
-					<div class="link-overlay">
-						<a class="double-button white" href="#"><span>view more</span></a>
-						<h4 class="overlay-title">Robert Doe “Cup”</h4>
-						<p class="work-category">illustrations, logo, wordpress themes</p>
-					</div>
-				</div>
-				<div class="isotope-item illustrations development">
-					<img src="images/work5.jpg" alt=""/>
-					<div class="link-overlay">
-						<a class="double-button white" href="#"><span>view more</span></a>
-						<h4 class="overlay-title">John Doe “Road”</h4>
-						<p class="work-category">illustrations, development</p>
-					</div>
-				</div>
-				<div class="isotope-item web-design development">
-					<img src="images/work6.jpg" alt=""/>
-					<div class="link-overlay">
-						<a class="double-button white" href="#"><span>view more</span></a>
-						<h4 class="overlay-title">Melissa Doe “Weather”</h4>
-						<p class="work-category">web design, development</p>
-					</div>
-				</div>
-				<div class="isotope-item illustrations wordpress-themes">
-					<img src="images/work7.jpg" alt=""/>
-					<div class="link-overlay">
-						<a class="double-button white" href="#"><span>view more</span></a>
-						<h4 class="overlay-title">Robert Doe “Worktable”</h4>
-						<p class="work-category">illustrations, wordpress themes</p>
-					</div>
-				</div>
-				<div class="isotope-item logo wordpress-themes">
-					<img src="images/work8.jpg" alt=""/>
-					<div class="link-overlay">
-						<a class="double-button white" href="#"><span>view more</span></a>
-						<h4 class="overlay-title">Melissa Doe “Gadgets”</h4>
-						<p class="work-category">logo, wordpress themes</p>
-					</div>
-				</div>
-				<div class="isotope-item web-design logo wordpress-themes">
-					<img src="images/work9.jpg" alt=""/>
-					<div class="link-overlay">
-						<a class="double-button white" href="#"><span>view more</span></a>
-						<h4 class="overlay-title">Melissa Doe “Skate”</h4>
-						<p class="work-category">web design, logo, wordpress themes</p>
-					</div>
-				</div>
-				<div class="isotope-item illustrations development">
-					<img src="images/work10.jpg" alt=""/>
-					<div class="link-overlay">
-						<a class="double-button white" href="#"><span>view more</span></a>
-						<h4 class="overlay-title">John Doe “Applications”</h4>
-						<p class="work-category">illustrations, development</p>
-					</div>
-				</div>
+			<div id="hidden-works-menu-container">
+				<ul id="hidden-works-menu">
+					
+					<li class="option">
+						<a data-filter=".web-design" href="#category-projects">Web Design</a>
+					</li>
+					<li class="option">
+						<a data-filter=".illustrations" href="#category-projects">illustrations</a>
+					</li>
+					<li class="option">
+						<a data-filter=".logo" href="#category-projects">logo</a>
+					</li>
+					<li class="option">
+						<a data-filter=".development" href="#category-projects">development</a>
+					</li>
+					<li class="option">
+						<a data-filter=".wordpress-themes" href="#category-projects">wordpress Themes</a>
+					</li>
 				
+				</ul>
 			</div>
+			
+			<div id="isotope-wrapper">
+				<div id="isotope-container" class="isotope ">
+					<div class="isotope-item web-design development">
+						<img src="images/work1.jpg" alt=""/>
+						<div class="link-overlay">
+							<a class="double-button white" href="#"><span>view more</span></a>
+							<h4 class="overlay-title">Melissa Doe “City”</h4>
+							<p class="work-category">web design, development</p>
+						</div>
+					</div>
+					<div class="isotope-item web-design logo wordpress-themes">
+						<img src="images/work2.jpg" alt=""/>
+						<div class="link-overlay">
+							<a class="double-button white" href="#"><span>view more</span></a>
+							<h4 class="overlay-title">Melissa Doe “iMac”</h4>
+							<p class="work-category">web design, logo, wordpress themes</p>
+						</div>
+					</div>
+					<div class="isotope-item illustrations development">
+						<img src="images/work3.jpg" alt=""/>
+						<div class="link-overlay">
+							<a class="double-button white" href="#"><span>view more</span></a>
+							<h4 class="overlay-title">John Doe “Water”</h4>
+							<p class="work-category">illustrations, development</p>
+						</div>
+					</div>
+					<div class="isotope-item illustrations logo wordpress-themes">
+						<img src="images/work4.jpg" alt=""/>
+						<div class="link-overlay">
+							<a class="double-button white" href="#"><span>view more</span></a>
+							<h4 class="overlay-title">Robert Doe “Cup”</h4>
+							<p class="work-category">illustrations, logo, wordpress themes</p>
+						</div>
+					</div>
+					<div class="isotope-item illustrations development">
+						<img src="images/work5.jpg" alt=""/>
+						<div class="link-overlay">
+							<a class="double-button white" href="#"><span>view more</span></a>
+							<h4 class="overlay-title">John Doe “Road”</h4>
+							<p class="work-category">illustrations, development</p>
+						</div>
+					</div>
+					<div class="isotope-item web-design development">
+						<img src="images/work6.jpg" alt=""/>
+						<div class="link-overlay">
+							<a class="double-button white" href="#"><span>view more</span></a>
+							<h4 class="overlay-title">Melissa Doe “Weather”</h4>
+							<p class="work-category">web design, development</p>
+						</div>
+					</div>
+					<div class="isotope-item illustrations wordpress-themes">
+						<img src="images/work7.jpg" alt=""/>
+						<div class="link-overlay">
+							<a class="double-button white" href="#"><span>view more</span></a>
+							<h4 class="overlay-title">Robert Doe “Worktable”</h4>
+							<p class="work-category">illustrations, wordpress themes</p>
+						</div>
+					</div>
+					<div class="isotope-item logo wordpress-themes">
+						<img src="images/work8.jpg" alt=""/>
+						<div class="link-overlay">
+							<a class="double-button white" href="#"><span>view more</span></a>
+							<h4 class="overlay-title">Melissa Doe “Gadgets”</h4>
+							<p class="work-category">logo, wordpress themes</p>
+						</div>
+					</div>
+					<div class="isotope-item web-design logo wordpress-themes">
+						<img src="images/work9.jpg" alt=""/>
+						<div class="link-overlay">
+							<a class="double-button white" href="#"><span>view more</span></a>
+							<h4 class="overlay-title">Melissa Doe “Skate”</h4>
+							<p class="work-category">web design, logo, wordpress themes</p>
+						</div>
+					</div>
+					<div class="isotope-item illustrations development">
+						<img src="images/work10.jpg" alt=""/>
+						<div class="link-overlay">
+							<a class="double-button white" href="#"><span>view more</span></a>
+							<h4 class="overlay-title">John Doe “Applications”</h4>
+							<p class="work-category">illustrations, development</p>
+						</div>
+					</div>
+					
+				</div><!-- end #isotope-wrapper -->
+			</div><!-- end #isotope-container -->
 		</div><!-- end #works -->
 		
 		<!-- Price -->
