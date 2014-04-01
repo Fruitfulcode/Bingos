@@ -27,12 +27,12 @@
 	<script src="js/slider/jquery.ba-cond.min.js"></script>
 	<script src="js/slider/jquery.slitslider.js"></script>
 	<script src="js/carousel/owl.carousel.min.js"></script>
-	
+	<script src="js/jquery.nicescroll.min.js"></script>
 	<script src="js/main.js"></script>
 </head>
 <body class="home">
 	
-	<div id="container">
+	<div id="container" class="not-mobile">
 		<!-- START SLIDER  -->
 		<div id="slider" class="sl-slider-wrapper">
  
@@ -99,7 +99,7 @@
 					<div class="row">
 						<div class="col-lg-5 col-md-5 col-xs-9">
 							<!-- Site logo -->
-							<a href="/" id="site-logo"></a>
+							<a href="/" id="site-logo"><img src="images/logo-benign-white.png" alt="logo"/></a>
 							
 						</div>
 						
@@ -873,12 +873,12 @@
 						
 						<div id="testimonial-carousel" class="owl-carousel">
 							<div>
-								<p class="testimonial-text">Proin vestibulum erat vitae elit eleifend dapibus. Morbi molestie, mauris sed imperdiet fermentum, tellus nulla eleifend eros, vitae elementum quam ligula a quam.</p>
-								<span class="testimonial-author">- Melissa Doe</span>
-							</div>
-							<div>
 								<p class="testimonial-text">The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
 								<span class="testimonial-author">- John Doe</span>
+							</div>
+							<div>
+								<p class="testimonial-text">Proin vestibulum erat vitae elit eleifend dapibus. Morbi molestie, mauris sed imperdiet fermentum, tellus nulla eleifend eros, vitae elementum quam ligula a quam.</p>
+								<span class="testimonial-author">- Melissa Doe</span>
 							</div>
 							<div>
 								<p class="testimonial-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
@@ -907,7 +907,7 @@
 						<h4 class="section-title">recent news</h4>
 						
 						<div class="row">
-							<div class="column-left col-md-6 col-sm-6">
+							<div class="column-left col-md-6 col-sm-12">
 								<article class="post">
 									<div class="entry-thumbnail">
 										<a href="#" class="thumbnail-link">
@@ -960,19 +960,17 @@
 										</div>
 										
 										<div class="col-md-8 col-sm-8 col-xs-8">
-											<h1 class="entry-title">
-												<a href="#" rel="bookmark">the best way to get started is to fill out the form below.</a>
-											</h1>
-										
-											<div class="entry-summary">
-												<p>Tell us about your project and we will be sure to get back to you as soon as Cred sriracha fixie gastropub. 8-bit id next level gastropub 90's, lo-fi cupidatat. Nesciunt ethnic banh mi lomo. Asymmetrical pug mlkshk dolor. Tell us about your project and we will be sure to get back to you as soon as Cred sriracha fixie gastropub. 8-bit id next level gastropub 90's, lo-fi cupidatat. Nesciunt ethnic banh mi lomo. Asymmetrical pug mlkshk dolor.</p>
+											<div class="entry-content">
+												<h1 class="entry-title">
+													<a href="#" rel="bookmark">the best way to get started is to fill out the form below.</a>
+												</h1>
+											
+												<div class="entry-summary">
+													<p>Tell us about your project and we will be sure to get back to you as soon as Cred sriracha fixie gastropub. 8-bit id next level gastropub 90's, lo-fi cupidatat. Nesciunt ethnic banh mi lomo. Asymmetrical pug mlkshk dolor. Tell us about your project and we will be sure to get back to you as soon as Cred sriracha fixie gastropub. 8-bit id next level gastropub 90's, lo-fi cupidatat. Nesciunt ethnic banh mi lomo.</p>
+												</div>
+												
+												<a class="double-button" href="#"><span>Read more</span></a>
 											</div>
-											
-											<!--
-											<span class="edit-link"><a class="post-edit-link" href="#">Edit</a></span>
-											-->
-											
-											<a class="double-button" href="#"><span>Read more</span></a>
 										</div>
 										
 									</div>
@@ -983,7 +981,7 @@
 							
 							</div>
 							
-							<div class="column-right col-md-6 col-sm-6">
+							<div class="column-right col-md-6 col-sm-12">
 								
 								<article class="post">
 									<div class="entry-thumbnail">
@@ -1029,19 +1027,17 @@
 										</div>
 										
 										<div class="col-md-8 col-sm-8 col-xs-8">
-											<h1 class="entry-title">
-												<a href="#" rel="bookmark">The best way to get started.</a>
-											</h1>
-										
-											<div class="entry-summary">
-												<p>Tell us about your project and we will be sure to get back to you as soon as Cred sriracha fixie gastropub. 8-bit id next level gastropub 90's, lo-fi cupidatat. Nesciunt ethnic banh mi lomo. Asymmetrical pug mlkshk dolor.</p>
+											<div class="entry-content">
+												<h1 class="entry-title">
+													<a href="#" rel="bookmark">The best way to get started.</a>
+												</h1>
+											
+												<div class="entry-summary">
+													<p>Tell us about your project and we will be sure to get back to you as soon as Cred sriracha fixie gastropub. 8-bit id next level gastropub 90's, lo-fi cupidatat. Nesciunt ethnic banh mi lomo. Asymmetrical pug mlkshk dolor.</p>
+												</div>
+																							
+												<a class="double-button" href="#"><span>Read more</span></a>
 											</div>
-											
-											<!--
-											<span class="edit-link"><a class="post-edit-link" href="#">Edit</a></span>
-											-->
-											
-											<a class="double-button" href="#"><span>Read more</span></a>
 										</div>
 										
 									</div>
@@ -1070,12 +1066,12 @@
 						<div id="tweets-carousel" class="">
 							<div class="tweet-block">
 								<div class="quote-open"></div>
-								<p class="testimonial-text">Proin vestibulum erat vitae elit eleifend dapibus. Morbi molestie, mauris sed imperdiet fermentum, tellus nulla eleifend eros, vitae elementum quam ligula a quam <span class="author">@benign</span></p>
+								<p class="testimonial-text">The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham. <span class="author">@benign</span></p>
 								<div class="quote-close"></div>
 							</div>
 							<div class="tweet-block">
 								<div class="quote-open"></div>
-								<p class="testimonial-text">The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham. <span class="author">@benign</span></p>
+								<p class="testimonial-text">Proin vestibulum erat vitae elit eleifend dapibus. Morbi molestie, mauris sed imperdiet fermentum, tellus nulla eleifend eros, vitae elementum quam ligula a quam <span class="author">@benign</span></p>
 								<div class="quote-close"></div>
 							</div>
 							<div class="tweet-block">

@@ -63,6 +63,10 @@ button:focus,html input[type="button"]:focus,input[type="reset"]:focus,input[typ
 /* Inputs */
 .input-text-wrapper,
 .input-textarea-wrapper {
+	border: 2px solid #999;
+}
+.input-text-wrapper.focus,
+.input-textarea-wrapper.focus {
 	border: 2px solid #fff;
 }
 .contact-form input[type="text"],
@@ -130,7 +134,7 @@ ul.list-arrows li {
 }
 #site-logo {
 	color:#202020;
-	background-image:url(../images/logo-benign-gray.png);
+	/* background-image:url(../images/logo-benign-gray.png); */
 }
 #main-header {
 	background: #fff;
