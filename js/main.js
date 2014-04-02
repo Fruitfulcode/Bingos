@@ -1,5 +1,33 @@
 var header_offset;
 
+/* Smooth Scroll Settings */
+$(function(){
+	
+	var $window = $(window);		//Window object
+	
+	var scrollTime = 0.25;	//1.2		//Scroll time
+	var scrollDistance = 180; //170		//Distance. Use smaller value for shorter scroll and greater value for longer scroll
+		
+	$window.on("mousewheel DOMMouseScroll", function(event){
+		if( !isMobile.any() ) {
+			event.preventDefault();	
+											
+			var delta = event.originalEvent.wheelDelta/120 || -event.originalEvent.detail/3;
+			var scrollTop = $window.scrollTop();
+			var finalScroll = scrollTop - parseInt(delta*scrollDistance);
+				
+			TweenMax.to($window, scrollTime, {
+				scrollTo : { y: finalScroll, autoKill:true },
+					ease: Power1.easeOut,	//For more easing functions see http://api.greensock.com/js/com/greensock/easing/package-detail.html
+					autoKill: true,
+					overwrite: 5							
+				});
+		}
+	});
+	
+});
+
+
 (function($){  
    $(window).load(function(){
        /* Isotope initialization */
@@ -10,11 +38,6 @@ var header_offset;
 })(jQuery);   
 
 jQuery(document).ready(function($) {
-	
-	
-	
-	$("html").niceScroll({scrollspeed :"60"});
-	
 	
 	/* Slider */
 	$.Slitslider.defaults   = {
@@ -275,13 +298,15 @@ jQuery(document).ready(function($) {
 		$(this).parent().removeClass('focus');
 	});
 	
+	
+	
+	/* Calculate header offset */
+	header_offset = jQuery('#site-header').offset().top;
+	
 	/* Mobile devices */
 	if( isMobile.any() ) {
 		$('#container').removeClass('not-mobile');
 	};
-	
-	
-	header_offset = jQuery('#site-header').offset().top;
 	
 });
 
@@ -372,18 +397,13 @@ jQuery(window).bind('scroll', function() {
 	
 });
 
-//var header_selector = jQuery('#site-header');
-//var header_height = header_selector.outerHeight(true);
-
 
 jQuery(window).bind('scroll resize', function() {
-	
-	
-	
+	/* header to FIXed */
 	if (document.body.clientWidth >1024) {
 		if (jQuery(window).scrollTop() > header_offset ) {	
 			jQuery('#site-header').css({ 'position':'fixed', 'top':'0','margin':'0' });
-			jQuery('#about-us').css({ 'margin' : '187px 0 80px'});
+			jQuery('#about-us').css({ 'padding' : '187px 0 80px'});
 			
 			jQuery('.main-navigation ul > li > a').stop().animate({ 'padding':'11px 10px'},200);
 			jQuery('.main-navigation ul ul a').stop().animate({ 'padding':'12px 15px'},300);
@@ -392,7 +412,7 @@ jQuery(window).bind('scroll resize', function() {
 			jQuery('#site-logo').stop().animate({ 'height':'40px' },200);
 		} else {
 			jQuery('#site-header').css({ 'position':'relative', 'top':'0','margin':'27px 0 0' });
-			jQuery('#about-us').css({ 'margin' : '80px 0 80px'});
+			jQuery('#about-us').css({ 'padding' : '80px 0 80px'});
 			
 			jQuery('.main-navigation ul > li > a').stop().animate({ 'padding':'31px 10px'},200);
 			jQuery('.main-navigation ul ul a').stop().animate({ 'padding':'12px 15px'},300);
