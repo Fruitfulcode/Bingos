@@ -1,15 +1,18 @@
 body {
     background:none no-repeat scroll 0 0 #fff;
-    color:#333333;
+    color:#202020;
 }
 a {
-    color:#333333;
+    color:#666666;
+	text-decoration:underline;
 }
 a:visited {
-    color:#333333;
+    color:#666666;
+	text-decoration:underline;
 }
 a:hover,a:focus,a:active {
-    color:#333333;
+    color:#666666;
+	text-decoration:underline;
 }
 table {     
 	background: #fff; 

@@ -7,9 +7,8 @@ $(function(){
 	
 	var scrollTime = 0.25;	//1.2		//Scroll time
 	var scrollDistance = 180; //170		//Distance. Use smaller value for shorter scroll and greater value for longer scroll
-		
-	$window.on("mousewheel DOMMouseScroll", function(event){
-		if( !isMobile.any() ) {
+	if( !isMobile.any() ) {
+		$window.on("mousewheel DOMMouseScroll", function(event){
 			event.preventDefault();	
 											
 			var delta = event.originalEvent.wheelDelta/120 || -event.originalEvent.detail/3;
@@ -22,8 +21,8 @@ $(function(){
 					autoKill: true,
 					overwrite: 5							
 				});
-		}
-	});
+		});
+	}
 	
 });
 
@@ -40,27 +39,7 @@ $(function(){
 jQuery(document).ready(function($) {
 	
 	/* Slider */
-	$.Slitslider.defaults   = {
-		// transitions speed
-		speed : 800,
-		// if true the item's slices will also animate the opacity value
-		optOpacity : false,
-		// amount (%) to translate both slices - adjust as necessary
-		translateFactor : 230,
-		// maximum possible angle
-		maxAngle : 25,
-		// maximum possible scale
-		maxScale : 2,
-		// slideshow on / off
-		autoplay : false,
-		// keyboard navigation
-		keyboard : false,
-		// time between transitions
-		interval : 5900,
-		// callbacks
-		onBeforeChange : function( slide, idx ) { return false; },
-		onAfterChange : function( slide, idx ) { return false; }
-	};
+	
 	
 	
 	/* Slider initialization */
@@ -127,7 +106,7 @@ jQuery(document).ready(function($) {
 		dragBeforeAnimFinish: false
 	});
 	
-	if (document.body.clientWidth < 650){
+	if (document.body.clientWidth < 650 && $('#team-carousel .owl-wrapper').length ){
 		$('#team-carousel .owl-wrapper').css({ "-webkit-transform" : "translate3d(-480px, 0px, 0px)","-webkit-transition" : "all 200ms ease", "transition" : "all 200ms ease" });
 	}
 	
@@ -151,7 +130,7 @@ jQuery(document).ready(function($) {
 		autoPlay:		false, 
 		/* stopOnHover:	true,  */
 		singleItem : true,
-		transitionStyle : "fade", 
+		/* transitionStyle : "fade",  */
 		responsiveBaseWidth: "#testimonials .container",
 		
 		theme:			"testimonials-theme",
@@ -168,7 +147,7 @@ jQuery(document).ready(function($) {
 		autoPlay:		false, 
 		/* stopOnHover:	true,  */
 		singleItem : true,
-		transitionStyle : "fade",
+		/* transitionStyle : "fade", */
 		
 		theme:			"tweets-theme",
 		
@@ -216,6 +195,58 @@ jQuery(document).ready(function($) {
 	}
 	
 	
+	
+	
+	/*== Mobile menu ==*/
+	/* Mobile menu switch */
+	$('a#mob-menu-switch').on("click", function(e){
+		if ( $('#menu-mobilemenu').hasClass('active') ){
+			$('#menu-mobilemenu').removeClass('active');
+			$(this).removeClass('active');
+			$('#menu-mobilemenu').slideUp();
+		} else {
+			$('#menu-mobilemenu').addClass('active');
+			$(this).addClass('active');
+			$('#menu-mobilemenu').slideDown();
+		}
+		e.preventDefault();
+	});
+	/* Sub-menu button */
+	$('#menu-mobilemenu li.menu-item-has-children .submenu-button').on("click", function(e){
+		if ( $(this).parent().hasClass('menu-item-has-children') ) {
+			if ( $(this).parent().hasClass('active-parent') ) {
+				$(this).parent().removeClass('active-parent');
+				$(this).parent().children('ul.sub-menu').slideUp();
+			} else {
+				$(this).parent().addClass('active-parent');
+				$(this).parent().children('ul.sub-menu').slideDown();
+			}
+			e.preventDefault();
+		}
+	});
+	/* Hide mobile menu after click */
+	$('#menu-mobilemenu li a').on("click", function(e){
+		if ( $('#menu-mobilemenu').hasClass('active') ){
+			$('#menu-mobilemenu').removeClass('active');
+			$('#mob-menu-switch').removeClass('active');
+			$('#menu-mobilemenu').slideUp(0);
+		}
+	});
+	
+	/* Isotope Mobile menu */
+	$('li.option-select > a').on("click", function(e){
+		if ( $('#hidden-works-menu').hasClass('active') ){
+			$('#hidden-works-menu').removeClass('active');
+			$(this).removeClass('active');
+			$('#hidden-works-menu').slideUp();
+		} else {
+			$('#hidden-works-menu').addClass('active');
+			$(this).addClass('active');
+			$('#hidden-works-menu').slideDown();
+		}
+		e.preventDefault();
+	});
+	
 	/* isotope category filter*/
 	$('.isotope-option li.all a, .isotope-option li.option a').on("click", function(){
 		$(this).closest('ul').find('li.current').removeClass('current');
@@ -247,47 +278,6 @@ jQuery(document).ready(function($) {
 		}
 		
 		return false;
-	});
-	
-	/* Mobile menu */
-	$('a#mob-menu-switch').on("click", function(e){
-		if ( $('#menu-mobilemenu').hasClass('active') ){
-			$('#menu-mobilemenu').removeClass('active');
-			$(this).removeClass('active');
-			$('#menu-mobilemenu').slideUp();
-		} else {
-			$('#menu-mobilemenu').addClass('active');
-			$(this).addClass('active');
-			$('#menu-mobilemenu').slideDown();
-		}
-		e.preventDefault();
-	});
-	
-	$('#hidden-mobile-menu li.menu-item-has-children .submenu-button').on("click", function(e){
-		if ( $(this).parent().hasClass('menu-item-has-children') ) {
-			if ( $(this).parent().hasClass('active-parent') ) {
-				$(this).parent().removeClass('active-parent');
-				$(this).parent().children('ul.sub-menu').slideUp();
-			} else {
-				$(this).parent().addClass('active-parent');
-				$(this).parent().children('ul.sub-menu').slideDown();
-			}
-			e.preventDefault();
-		}
-	});
-	
-	/* Isotope Mobile menu */
-	$('li.option-select > a').on("click", function(e){
-		if ( $('#hidden-works-menu').hasClass('active') ){
-			$('#hidden-works-menu').removeClass('active');
-			$(this).removeClass('active');
-			$('#hidden-works-menu').slideUp();
-		} else {
-			$('#hidden-works-menu').addClass('active');
-			$(this).addClass('active');
-			$('#hidden-works-menu').slideDown();
-		}
-		e.preventDefault();
 	});
 	
 	/* Focus on contact form */
@@ -403,7 +393,7 @@ jQuery(window).bind('scroll resize', function() {
 	if (document.body.clientWidth >1024) {
 		if (jQuery(window).scrollTop() > header_offset ) {	
 			jQuery('#site-header').css({ 'position':'fixed', 'top':'0','margin':'0' });
-			jQuery('#about-us').css({ 'padding' : '187px 0 80px'});
+			jQuery('#about-us').css({ 'padding-top' : '185px'});
 			
 			jQuery('.main-navigation ul > li > a').stop().animate({ 'padding':'11px 10px'},200);
 			jQuery('.main-navigation ul ul a').stop().animate({ 'padding':'12px 15px'},300);
@@ -412,7 +402,7 @@ jQuery(window).bind('scroll resize', function() {
 			jQuery('#site-logo').stop().animate({ 'height':'40px' },200);
 		} else {
 			jQuery('#site-header').css({ 'position':'relative', 'top':'0','margin':'27px 0 0' });
-			jQuery('#about-us').css({ 'padding' : '80px 0 80px'});
+			jQuery('#about-us').css({ 'padding-top' : '78px'});
 			
 			jQuery('.main-navigation ul > li > a').stop().animate({ 'padding':'31px 10px'},200);
 			jQuery('.main-navigation ul ul a').stop().animate({ 'padding':'12px 15px'},300);
