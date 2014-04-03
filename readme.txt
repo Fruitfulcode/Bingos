@@ -11,6 +11,9 @@ Isotope
 http://isotope.metafizzy.co/
 
 Bootstrap
+http://getbootstrap.com/
+Bootstrap collapse (accordion)
+Bootstrap tab
 
 Fonts-Awesome
 

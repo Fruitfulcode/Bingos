@@ -17,13 +17,15 @@
 	<link rel="stylesheet" id="isotop-css" href="js/isotope/css/isotope.css" type="text/css" media="all"> 
 	<link rel="stylesheet" class="color-scheme" href="css/light.css" type="text/css" media="all">
 	
-	<!-- <script src="js/jquery-1.10.2.min.js"></script> -->
+	<script src="js/jquery-1.10.2.min.js"></script>
 	<script src="js/slider/modernizr.custom.79639.js"></script>
-	<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+	<!-- <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script> -->
 	
 	<!-- <script src="js/jquery-migrate-1.2.1.js"></script> -->
 	<!-- <script src="http://code.jquery.com/jquery-1.10.2.min.map"></script> -->
 	<script src="js/bootstrap/bootstrap.min.js"></script>
+	<script src="js/bootstrap/collapse.js"></script>
+	<script src="js/bootstrap/tab.js"></script>
 	<script src="js/isotope/jquery.isotope.min.js"></script>
 	
 	<script src="js/slider/jquery.ba-cond.min.js"></script>
@@ -158,12 +160,12 @@
 						
 						<div class="row">
 							<div class="col-sm-6 col-xs-12">
-								<h4 class="section-title">text format</h4>
+								<h2 class="section-title">text format</h2>
 								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mollis magna nisi, nec pellentesque sapien bibendum eget, <span style="font-family: 'opensans-bold-italic';">italic text</span>. Etiam quam ligula, bibendum et pellentesque ac, aliquam non quam. Mauris tristique dictum fringilla. Integer volutpat, <a href="#">link text</a>, ligula scelerisque auctor sagittis, nibh erat laoreet nisl, id vehicula leo eros eget erat. Duis ac euismod magna. Morbi eu molestie nunc. Nam lobortis viverra quam ut bibendum.</p>
-							</div>
+							</div><!-- end .col -->
 							
-							<div class="col-sm-3 col-xs-6">
-								<h4 class="section-title">headings</h4>
+							<div id="headings-block" class="col-sm-3 col-xs-6">
+								<h2 class="section-title">headings</h2>
 								
 								<h1>heading 1</h1>
 								<h2>heading 2</h2>
@@ -171,14 +173,113 @@
 								<h4>heading 4</h4>
 								<h5>heading 5</h5>
 								<h6>heading 6</h6>
-							</div>
+							</div><!-- end .col -->
 							
-							<div class="col-sm-3 col-xs-6">
+							<div id="heading-styles-block" class="col-sm-3 col-xs-6 text-center">
+								<h2 class="section-title">heading styles</h2>
+								
+								<h3 class="title-underlined">
+									<span>heading 1</span>
+								</h3>
+								
+								<h3 class="title-corner">
+									heading 2
+									<span class="corner1"></span>
+									<span class="corner2"></span>
+								</h3>
+								
+								<h3 class="title-pattern">
+									heading 3
+									<span class="pattern"></span>
+								</h3>
+								
+							</div><!-- end .col -->
 							
-							</div>
+						</div><!-- end .row -->
+						<div class="row">
+							<div class="col-sm-4 col-xs-12">
+								<h2 class="section-title">accordion</h2>
+								
+								<div class="panel-group" id="accordion" data-collapse-type="">
+									<div class="panel panel-default">
+										<div class="panel-heading">
+										  <h4 class="panel-title">
+											<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+											  our history
+											</a>
+										  </h4>
+										</div>
+										<div id="collapseOne" class="panel-collapse collapse in">
+										  <div class="panel-body">
+											Tell us about your project and we will be sure to get back to you as soon as Cred sriracha fixie gastropub. 8-bit id next level gastropub 90's, lo-fi cupidatat. Nesciunt ethnic banh mi lomo. Asymmetrical pug mlkshk dolor.
+										  </div>
+										</div>
+									</div>
+									<div class="panel panel-default">
+										<div class="panel-heading">
+										  <h4 class="panel-title">
+											<a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" class="collapsed">
+											  what we do
+											</a>
+										  </h4>
+										</div>
+										<div id="collapseTwo" class="panel-collapse collapse">
+										  <div class="panel-body">
+											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mollis magna nisi, nec pellentesque sapien bibendum eget, italic text. Etiam quam ligula, bibendum et pellentesque ac, aliquam non quam. Mauris tristique dictum fringilla. Integer volutpat, link text, ligula scelerisque auctor sagittis, nibh erat laoreet nisl, id vehicula leo eros eget erat. Duis ac euismod magna. Morbi eu molestie nunc. Nam lobortis viverra quam ut bibendum.
+										  </div>
+										</div>
+									</div>
+									<div class="panel panel-default">
+										<div class="panel-heading">
+										  <h4 class="panel-title">
+											<a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" class="collapsed" >
+											  our mission
+											</a>
+										  </h4>
+										</div>
+										<div id="collapseThree" class="panel-collapse collapse">
+										  <div class="panel-body">
+											Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+										  </div>
+										</div>
+									</div>
+								</div><!-- #accordion -->
+								
+
+							</div><!-- end .col -->
+							<div class="col-sm-4 col-xs-12">
+								<h2 class="section-title">toggles</h2>
+								<div class="toggles">
+									<div class="toggle-item">
+										<a class="toggle-title" href="#">interective web designer</a>
+										<div class="toggle-content">
+											Tell us about your project and we will be sure to get back to you as soon as Cred sriracha fixie gastropub. 8-bit id next level gastropub 90's, lo-fi cupidatat. Nesciunt ethnic banh mi lomo. Asymmetrical pug mlkshk dolor.
+										</div>
+									</div>
+									<div class="toggle-item">
+										<a class="toggle-title" href="#">project manager</a>
+										<div class="toggle-content">
+											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mollis magna nisi, nec pellentesque sapien bibendum eget, italic text. Etiam quam ligula, bibendum et pellentesque ac, aliquam non quam. Mauris tristique dictum fringilla. Integer volutpat, link text, ligula scelerisque auctor sagittis, nibh erat laoreet nisl, id vehicula leo eros eget erat. Duis ac euismod magna. Morbi eu molestie nunc. Nam lobortis viverra quam ut bibendum.
+										</div>
+									</div>
+									<div class="toggle-item">
+										<a class="toggle-title" href="#">support manager</a>
+										<div class="toggle-content">
+											Tell us about your project and we will be sure to get back to you as soon as Cred sriracha fixie gastropub. 8-bit id next level gastropub 90's, lo-fi cupidatat. Nesciunt ethnic banh mi lomo. Asymmetrical pug mlkshk dolor.
+										</div>
+									</div>
+									<div class="toggle-item">
+										<a class="toggle-title" href="#">technical animator</a>
+										<div class="toggle-content">
+											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mollis magna nisi, nec pellentesque sapien bibendum eget, italic text. Etiam quam ligula, bibendum et pellentesque ac, aliquam non quam. Mauris tristique dictum fringilla. Integer volutpat, link text, ligula scelerisque auctor sagittis, nibh erat laoreet nisl, id vehicula leo eros eget erat. Duis ac euismod magna. Morbi eu molestie nunc. Nam lobortis viverra quam ut bibendum.
+										</div>
+									</div>
+								</div><!-- .toggles -->
+							</div><!-- end .col -->
+							<div class="col-sm-4 col-xs-12">
 							
-						</div>
-						
+							</div><!-- end .col -->
+						</div><!-- end .row -->
 					
 					</div>
 				</div>

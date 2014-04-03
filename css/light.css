@@ -1,19 +1,28 @@
 body {
     background:none no-repeat scroll 0 0 #fff;
-    color:#202020;
+    color:#333333;
 }
-a {
+a,
+a:visited,
+a:hover,
+a:focus, 
+a:active {
+    color:#333;
+	text-decoration:none;
+}
+p a {
     color:#666666;
 	text-decoration:underline;
 }
-a:visited {
+p a:visited {
     color:#666666;
 	text-decoration:underline;
 }
-a:hover,a:focus,a:active {
+p a:hover, p a:focus, p a:active {
     color:#666666;
 	text-decoration:underline;
 }
+
 table {     
 	background: #fff; 
 	border: 1px solid #d6d6d6;
@@ -111,7 +120,7 @@ button:focus,html input[type="button"]:focus,input[type="reset"]:focus,input[typ
 
 /* Titles */
 .title-underlined  {
-	border-bottom:7px solid #333;
+	border-bottom:8px solid #333;
 }
 .title-underlined span {
 	border-bottom:1px solid #333;
@@ -195,6 +204,10 @@ a.social-link.pinterest{ background-position:-120px 0; }
 .services-theme .owl-controls .owl-buttons div.owl-next:hover{
 	background-position: -60px -60px;
 }
+#services a,
+#blog-recent a {
+	color:#333;
+}
 
 /* Works */
 ul.isotope-option li.current a,
@@ -209,6 +222,7 @@ ul.isotope-option li a:hover {
 .price-table h4.packet-title {
 	color:#fff;
 	background:#333;
+	margin:0;
 }
 .price-table ul li {
 	border-top: 1px solid #333;

@@ -280,6 +280,47 @@ jQuery(document).ready(function($) {
 		return false;
 	});
 	
+	/*== Accordion ==*/
+	
+
+	
+	
+	/* initial active */
+	acc_initial_selector = $('.accordion').find('.acc-title.active').first();
+	acc_initial_selector.parent().find('.acc-content').show().addClass('active');
+	
+	/* click section */
+	$('.accordion .acc-title').on("click", function(e){
+		if ($(this).hasClass('active')) {
+			$(this).parent().find('.acc-content').slideUp(400).removeClass('active');
+			$(this).removeClass('active');
+		} else {
+			$(this).parents('.accordion').find('.acc-title.active').removeClass('active');
+			$(this).parents('.accordion').find('.acc-content.active').slideUp(400).removeClass('active');
+			$(this).parent().find('.acc-content').slideDown(400).addClass('active');
+			$(this).addClass('active');
+		}
+		e.preventDefault();
+	});
+	
+	/*== Toggles ==*/
+	/* initial active */
+	togg_initial_selector = $('.toggles').find('.toggle-title.active').first();
+	togg_initial_selector.parent().find('.toggle-content').show().addClass('active');
+	
+	/* click section */
+	$('.toggles .toggle-title').on("click", function(e){
+		if ($(this).hasClass('active')) {
+			$(this).parent().find('.toggle-content').slideUp(400).removeClass('active');
+			$(this).removeClass('active');
+		} else {
+			$(this).parent().find('.toggle-content').slideDown(400).addClass('active');
+			$(this).addClass('active');
+		}
+		e.preventDefault();
+	});
+	
+	
 	/* Focus on contact form */
 	$('.contact-form input[type="text"], .contact-form input[type="email"], .contact-form textarea').focusin(function(){
 		$(this).parent().addClass('focus');
