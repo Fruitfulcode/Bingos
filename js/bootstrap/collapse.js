@@ -40,7 +40,7 @@
 
     var actives = this.$parent && this.$parent.find('> .panel > .in')
 
-	if ( this.$parent.attr("data-collapse-type") !== "manual" && actives && actives.length) {
+	if ( actives && actives.length) {
       var hasData = actives.data('bs.collapse')
       if (hasData && hasData.transitioning) return
       actives.collapse('hide')
