@@ -128,7 +128,7 @@ jQuery(document).ready(function($) {
 		autoPlay:		false, 
 		/* stopOnHover:	true,  */
 		singleItem : true,
-		/* transitionStyle : "fade",  */
+		transitionStyle : "fade",  
 		responsiveBaseWidth: "#testimonials .container",
 		
 		theme:			"testimonials-theme",
@@ -145,7 +145,7 @@ jQuery(document).ready(function($) {
 		autoPlay:		false, 
 		/* stopOnHover:	true,  */
 		singleItem : true,
-		/* transitionStyle : "fade", */
+		transitionStyle : "fade",
 		
 		theme:			"tweets-theme",
 		
@@ -154,7 +154,16 @@ jQuery(document).ready(function($) {
 	});
 	
 	
-	
+	$('#submit').click(function(){
+        $("#contact-form").validate({
+            submitHandler: function() {
+                $.post("contact.php", $("#contact-form").serialize(),  function(response) {
+                    $('#form-status').html(response);
+                });
+                return false;
+            }
+        });
+    });
 
 	/* Switcher of Color Themes */
 	$(".color-switch a").click(function(){
@@ -275,21 +284,19 @@ jQuery(document).ready(function($) {
 	
 	
 	/* Focus on contact form */
-	$('.contact-form input[type="text"], .contact-form input[type="email"], .contact-form textarea').focusin(function(){
+	$('#contact-form input[type="text"], #contact-form input[type="email"], #contact-form textarea').focusin(function(){
 		$(this).parent().addClass('focus');
 	});
-	$('.contact-form input[type="text"], .contact-form input[type="email"], .contact-form textarea').focusout(function(){
-		$(this).parent().removeClass('focus');
+	$('#contact-form input[type="text"], #contact-form input[type="email"], #contact-form textarea').focusout(function(){
+		$(this).parent().removeClass('focus-error').removeClass('focus');
 	});
-	
-	
 	
 	/* Calculate header offset */
 	header_offset = jQuery('#site-header').offset().top;
 	header_image_height = jQuery('#header-top-image').height(); 
 	slider_height = jQuery('#slider').height();
 	
-	menu_appear_height = (slider_height > 0) ? header_image_height + slider_height + 400 : header_image_height + 100;
+	menu_appear_height = header_image_height + slider_height;
 	menu_disappear_height = menu_appear_height + 1200;
 	
 	

@@ -20,3 +20,6 @@ Fonts-Awesome
 Smooth Scrolling of page
 http://www.greensock.com/tweenmax/
 http://api.greensock.com/js/com/greensock/plugins/ScrollToPlugin.html
+
+jQuery Validate
+http://jqueryvalidation.org/

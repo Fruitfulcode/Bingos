@@ -18,6 +18,7 @@
 	<link rel="stylesheet" class="color-scheme" href="css/light.css" type="text/css" media="all">
 	
 	<script src="js/jquery-1.10.2.min.js"></script>
+	<script src="js/jquery.validate.min.js"></script>
 	<script src="js/slider/modernizr.custom.79639.js"></script> 
 	<!-- <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script> -->
 	
@@ -1066,23 +1067,24 @@
 						<div class="row">
 							<div class="column-left col-md-6 col-sm-6">
 								<h2 class="section-title">write to us</h2>
-								<form action="#" method="post" class="contact-form">
+								<form action="" method="post" id="contact-form">
 									<div class="input-text-wrapper">
-										<input type="text" name="first-name" placeholder="Name">
+										<input type="text" name="name" id="name" placeholder="Name" required>
 									</div>
 									
 									<div class="input-text-wrapper">
-										<input type="email" name="e-mail" placeholder="e-mail">
+										<input type="email" name="email" id="email" placeholder="e-mail" required>
 									</div>
 									
 									<div class="input-textarea-wrapper">
-										<textarea name="message" cols="40" rows="6" placeholder="Message"></textarea>
+										<textarea name="message" id="message" placeholder="Message" cols="40" rows="6" required></textarea>
 									</div>
 									
 									<div class="input-submit-wrapper">
-										<input type="submit" value="Send message" class="submit">
+										<input type="submit" value="Send message" id="submit" >
 									</div>
 									
+									<div id="form-status"></div>
 								</form>
 							</div>
 							
@@ -1117,19 +1119,20 @@
 		
 		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
 		<script>
-			var overlay;
-			USGSOverlay.prototype = new google.maps.OverlayView();
-
-			// Initialize the map and the custom overlay.
-
+			
+			
+			
 			function initialize() {
 			  //var image = 'images/map-cursor.png';
-			  var myLatlng = new google.maps.LatLng(38.718181,-9.12578);
 			  
+			  var mapStyles = [{"stylers":[{"hue":"#ff1a00"},{"invert_lightness":true},{"saturation":-100},{"lightness":33},{"gamma":0.5}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#394659"}]}];
+			  
+			  var myLatlng = new google.maps.LatLng(38.718181,-9.12578);
 			  
 			  var mapOptions = {
 				zoom: 16,
-				center: myLatlng
+				center: myLatlng,
+				styles: mapStyles
 			  };
 
 			  var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
@@ -1141,107 +1144,9 @@
 					title: 'We are here'
 				});
 			  
-			  
-			  google.maps.event.addListenerOnce(map, 'center_changed', function() {
-				// 3 seconds after the center of the map has changed, pan back to the
-				// marker.
-				window.setTimeout(function() {
-				  var newCenter = map.getCenter();
-				  var newLat = newCenter.lat();
-				  var newLng = newCenter.lng();
-				  var newSW = new google.maps.LatLng(newLat-0.001,newLng-0.001);
-				  var newNE = new google.maps.LatLng(newLat+0.001,newLng+0.001);
-				  //alert('first ' + newSW);
-				  //alert('second ' + newNE);
-				  //var newBounds = new google.maps.LatLngBounds(newSW, newNE);
-				  //overlay = new USGSOverlay(bounds, map);
-				}, 1000);
-			  });
-
-			  
-			  var swBound = new google.maps.LatLng(38.717181,-9.12678);
-			  var neBound = new google.maps.LatLng(38.719181,-9.12478);
-			  var bounds = new google.maps.LatLngBounds(swBound, neBound);
-			  
-			  
-
-			  // The custom USGSOverlay object contains the USGS image,
-			  // the bounds of the image, and a reference to the map.
-			  overlay = new USGSOverlay(bounds, map);
-			  
 			}
+	
 
-			/** @constructor */
-			function USGSOverlay(bounds, map) {
-
-			  // Initialize all properties.
-			  this.bounds_ = bounds;
-			  this.map_ = map;
-
-			  // Define a property to hold the image's div. We'll
-			  // actually create this div upon receipt of the onAdd()
-			  // method so we'll leave it null for now.
-			  this.div_ = null;
-
-			  // Explicitly call setMap on this overlay.
-			  this.setMap(map);
-			}
-
-			/**
-			 * onAdd is called when the map's panes are ready and the overlay has been
-			 * added to the map.
-			 */
-			USGSOverlay.prototype.onAdd = function() {
-
-			  var div = document.createElement('div');
-			  div.style.borderStyle = 'none';
-			  div.style.borderWidth = '0px';
-			  div.style.backgroundColor = '#000000';
-			  div.style.opacity = '0.4';
-			  div.style.width = '100%';
-			  div.style.height = '100%';
-			  div.style.position = 'absolute';
-
-			  this.div_ = div;
-
-			  // Add the element to the "overlayLayer" pane.
-			  var panes = this.getPanes();
-			  panes.overlayLayer.appendChild(div);
-			};
-
-			USGSOverlay.prototype.draw = function() {
-
-			  // We use the south-west and north-east
-			  // coordinates of the overlay to peg it to the correct position and size.
-			  // To do this, we need to retrieve the projection from the overlay.
-			  var overlayProjection = this.getProjection();
-
-			  // Retrieve the south-west and north-east coordinates of this overlay
-			  // in LatLngs and convert them to pixel coordinates.
-			  // We'll use these coordinates to resize the div.
-			  var sw = overlayProjection.fromLatLngToDivPixel(this.bounds_.getSouthWest());
-			  var ne = overlayProjection.fromLatLngToDivPixel(this.bounds_.getNorthEast());
-
-			  // Resize the image's div to fit the indicated dimensions.
-			  var div = this.div_;
-			  div.style.left = sw.x + 'px';
-			  div.style.top = ne.y + 'px';
-			  div.style.width = (ne.x - sw.x) + 'px';
-			  div.style.height = (sw.y - ne.y) + 'px';
-			  
-			  //div.style.left = '-1000px';
-			  //div.style.top = '-1000px';
-			  //div.style.width = (ne.x - sw.x)*20 + 'px';
-			  //div.style.height = (sw.y - ne.y)*20 + 'px';
-			};
-
-			// The onRemove() method will be called automatically from the API if
-			// we ever set the overlay's map property to 'null'.
-			USGSOverlay.prototype.onRemove = function() {
-			  this.div_.parentNode.removeChild(this.div_);
-			  this.div_ = null;
-			};
-		
 			google.maps.event.addDomListener(window, 'load', initialize);
 
 		</script>
