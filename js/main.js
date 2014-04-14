@@ -378,6 +378,8 @@ jQuery(window).bind('resize', function() {
 });
 
 var counters_finished = false;
+var progresses_finished = false;
+var progresses_2_finished = false;
 var lastScrollTop = 0;
 
 jQuery(window).on('scroll', function() {	
@@ -389,9 +391,30 @@ jQuery(window).on('scroll', function() {
 				jQuery(this).initCounter(20);
 			});
 			counters_finished = true;		
-		} else {
-			//return false;
-		}
+		} 
+	}
+	
+	
+	/* run Counters on elements appear */
+	if (jQuery('#skills-block').length > 0 && document.body.clientWidth > 1024 ) {
+		if(jQuery("#skills-block").offset().top < (jQuery(window).scrollTop() + jQuery(window).outerHeight()) && !progresses_finished && jQuery("#skills-block").offset().top + jQuery("#skills-block").outerHeight() > (jQuery(window).scrollTop() ) ) {
+			
+			jQuery('.progress-bar').each(function(){
+				jQuery(this).children('.sr-only').percentCounter(20);
+			});
+			progresses_finished = true;		
+		} 
+	}
+	
+	/* run Counters on elements appear */
+	if (jQuery('#skills-block').length > 0 && document.body.clientWidth > 1024 ) {
+		if(jQuery("#skills-block").offset().top < (jQuery(window).scrollTop() + jQuery(window).outerHeight()) && !progresses_2_finished && jQuery("#skills-block").offset().top + jQuery("#skills-block").outerHeight() > (jQuery(window).scrollTop() ) ) {
+			
+			jQuery('.progress-bar').each(function(){
+				jQuery(this).styleCounter(20);
+			});
+			progresses_2_finished = true;		
+		} 
 	}
 	
 	
@@ -446,10 +469,51 @@ jQuery.fn.extend({
 			}
 			else
 			{
-			  window.clearInterval(timerID); // stop firing the timer 
+			  window.clearInterval(timer1); // stop firing the timer 
 			}
 		}
-		var timerID = window.setInterval(updateCounter, interval, showing_number); // timer interval
+		var timer1 = window.setInterval(updateCounter, interval, showing_number); // timer interval
+	},
+	
+	percentCounter: function (interval) {
+		interval = typeof(interval) != 'undefined' ? interval : 5;
+		var counterElement = jQuery(this);
+		var final_number = parseInt(counterElement.html());
+		var showing_number = 0;
+		function updateCounter()
+		{
+			if(showing_number <= final_number)
+			{
+				counterElement.html(showing_number+'%');
+				showing_number++;
+			}
+			else
+			{
+			  window.clearInterval(timer2); // stop firing the timer 
+			}
+		}
+		var timer2 = window.setInterval(updateCounter, interval, showing_number); // timer interval
+	},
+	
+	styleCounter: function (interval) {
+		interval = typeof(interval) != 'undefined' ? interval : 5;
+		var counterElement = jQuery(this);
+		var final_number = parseInt(counterElement.attr('aria-valuenow'));
+		//alert(final_number);
+		var showing_number = 0;
+		function updateCounter()
+		{
+			if(showing_number <= final_number)
+			{
+				counterElement.css('width', showing_number+'%');
+				showing_number++;
+			}
+			else
+			{
+			  window.clearInterval(timer3); // stop firing the timer 
+			}
+		}
+		var timer3 = window.setInterval(updateCounter, interval, showing_number); // timer interval
 	}
 	
 });
