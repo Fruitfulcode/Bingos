@@ -178,11 +178,6 @@ ul.list-arrows li {
 	color: #fff;
 	background: rgba(0,0,0,0.8);
 }
-a.social-link.facebook{ background-position:0 0; }
-a.social-link.tweet{ background-position:-30px 0; }
-a.social-link.google{ background-position:-60px 0; }
-a.social-link.youtube{ background-position:-90px 0; }
-a.social-link.pinterest{ background-position:-120px 0; }
 
 .down-arrow{
 	background-position:0 0;
@@ -230,13 +225,16 @@ ul.isotope-option li a:hover {
 
 /* Footer */
 footer#site-footer {
-	background:#333;
+	background:#333; 
 }
-footer .copyright{
-	color:#fff;
-}footer .copyright{
+footer .copyright {
 	color:#fff;
 }
+
+a.social-link .fa { color:#fff; }
+a.social-link:hover .fa{ color:#666; }
+.about-person a.social-link .fa { color:#fff; }
+.about-person a.social-link:hover .fa { color:#666; }
 
 /* Blog */
 .entry-header {

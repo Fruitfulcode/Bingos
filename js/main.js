@@ -1,6 +1,6 @@
-var header_offset;
-var header_image_height;
-var slider_height;
+/* Variables for Heights */
+var menu_appear_height;
+var menu_disappear_height;
 
 /* Smooth Scroll Settings */
 $(function(){
@@ -113,6 +113,8 @@ jQuery(document).ready(function($) {
 		navigation :	true,
 		navigationText: false,
 		pagination :	false,
+		touchDrag :		false,
+		mouseDrag :		false,
 		
 		theme:			"services-theme",
 		
@@ -153,7 +155,7 @@ jQuery(document).ready(function($) {
 		
 	});
 	
-	
+	/* Validation of Contact Form */
 	$('#submit').click(function(){
         $("#contact-form").validate({
             submitHandler: function() {
@@ -164,6 +166,14 @@ jQuery(document).ready(function($) {
             }
         });
     });
+	
+	/* Focus on contact form */
+	$('#contact-form input[type="text"], #contact-form input[type="email"], #contact-form textarea').focusin(function(){
+		$(this).parent().addClass('focus');
+	});
+	$('#contact-form input[type="text"], #contact-form input[type="email"], #contact-form textarea').focusout(function(){
+		$(this).parent().removeClass('focus-error').removeClass('focus');
+	});
 
 	/* Switcher of Color Themes */
 	$(".color-switch a").click(function(){
@@ -267,9 +277,8 @@ jQuery(document).ready(function($) {
 	});
 	
 	
-	/*== Toggles ==*/
-		
-	/* click section */
+	/*== Isotope Toggles ==*/
+	
 	$('.toggles .panel-title a').on("click", function(e){
 		link_to_toggle = $(this).attr('href');
 		if ($(this).hasClass('collapsed')) {
@@ -282,19 +291,17 @@ jQuery(document).ready(function($) {
 		e.preventDefault();
 	});
 	
-	
-	/* Focus on contact form */
-	$('#contact-form input[type="text"], #contact-form input[type="email"], #contact-form textarea').focusin(function(){
-		$(this).parent().addClass('focus');
+	/*== Isotope Tabs ==*/
+	$('#my-tab-list a').click(function (e) {
+		e.preventDefault()
+		$(this).tab('show')
 	});
-	$('#contact-form input[type="text"], #contact-form input[type="email"], #contact-form textarea').focusout(function(){
-		$(this).parent().removeClass('focus-error').removeClass('focus');
-	});
-	
+
+		
 	/* Calculate header offset */
-	header_offset = jQuery('#site-header').offset().top;
-	header_image_height = jQuery('#header-top-image').height(); 
-	slider_height = jQuery('#slider').height();
+	var header_offset = jQuery('#site-header').offset().top;
+	var header_image_height = jQuery('#header-top-image').height(); 
+	var slider_height = jQuery('#slider').height();
 	
 	menu_appear_height = header_image_height + slider_height;
 	menu_disappear_height = menu_appear_height + 1200;
@@ -347,15 +354,6 @@ function height_set(selector,height) {
 	});
 }
 
-// get number of rows of text
-function getRows(selector) {
-    var height = $(selector).height();
-    var line_height = $(selector).css('line-height');
-    line_height = parseFloat(line_height)
-    var rows = height / line_height;
-    return Math.round(rows);
-}
-
 /* isotop resize relayout timeout */
 function isotope_relayout(selector){
     selector.isotope('reLayout');
@@ -377,6 +375,7 @@ jQuery(window).bind('resize', function() {
 	
 });
 
+/* Variables for SCROLL Events */
 var counters_finished = false;
 var progresses_finished = false;
 var progresses_2_finished = false;
@@ -439,16 +438,6 @@ jQuery(window).on('scroll', function() {
 	
 	
 	
-});
-
-
-jQuery(window).bind('scroll resize', function() {
- 
-	//if (document.body.clientWidth >1024) {
-	
-		
-	//}
-
 });
 
 
