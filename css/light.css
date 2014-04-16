@@ -25,22 +25,28 @@ p a:hover, p a:focus, p a:active {
 
 table {     
 	background: #fff; 
-	border: 1px solid #d6d6d6;
+	border: 1px solid #333333;
 }
 table thead th, 
 table th {
-	color:#333333; 
-	border-bottom: 1px solid #d6d6d6; 
+	color:#ffffff; 
+	background: #333333;
+	border-bottom: 1px solid #333333; 
+	border-right: 1px solid #333333;
 } 
+table th:nth-child(2) { 
+	background: #707070;
+}
 table tbody td { 
-	color: #7D7D7D; 
-	border-bottom: 1px solid #d6d6d6;
+	color: #333333; 
+	border-bottom: 1px solid #333333;
+	border-right: 1px solid #333333;
 }
 table tbody tr:last-child td:last-child { 
-	border-right:1px solid #d6d6d6; 
+	border-right:1px solid #333333; 
 }
 table tfoot td div { 
-	border-top: 1px solid #8C8C8C;
+	border-top: 1px solid #333333;
 	background: #EBEBEB;
 } 
 /* Buttons */
@@ -70,6 +76,15 @@ button:hover,html input[type="button"]:hover,input[type="reset"]:hover,input[typ
 button:focus,html input[type="button"]:focus,input[type="reset"]:focus,input[type="submit"]:focus,button:active,html input[type="button"]:active,input[type="reset"]:active,input[type="submit"]:active {
 	background:#999;
 }
+
+/* Quotes */
+.block-with-quotes:before{
+	background-image: url("../images/quotes-open-dark.png");
+}
+.block-with-quotes:after{
+	background-image: url("../images/quotes-close-dark.png");
+}
+
 
 /* Inputs */
 .input-text-wrapper,
@@ -127,7 +142,13 @@ button:focus,html input[type="button"]:focus,input[type="reset"]:focus,input[typ
 }
 /* Lists */
 ul.list-arrows li {
-	background:url("../images/li-arrow-black.png") no-repeat 0 5px transparent;
+	background:url("../images/li-arrow-black.png") no-repeat 0 4px transparent;
+}
+ul.list-pluses li {
+	background:url("../images/li-plus-black.png") no-repeat 0 4px transparent;
+}
+ul.list-stars li {
+	background:url("../images/li-star-black.png") no-repeat 0 4px transparent;
 }
 /* Progress bars */
 .progress {
