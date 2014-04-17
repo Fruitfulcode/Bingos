@@ -60,6 +60,9 @@ a:hover, a:focus {
 	color:inherit;
 	text-decoration:none;
 }
+a:focus {
+    outline: none;
+}
 .site-content .entry-content p a img, .site-content .entry-content p img {
 	box-shadow: 0 0px 1px rgba(0, 0, 0, 0.5)
 }
@@ -264,6 +267,23 @@ input[type="checkbox"],input[type="radio"] {
     box-sizing:border-box;
     padding:0;
 }
+.radio.inline, .checkbox.inline {
+    display: inline-block;
+    margin-bottom: 0;
+	margin-top: 0;
+    /* padding-top: 5px; */
+    vertical-align: middle;
+}
+.radio.inline + .radio.inline, .checkbox.inline + .checkbox.inline {
+    margin-left: 10px;
+}
+.left-label{
+	display: inline-block;
+	width:100px;
+	font-family:'opensans-light', sans-serif;
+	font-size: 18px;
+	line-height: 18px;
+}
 input[type="search"] {
     box-sizing:content-box;
     moz-box-sizing:content-box;
@@ -291,10 +311,11 @@ input[type=text],input[type=email],input[type=url],textarea { /* for ipad */
     border-radius:3px;
 	-webkit-border-radius: 3px; 
 	-moz-border-radius: 3px; 
-    color:#45494c;
+    
+	color:#333333;
 }
 input[type=text]:focus,input[type=email]:focus,textarea:focus {
-    color:#111;
+    color:#333333;
 }
 input[type=text],input[type=email],input[type=url] {
     padding:3px;
@@ -2306,8 +2327,8 @@ article.post .double-button {
 }
 
 
-#contact-form input[type="text"],
-#contact-form input[type="email"] {
+.contact-form input[type="text"],
+.contact-form input[type="email"] {
 	width: 100%;
 	height: 39px ;
 	padding: 5px 10px;
@@ -2331,7 +2352,7 @@ article.post .double-button {
 	background: none;
 	border: 1px solid #fff;
 }
-#contact-form textarea {
+.contact-form textarea {
 	width: 100%;
 	padding: 5px 10px;
 	border-radius: 0;
@@ -2352,11 +2373,12 @@ article.post .double-button {
 	border: 1px solid #fff;
 }
 
-#contact-form input:focus,
-#contact-form textarea:focus {
+.contact-form input:focus,
+.contact-form textarea:focus {
 	border: 1px solid #333;
 }
-#contact-form label.error {
+.contact-form .input-text-wrapper > label.error,
+.contact-form .input-textarea-wrapper > label.error {
 	margin-top:7px;
 }
 .input-submit-wrapper {
@@ -2409,6 +2431,34 @@ article.post .double-button {
 
 .elements-block {
 	padding:0 0 80px;
+}
+
+.form-row {
+	float:left;
+	width:100%;
+}
+
+.contact-form .form-row label {
+	float:left;
+	padding-top:17px;
+	font-family:'opensans-light', sans-serif;
+	font-size:18px;
+	line-height:18px;
+}
+.contact-form label.error {
+	width:100%;
+}
+.form-row label {
+	width:17%;
+}
+.contact-form .bootstrap-select {
+	margin:0 0 30px;
+}
+#elements-block .contact-form .input-text-wrapper,
+#elements-block .contact-form .input-textarea-wrapper,
+#elements-block .contact-form .bootstrap-select {
+	float:left;
+	width:83%;
 }
 
 /* Footer */
@@ -2748,7 +2798,7 @@ and (max-width:767px) {
 	
 	#contacts-block { padding: 60px 0; }
 	#contacts-block .chapter-title { margin: 0 0 76px; }
-	#contact-form { text-align:center; margin-bottom:60px;}
+	.contact-form { text-align:center; margin-bottom:60px;}
 	#contacts-block .input-submit-wrapper { float:none;	}
 	.contact-info { text-align: center; }
 	.contact-info p { font-size: 22px; }

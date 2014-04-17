@@ -40,6 +40,9 @@ $(function(){
 
 jQuery(document).ready(function($) {
 	
+	/* Select */
+	$('.selectpicker').selectpicker();
+	
 	/* Slider initialization */
 	$(function() {
 		var Page = (function() {
@@ -157,21 +160,34 @@ jQuery(document).ready(function($) {
 	
 	/* Validation of Contact Form */
 	$('#submit').click(function(){
-        $("#contact-form").validate({
-            submitHandler: function() {
-                $.post("contact.php", $("#contact-form").serialize(),  function(response) {
-                    $('#form-status').html(response);
-                });
-                return false;
-            }
-        });
+        if ($("#contact-form").length ) {
+			$("#contact-form").validate({
+				submitHandler: function() {
+					$.post("contact.php", $("#contact-form").serialize(),  function(response) {
+						$('#form-status').html(response);
+					});
+					return false;
+				}
+			});
+		}
+		
+		if ($("#test-form").length ) {
+			$("#test-form").validate({
+				submitHandler: function() {
+					$.post("contact-test.php", $("#test-form").serialize(),  function(response) {
+						$('#form-status').html(response);
+					});
+					return false;
+				}
+			});
+		}
     });
-	
+		
 	/* Focus on contact form */
-	$('#contact-form input[type="text"], #contact-form input[type="email"], #contact-form textarea').focusin(function(){
+	$('.contact-form input[type="text"], .contact-form input[type="email"], .contact-form textarea').focusin(function(){
 		$(this).parent().addClass('focus');
 	});
-	$('#contact-form input[type="text"], #contact-form input[type="email"], #contact-form textarea').focusout(function(){
+	$('.contact-form input[type="text"], .contact-form input[type="email"], .contact-form textarea').focusout(function(){
 		$(this).parent().removeClass('focus-error').removeClass('focus');
 	});
 

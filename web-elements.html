@@ -9,6 +9,7 @@
     <link rel="shortcut icon" href="" type="image/x-icon">
 	<link rel="stylesheet" id="font-style-css" href="fonts/fonts.css" type="text/css" media="all">
 	<link rel="stylesheet" href="js/bootstrap/css/bootstrap.css" type="text/css" media="all">
+	<link rel="stylesheet" href="css/bootstrap-select.css" type="text/css" media="all">
 	<link rel="stylesheet" href="inc/font-awesome/css/font-awesome.min.css">
 	<link rel="stylesheet" id="main-style-css" href="css/style.css" type="text/css" media="all">
 	<link rel="stylesheet" id="carousel-css" href="js/carousel/css/owl.carousel.css" type="text/css" media="all">
@@ -18,6 +19,7 @@
 	<link rel="stylesheet" class="color-scheme" href="css/light.css" type="text/css" media="all">
 	
 	<script src="js/jquery-1.10.2.min.js"></script>
+	<script src="js/jquery.validate.min.js"></script> 
 	<script src="js/slider/modernizr.custom.79639.js"></script>
 	<!-- <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script> -->
 	
@@ -26,6 +28,7 @@
 	<script src="js/bootstrap/bootstrap.min.js"></script>
 	<script src="js/bootstrap/collapse.js"></script>
 	<script src="js/bootstrap/tab.js"></script>
+	<script src="js/bootstrap-select.min.js"></script>
 	<script src="js/isotope/jquery.isotope.min.js"></script>
 	
 	<script src="js/slider/jquery.ba-cond.min.js"></script>
@@ -542,32 +545,72 @@
 	
 						<div class="row elements-block">
 							<h2 class="section-title">forms</h2>
-								
-							<div class="col-md-6 col-xs-12">
-								<form action="" method="post" id="contact-form">
-									<label for="text-field">text: </label>
-									<div class="input-text-wrapper">
-										<input type="text" name="text" id="text-field" placeholder="" required>
-									</div>
+							
+							
+								<form action="" method="post" id="test-form" class="contact-form">
+									<div class="col-md-6 col-xs-12">
+										<div class="form-row">
+											<label for="text-field">text: </label>
+											<div class="input-text-wrapper">
+												<input type="text" name="text-field" id="text-field" required>
+											</div>
+										</div>
+										
+										<div class="form-row">
+											<label for="my-select">select: </label>
+											<select class="selectpicker" name="my-select" id="my-select">
+												<option value="option 1">option 1</option>
+												<option value="option 2">option 2</option>
+												<option value="option 3">option 3</option>
+											</select>
+										</div>
+										
+										<div class="form-row">
+											<label for="text-area">textarea: </label>
+											<div class="input-textarea-wrapper">
+												<textarea name="text-area" id="text-area" cols="40" rows="6" required></textarea>
+											</div>
+										</div>
+										
+										
+										
+										
+										<div class="input-submit-wrapper">
+											<input type="submit" value="Send message" id="submit" >
+										</div>
+										
+										<div id="form-status"></div>
+									</div><!-- end .col -->
 									
-									<label for="text-area">textarea: </label>
-									<div class="input-textarea-wrapper">
-										<textarea name="message" id="text-area" placeholder="" cols="40" rows="6" required></textarea>
-									</div>
 									
-									<select name="my-select" id="my-select">
-										<option value="option 1">option 1</option>
-										<option value="option 2">option 2</option>
-										<option value="option 3">option 3</option>
-									</select>
 									
-									<div class="input-submit-wrapper">
-										<input type="submit" value="Send message" id="submit" >
-									</div>
-									
-									<div id="form-status"></div>
+									<div class="col-md-offset-1 col-md-5 col-xs-12">
+										<div>
+											<span class="left-label">checkbox:</span>
+											<label class="checkbox inline">
+												<input type="checkbox" name="inlineCheckbox1" id="inlineCheckbox1" value="option1">Option one
+											</label>
+											<label class="checkbox inline">
+												<input type="checkbox" name="inlineCheckbox2" id="inlineCheckbox2" value="option2">Option two
+											</label>
+										</div>
+										
+										<div style="margin-top:20px;">
+											<span class="left-label">radio:</span>
+											
+											<label class="radio inline">
+												<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+												Option one
+											</label>
+											<label class="radio inline">
+												<input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+												Option two
+											</label>
+										</div>
+										
+									</div><!-- end .col -->
 								</form>
-							</div><!-- end .col -->
+							
 							
 
 							

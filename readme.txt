@@ -23,3 +23,6 @@ http://api.greensock.com/js/com/greensock/plugins/ScrollToPlugin.html
 
 jQuery Validate
 http://jqueryvalidation.org/
+
+Bootstrap-select
+http://silviomoreto.github.io/bootstrap-select/
