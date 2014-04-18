@@ -9,6 +9,7 @@
     <link rel="shortcut icon" href="" type="image/x-icon">
 	<link rel="stylesheet" id="font-style-css" href="fonts/fonts.css" type="text/css" media="all">
 	<link rel="stylesheet" href="js/bootstrap/css/bootstrap.css" type="text/css" media="all">
+	<link rel="stylesheet" href="css/bootstrap-select.css" type="text/css" media="all">
 	<link rel="stylesheet" href="inc/font-awesome/css/font-awesome.min.css">
 	<link rel="stylesheet" id="main-style-css" href="css/style.css" type="text/css" media="all">
 	<link rel="stylesheet" id="carousel-css" href="js/carousel/css/owl.carousel.css" type="text/css" media="all">
@@ -18,6 +19,7 @@
 	<link rel="stylesheet" class="color-scheme" href="css/light.css" type="text/css" media="all">
 	
 	<script src="js/jquery-1.10.2.min.js"></script>
+	<script src="js/jquery.validate.min.js"></script> 
 	<script src="js/slider/modernizr.custom.79639.js"></script>
 	<!-- <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script> -->
 	
@@ -26,6 +28,7 @@
 	<script src="js/bootstrap/bootstrap.min.js"></script>
 	<script src="js/bootstrap/collapse.js"></script>
 	<script src="js/bootstrap/tab.js"></script>
+	<script src="js/bootstrap-select.min.js"></script>
 	<script src="js/isotope/jquery.isotope.min.js"></script>
 	
 	<script src="js/slider/jquery.ba-cond.min.js"></script>
@@ -115,7 +118,467 @@
 			</div>	
 		</nav>
 		
-		
+		<div id="blog-container" class="padding-both">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="chapter-title">
+							<h3 class="title-underlined">
+								<span>Blog</span>
+							</h3>
+						</div>
+						
+						<div class="row">
+							<div class="col-md-9 col-sm-12">
+								<div id="posts-container" class="clearfix">
+									<article class="post">
+										<div class="entry-thumbnail">
+											<a href="#" class="thumbnail-link">
+												<img src="images/post-feature-1.jpg" alt="Featured Image">		
+												<div class="thumb-overlay"></div>
+											</a>
+											
+										</div>
+										
+										<div class="row">
+											<div class="col-md-4 col-sm-4 col-xs-4">
+										
+												<header class="entry-header">
+													<div class="entry-meta">
+														<div class="date">
+															<a href="#" title="" rel="bookmark">
+																<time class="entry-date" datetime="2013-10-31T15:15:12+00:00">31 October</time>
+															</a>
+														</div>
+														
+														<div class="comments-link">
+															<a href="#" title="">2 comments</a>			
+														</div><!-- .comments-link -->
+														
+														<div class="author">
+															by <a href="#" title="View all posts by John Doe" rel="author">John Doe</a>
+														</div>
+														
+														<div class="categories-links">
+															<ul>
+																<li><a href="#" title="View all posts in Illustration" rel="category tag">Illustration</a>,</li>
+																<li><a href="#" title="View all posts in Web-design" rel="category tag">Web-design</a>,</li>
+																<li><a href="#" title="View all posts in Development" rel="category tag">Development</a>,</li>
+																<li><a href="#" title="View all posts in Plugins" rel="category tag">Plugins</a>,</li>
+																<li><a href="#" title="View all posts in Wordpress" rel="category tag">Wordpress</a></li>
+															</ul>
+														</div>
+														
+														<div class="tag-links">
+															<a href="#" rel="tag">Codex</a>, 
+															<a href="#" rel="tag">edge case</a>, 
+															<a href="#" rel="tag">featured image</a>,
+															<a href="#" rel="tag">image</a>, 
+															<a href="#" rel="tag">template</a>
+														</div>
+														
+													</div><!-- .entry-meta -->
+												</header>
+										
+											</div>
+											
+											<div class="col-md-8 col-sm-8 col-xs-8">
+												<div class="entry-content">
+													<h3 class="entry-title">
+														<a href="#" rel="bookmark">the best way to get started is to fill out the form below.</a>
+													</h3>
+												
+													<div class="entry-summary">
+														<p>Tell us about your project and we will be sure to get back to you as soon as Cred sriracha fixie gastropub. 8-bit id next level gastropub 90's, lo-fi cupidatat. Nesciunt ethnic banh mi lomo. Asymmetrical pug mlkshk dolor. Tell us about your project and we will be sure to get back to you as soon as Cred sriracha fixie gastropub. 8-bit id next level gastropub 90's, lo-fi cupidatat. Nesciunt ethnic banh mi lomo.</p>
+													</div>
+													
+													<a class="double-button" href="#"><span>Read more</span></a>
+												</div>
+											</div>
+											
+										</div>
+										
+									</article>
+									
+									<article class="post">
+										<div class="entry-thumbnail">
+											<a href="#" class="thumbnail-link">
+												<img src="images/post-feature-2.jpg" alt="Featured Image">		
+												<div class="thumb-overlay"></div>
+											</a>
+										</div>
+										
+										<div class="row">
+											<div class="col-md-4 col-sm-4 col-xs-4">
+										
+												<header class="entry-header">
+													<div class="entry-meta">
+														<div class="date">
+															<a href="#" title="" rel="bookmark">
+																<time class="entry-date" datetime="2013-10-31T15:15:12+00:00">30 October</time>
+															</a>
+														</div>
+														
+														<div class="comments-link">
+															<a href="#" title="">2 comments</a>			
+														</div><!-- .comments-link -->
+														
+														<div class="author">
+															by <a href="#" title="View all posts by John Doe" rel="author">John Doe</a>
+														</div>
+														
+														<div class="categories-links">
+															<ul>
+																<li><a href="#" title="View all posts in Development" rel="category tag">Development</a></li>
+															</ul>
+														</div>
+														
+														<div class="tag-links">
+															<a href="#" rel="tag">Codex</a>, 
+															<a href="#" rel="tag">edge case</a>
+														</div>
+														
+													</div><!-- .entry-meta -->
+												</header>
+										
+											</div>
+											
+											<div class="col-md-8 col-sm-8 col-xs-8">
+												<div class="entry-content">
+													<h3 class="entry-title">
+														<a href="#" rel="bookmark">The best way to get started.</a>
+													</h3>
+												
+													<div class="entry-summary">
+														<p>Tell us about your project and we will be sure to get back to you as soon as Cred sriracha fixie gastropub. 8-bit id next level gastropub 90's, lo-fi cupidatat. Nesciunt ethnic banh mi lomo. Asymmetrical pug mlkshk dolor.</p>
+													</div>
+																								
+													<a class="double-button" href="#"><span>Read more</span></a>
+												</div>
+											</div>
+											
+										</div>
+										
+									</article>
+									
+									<article class="post">
+										<div class="entry-thumbnail">
+											<a href="#" class="thumbnail-link">
+												<img src="images/post-feature-1.jpg" alt="Featured Image">		
+												<div class="thumb-overlay"></div>
+											</a>
+											
+										</div>
+										
+										<div class="row">
+											<div class="col-md-3 col-sm-4 col-xs-4">
+										
+												<header class="entry-header">
+													<div class="entry-meta">
+														<div class="date">
+															<a href="#" title="" rel="bookmark">
+																<time class="entry-date" datetime="2013-10-31T15:15:12+00:00">30 October</time>
+															</a>
+														</div>
+														
+														<div class="comments-link">
+															<a href="#" title="">2 comments</a>			
+														</div><!-- .comments-link -->
+														
+														<div class="author">
+															by <a href="#" title="View all posts by John Doe" rel="author">John Doe</a>
+														</div>
+														
+														<div class="categories-links">
+															<ul>
+																<li><a href="#" title="View all posts in Design" rel="category tag">design</a></li>
+															</ul>
+														</div>
+														
+														<div class="tag-links">
+															<a href="#" rel="tag">gallery</a>,
+															<a href="#" rel="tag">featured</a>
+														</div>
+														
+													</div><!-- .entry-meta -->
+												</header>
+										
+											</div>
+											
+											<div class="col-md-9 col-sm-8 col-xs-8">
+												<div class="entry-content">
+													<h3 class="entry-title">
+														<a href="#" rel="bookmark">gallery post with featured images.</a>
+													</h3>
+												
+													<div class="entry-summary">
+														<p> Tell us about your project and we will be sure to get back to you as soon as Cred sriracha fixie gastropub. 8-bit id next level gastropub 90's, lo-fi cupidatat. Nesciunt ethnic banh mi lomo. Asymmetrical pug mlkshk dolor. Tell us about your project and we will be sure to get back to you as soon as Cred sriracha fixie gastropub. 8-bit id next level gastropub 90's, lo-fi cupidatat. Nesciunt ethnic banh mi lomo. Asymmetrical pug mlkshk dolor. Tell us about your project and we will be sure to get back to you as soon as Cred sriracha fixie gastropub. 8-bit id next level gastropub 90's, lo-fi cupidatat. Nesciunt ethnic banh mi lomo. Asymmetrical pug mlkshk dolor.</p>
+													</div>
+													
+													<a class="double-button" href="#"><span>Read more</span></a>
+												</div>
+											</div>
+											
+										</div>
+										
+									</article>
+									
+									
+									<article class="post">
+										<div class="entry-thumbnail">
+											<a href="#" class="thumbnail-link">
+												<img src="images/post-feature-4.jpg" alt="Featured Image">		
+												<div class="thumb-overlay"></div>
+											</a>
+										</div>
+										
+										<div class="row">
+											<div class="col-md-3 col-sm-4 col-xs-4">
+										
+												<header class="entry-header">
+													<div class="entry-meta">
+														<div class="date">
+															<a href="#" title="" rel="bookmark">
+																<time class="entry-date" datetime="2013-10-31T15:15:12+00:00">30 October</time>
+															</a>
+														</div>
+														
+														<div class="comments-link">
+															<a href="#" title="">2 comments</a>			
+														</div><!-- .comments-link -->
+														
+														<div class="author">
+															by <a href="#" title="View all posts by John Doe" rel="author">John Doe</a>
+														</div>
+														
+														<div class="categories-links">
+															<ul>
+																<li><a href="#" title="View all posts in Design" rel="category tag">design</a></li>
+															</ul>
+														</div>
+														
+														<div class="tag-links">
+															<a href="#" rel="tag">one</a>, 
+															<a href="#" rel="tag">featured</a>
+														</div>
+														
+													</div><!-- .entry-meta -->
+												</header>
+										
+											</div>
+											
+											<div class="col-md-9 col-sm-8 col-xs-8">
+												<div class="entry-content">
+													<h3 class="entry-title">
+														<a href="#" rel="bookmark">post with a featured image.</a>
+													</h3>
+												
+													<div class="entry-summary">
+														<p>Tell us about your project and we will be sure to get back to you as soon as Cred sriracha fixie gastropub. 8-bit id next level gastropub 90's, lo-fi cupidatat. Nesciunt ethnic banh mi lomo. Asymmetrical pug mlkshk dolor. Tell us about your project and we will be sure to get back to you as soon as Cred sriracha fixie gastropub. 8-bit id next level gastropub 90's, lo-fi cupidatat.</p>
+													</div>
+																								
+													<a class="double-button" href="#"><span>Read more</span></a>
+												</div>
+											</div>
+										</div>
+										
+									</article>
+									
+									
+									
+									
+									<article class="post">
+										
+										<div class="row">
+											<div class="col-md-3 col-sm-4 col-xs-4">
+										
+												<header class="entry-header">
+													<div class="entry-meta">
+														<div class="date">
+															<a href="#" title="" rel="bookmark">
+																<time class="entry-date" datetime="2013-10-31T15:15:12+00:00">30 October</time>
+															</a>
+														</div>
+														
+														<div class="comments-link">
+															<a href="#" title="">2 comments</a>			
+														</div><!-- .comments-link -->
+														
+														<div class="author">
+															by <a href="#" title="View all posts by John Doe" rel="author">John Doe</a>
+														</div>
+														
+														<div class="categories-links">
+															<ul>
+																<li><a href="#" title="View all posts in Design" rel="category tag">design</a></li>
+															</ul>
+														</div>
+														
+														<div class="tag-links">
+															<a href="#" rel="tag">without a featured</a>
+														</div>
+														
+													</div><!-- .entry-meta -->
+												</header>
+										
+											</div>
+											
+											<div class="col-md-9 col-sm-8 col-xs-8">
+												<div class="entry-content">
+													<h3 class="entry-title">
+														<a href="#" rel="bookmark">post without a featured image.</a>
+													</h3>
+												
+													<div class="entry-summary">
+														<p> Tell us about your project and we will be sure to get back to you as soon as Cred sriracha fixie gastropub. 8-bit id next level gastropub 90's, lo-fi cupidatat. Nesciunt ethnic banh mi lomo. Asymmetrical pug mlkshk dolor. Tell us about your project and we will be sure to get back to you as soon as Cred sriracha fixie gastropub. 8-bit id next level gastropub 90's, lo-fi cupidatat. Nesciunt ethnic banh mi lomo. Asymmetrical pug mlkshk dolor. Tell us about your project and we will be sure to get back to you as soon as Cred sriracha fixie gastropub. 8-bit id next level gastropub 90's, lo-fi cupidatat. Nesciunt ethnic banh mi lomo. Asymmetrical pug mlkshk dolor.</p>
+													</div>
+																								
+													<a class="double-button" href="#"><span>Read more</span></a>
+												</div>
+											</div>
+										</div>
+										
+									</article>
+									
+									
+									<ul class="pagination">
+									  <li><a href="#">previous</a></li>
+									  <li><a href="#">1</a></li>
+									  <li><a href="#">2</a></li>
+									  <li><a href="#">3</a></li>
+									  <li><a href="#">4</a></li>
+									  <li><a href="#">5</a></li>
+									  <li><a href="#">next</a></li>
+									</ul>
+								</div><!-- #posts-container -->
+							</div>
+							
+							<div class="col-md-offset-0 col-md-3 col-sm-offset-2 col-sm-8 col-xs-12">
+								<div id="sidebar">
+									<aside class="widget widget-search" id="search">
+										<form role="search" action="#" id="searchform" method="get">
+											<label class="assistive-text" for="s">Search</label>
+											<input type="text" placeholder="" id="s" value="" name="s" class="field">
+											<input type="submit" value="Search" id="searchsubmit" name="submit" class="submit">
+										</form>
+									</aside>
+									
+									<aside class="widget widget-categories">
+										<h3 class="widget-title">category</h3>
+										<ul>
+											<li><a href="#">design</a></li>
+											<li><a href="#">illustrotions</a></li>
+											<li><a href="#">logo</a></li>
+											<li><a href="#">development</a></li>
+											<li><a href="#">wordpress</a></li>
+											<li><a href="#">plugins</a></li>
+										</ul>
+									</aside>
+									
+									<aside class="widget widget-archives">
+										<h3 class="widget-title">archives</h3>
+										<ul>
+											<li><a href="#">august 2013 (11)</a></li>
+											<li><a href="#">july 2013 (9)</a></li>
+											<li><a href="#">june 2013 (6)</a></li>
+											<li><a href="#">may 2013 (2)</a></li>
+											<li><a href="#">april 2012 (11)</a></li>
+										</ul>
+									</aside>
+									
+									<aside class="widget widget-latest-posts">
+										<h3 class="widget-title">latest from blog</h3>
+										<ul>
+											<li>
+												<div class="entry-thumbnail">
+													<a href="#" class="thumbnail-link">
+														<img src="images/post-feature-3-1.jpg" alt="Featured Image">		
+														<div class="thumb-overlay">read more</div>
+													</a>
+												</div>
+												
+												<h3 class="entry-title">
+													<a href="#" rel="bookmark">gallery post with featured images.</a>
+												</h3>
+											</li>
+											<li>
+												<div class="entry-thumbnail">
+													<a href="#" class="thumbnail-link">
+														<img src="images/post-feature-2.jpg" alt="Featured Image">		
+														<div class="thumb-overlay">read more</div>
+													</a>
+												</div>
+												
+												<h3 class="entry-title">
+													<a href="#" rel="bookmark">The best way to get started.</a>
+												</h3>
+											</li>
+											<li>
+												<div class="entry-thumbnail">
+													<a href="#" class="thumbnail-link">
+														<img src="images/post-feature-4.jpg" alt="Featured Image">		
+														<div class="thumb-overlay">read more</div>
+													</a>
+												</div>
+												
+												<h3 class="entry-title">
+													<a href="#" rel="bookmark">post with a featured image.</a>
+												</h3>
+											</li>
+										</ul>
+									</aside>
+									
+									<aside class="widget widget-flickr-profile">
+										<h3 class="widget-title">our flickr profile</h3>
+										<ul>
+											<li>
+												<div class="entry-thumbnail">
+													<a href="#" class="thumbnail-link">
+														<img src="images/post-feature-3-1.jpg" alt="Featured Image">		
+														<div class="thumb-overlay"></div>
+														<span class="flickr"></span>
+													</a>
+												</div>
+											</li>
+											<li>
+												<div class="entry-thumbnail">
+													<a href="#" class="thumbnail-link">
+														<img src="images/post-feature-2.jpg" alt="Featured Image">		
+														<div class="thumb-overlay"></div>
+														<span class="flickr"></span>
+													</a>
+												</div>
+											</li>
+											<li>
+												<div class="entry-thumbnail">
+													<a href="#" class="thumbnail-link">
+														<img src="images/post-feature-4.jpg" alt="Featured Image">		
+														<div class="thumb-overlay"></div>
+														<span class="flickr"></span>
+													</a>
+												</div>
+											</li>
+											<li>
+												<div class="entry-thumbnail">
+													<a href="#" class="thumbnail-link">
+														<img src="images/post-image-5.jpg" alt="Featured Image">		
+														<div class="thumb-overlay"></div>
+														<span class="flickr"></span>
+													</a>
+												</div>
+											</li>
+										</ul>
+									</aside>
+								
+								</div><!-- #sidebar -->
+							</div>
+							
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
 		
 		<footer id="site-footer">
 			<div class="container">
@@ -135,16 +598,6 @@
 				</div>
 			</div><!-- end .container -->
 		</footer>
-				
-		
-		<div class="style-switcher">
-			<!-- Switcher of Color scheme of Site via 'rel' attribute -->
-			<h4>Color Skins</h4>
-			<ul class="color-switch">
-				<li><a class="light-theme" rel="css/light.css" href="#">Light</a></li>
-				<li><a class="dark-theme" rel="css/dark.css" href="#">Dark</a></li>
-			</ul>
-		</div>
 		
 	</div><!-- #container -->
 

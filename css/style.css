@@ -308,9 +308,6 @@ input[type="submit"] {   /* for ipad */
 } 
 input[type=text],input[type=email],input[type=url],textarea { /* for ipad */
     border:1px solid #e5e5e5;
-    border-radius:3px;
-	-webkit-border-radius: 3px; 
-	-moz-border-radius: 3px; 
     
 	color:#333333;
 }
@@ -322,8 +319,8 @@ input[type=text],input[type=email],input[type=url] {
 }
 
 #commentform label {
-width: 75px;
-float: left;
+	width: 75px;
+	float: left;
 }
 
 textarea {
@@ -834,6 +831,7 @@ ul.list-stars li {
 .pagination > li > a,
 .pagination > li > span {
 	padding: 6px 9px 4px;
+	margin:0 2px;
 	font-family:'opensans-light', sans-serif;
 	font-size:18px;
 	line-height: 18px;
@@ -2166,6 +2164,33 @@ ul.isotope-option li.option-select {
 }
 
 /* Blog */
+article {
+	padding-bottom:160px;
+}
+article:last-of-type {
+	padding-bottom:70px;
+}
+article.image-inside {
+	position:relative;
+	overflow:hidden;
+}
+article.image-inside .entry-image{
+	position:absolute;
+	top:0;
+	left:0;
+	width: 100%;
+	overflow: hidden;
+}
+.entry-image img {
+	width: 100%;
+}
+article.image-inside a.thumbnail-link:hover .thumb-overlay {
+	opacity: 0;
+	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+}
+#blog-recent article {
+	padding-bottom:0;
+}
 .entry-thumbnail {
 	width:100%;
 	overflow:hidden;
@@ -2178,6 +2203,8 @@ ul.isotope-option li.option-select {
 }
 .entry-thumbnail a.thumbnail-link img {
 	width:100%;
+	height:auto;
+	max-height:420px; /* 354px */
 }
 .thumb-overlay {
 	position: absolute;
@@ -2225,7 +2252,6 @@ a.thumbnail-link:hover .thumb-overlay {
 }
 .entry-title {
 	text-transform: lowercase;
-	font-size:24px;
 	line-height:32px;
 	font-family:'opensans-regular', sans-serif;
 }
@@ -2235,6 +2261,91 @@ a.thumbnail-link:hover .thumb-overlay {
 article.post .double-button {
 	margin-top:5px;
 }
+#blog-container .pagination {
+	float:right;
+	margin:0;
+}
+
+#sidebar {
+	padding-left:15px;
+}
+#searchsubmit {
+	display:none;
+}
+aside {
+	width:100%;
+	margin-bottom:55px;
+}
+aside input[type="text"] {
+	width:100%;
+	padding: 7px 28px 6px 10px;
+	font-family:'opensans-light', sans-serif;
+	font-size:18px;
+	line-height:18px;
+	outline:none;
+	
+	border: 1px solid #707070;
+	background:url('../images/search.png') no-repeat 97% center transparent;
+}
+aside ul {
+	list-style:none;
+	margin:0;
+}
+aside ul li,
+aside ul li a {
+	font-family:'opensans-light', sans-serif;
+	font-size:18px;
+	line-height:35px;
+}
+.widget-latest-posts .entry-thumbnail {
+	margin-bottom: 10px;
+}
+.widget-latest-posts .entry-title,
+.widget-latest-posts .entry-title a {
+	line-height: 28px;
+}
+.widget-flickr-profile .thumb-overlay {
+	background: #000;
+}
+.widget-latest-posts .thumb-overlay {
+	text-align:center;
+	padding-top: 44px;
+	font-family: "opensans-regular", sans-serif;
+	
+	background: #000;
+	color:#fff;
+}
+
+.widget-latest-posts a.thumbnail-link:hover .thumb-overlay,
+.widget-flickr-profile a.thumbnail-link:hover .thumb-overlay {
+	opacity: 0.7;
+	filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+	
+}
+.widget-flickr-profile .entry-thumbnail {
+	margin-bottom: 25px;
+}
+.flickr {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background:url(../images/flickr.png) no-repeat center center transparent;
+	opacity: 0;
+	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+	transition: all 0.2s ease-in-out 0s;
+	-webkit-transition: all 0.2s ease-in-out 0s;
+	-moz-transition: all 0.2s ease-in-out 0s;
+	-khtml-transition: all 0.2s ease-in-out 0s;
+	-o-transition: all 0.2s ease-in-out 0s;
+	-ms-transition: all 0.2s ease-in-out 0s;
+}
+a.thumbnail-link:hover .flickr {
+	opacity: 1;
+	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+}
+
 
 /* Tweets */
 #twitter-block {
@@ -2558,6 +2669,7 @@ and (max-width:1200px) {
 	.work_process_element.alpha { margin-left: 15px; }
 	.work_process_element, .image-separator { margin-right: 25px; }
 	
+	.widget-latest-posts .thumb-overlay { padding-top: 33px; }
 	
 }
 
@@ -2596,11 +2708,16 @@ and (max-width:991px) {
 	#price-block { padding: 78px 0 0; }
 	.price-packet { margin-bottom:63px; }
 	
-	article { margin-bottom: 63px; } 
-	#blog-recent { padding: 78px 0 18px; }
+	
 	
 	/* Web-elements */
 	#lists-block .col-xs-6{ padding-bottom:30px; }
+	
+	/* Blog */
+	#blog-recent { padding: 78px 0 18px; }
+	#blog-recent article { margin-bottom: 63px; } 
+	
+	#posts-container { padding-bottom:78px; }
 }
 
 @media only screen 
@@ -2614,6 +2731,9 @@ and (max-width:991px) {
 	
 	ul.isotope-option li { margin: 0; }
 	ul.isotope-option li a { padding: 10px 15px; }
+	
+	#blog-recent .column-left { padding-right:15px; 	}
+	#blog-recent .column-right { padding-left:15px;	}
 }
 
 @media only screen 

@@ -191,24 +191,6 @@ jQuery(document).ready(function($) {
 		$(this).parent().removeClass('focus-error').removeClass('focus');
 	});
 
-	/* Switcher of Color Themes */
-	$(".color-switch a").click(function(){
-		$rel = $(this).attr('rel');
-		if ($rel.length == false)	return false;
-		
-		var $head = $("head");
-		var $colorlink = $head.find("link[rel='stylesheet'][class='color-scheme']");
-		var linkElement = '<link rel="stylesheet" class="color-scheme" href="' + $rel + '" type="text/css" media="all">';
-		if ($colorlink.length){
-		   $colorlink.replaceWith(linkElement);
-		}
-		else {
-		   $head.append(linkElement);
-		}
-		return false;
-	});
-	
-	
 	/*== Mobile menu ==*/
 	/* Mobile menu switch */
 	$('a#mob-menu-switch').on("click", function(e){
@@ -322,6 +304,18 @@ jQuery(document).ready(function($) {
 	menu_appear_height = header_image_height + slider_height;
 	menu_disappear_height = menu_appear_height + 1200;
 	
+	/* Check if page height is small */
+	/* var page_height = $('body').height();
+	if ( page_height < $(window).outerHeight() ) {
+		$('#site-header').css({ 
+			"position":"relative", 
+			"visibility":"visible",
+			"opacity":"1",
+			"filter":"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)",
+			"margin-top":"27px",
+			"margin-bottom":"27px"
+		});
+	} */
 	
 	/* Mobile devices */
 	if( isMobile.any() ) {
