@@ -1472,13 +1472,12 @@ body .panel-title a{
 header#site-header {
 	position:fixed;
 	top:0;
-	visibility:hidden;
 	opacity:0;
-	filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+	
 	width:100%;
 	z-index:99999;
 	
-	-webkit-transition: all 0.4s ease-in-out; 
+	-webkit-transition: all 0.4s ease-out; 
 	-moz-transition: all 0.4s ease-in-out; 
 	-khtml-transition: all 0.4s ease-in-out; 
 	-o-transition: all 0.4s ease-in-out; 
@@ -1486,10 +1485,7 @@ header#site-header {
 	transition: all 0.4s ease-in-out;
 }
 header#site-header.show {
-	visibility:visible;
 	opacity:1;
-	filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
-	
 }
 
 #site-logo {
@@ -2286,6 +2282,7 @@ aside input[type="text"] {
 	
 	border: 1px solid #707070;
 	background:url('../images/search.png') no-repeat 97% center transparent;
+	border-radius:0;
 }
 aside ul {
 	list-style:none;
@@ -2718,6 +2715,11 @@ and (max-width:991px) {
 	#blog-recent article { margin-bottom: 63px; } 
 	
 	#posts-container { padding-bottom:78px; }
+	
+	#sidebar { padding-left: 0; }
+	
+	#pagination-container { text-align:center; }
+	#blog-container .pagination { float:none; }
 }
 
 @media only screen 
@@ -2914,6 +2916,27 @@ and (max-width:767px) {
 		font-size: 30px;
 		line-height: 36px;
 	}
+	.pagination > li > a, .pagination > li > span {
+		font-size: 24px;
+		line-height: 24px;
+	}
+	.widget-title {
+		font-size: 36px;
+		line-height: 42px;
+	}
+	.widget-title {
+		font-size: 36px;
+		line-height: 42px;
+	}
+	aside ul li, aside ul li a {
+		font-size: 24px;
+		line-height: 42px;
+	}
+	aside input[type="text"] {
+		padding: 11px 28px 10px 10px;
+		font-size: 24px;
+		line-height: 24px;
+	}
 	.entry-summary p { 	font-size: 18px; 	}
 	
 	#contacts-block { padding: 60px 0; }
@@ -2922,7 +2945,6 @@ and (max-width:767px) {
 	#contacts-block .input-submit-wrapper { float:none;	}
 	.contact-info { text-align: center; }
 	.contact-info p { font-size: 22px; }
-	
 	
 	
 }

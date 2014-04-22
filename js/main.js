@@ -2,7 +2,7 @@
 var menu_appear_height;
 var menu_disappear_height;
 
-/* Smooth Scroll Settings */
+/* Smooth Scroll Settings for Desktop */
 $(function(){
 	
 	var $window = $(window);		//Window object
@@ -35,6 +35,14 @@ $(function(){
 		$('#isotope-container').isotope({
 			itemSelector : '.isotope-item'
 		});
+		
+		/* Article border */
+		if ( $('article').length > 0 ){
+			article_selector = jQuery('article');
+			
+			article_border(article_selector);
+			
+		}
    })
 })(jQuery);   
 
@@ -298,8 +306,10 @@ jQuery(document).ready(function($) {
 		
 	/* Calculate header offset */
 	var header_offset = jQuery('#site-header').offset().top;
-	var header_image_height = jQuery('#header-top-image').height(); 
-	var slider_height = jQuery('#slider').height();
+	var header_image_height = 0; 
+	if (jQuery('#header-top-image').length)	{ header_image_height = jQuery('#header-top-image').height(); }
+	var slider_height = 0;
+	if (jQuery('#slider').length) { slider_height = jQuery('#slider').height(); }
 	
 	menu_appear_height = header_image_height + slider_height;
 	menu_disappear_height = menu_appear_height + 1200;
@@ -321,6 +331,8 @@ jQuery(document).ready(function($) {
 	if( isMobile.any() ) {
 		$('#container').removeClass('not-mobile');
 	};
+	
+	
 	
 }); // end of document.ready
 
@@ -357,6 +369,15 @@ function max_height_calc(selector) {
 	return max_height;
 }
 
+// find max height of two blocks
+function max_height_of_two(selector1, selector2) {
+	var max_height = 0;
+	selector1_height = selector1.height();
+	selector2_height = selector2.height();
+	max_height = (selector1_height > selector2_height) ? selector1_height : selector2_height;
+	return max_height;
+}
+
 // set height
 function height_set(selector,height) {
 	selector.each(function(){
@@ -383,6 +404,17 @@ jQuery(window).bind('resize', function() {
 		}, 100);
 	}
 	
+	/* Article border */
+	var article_resize_timeout;
+	
+	if ( jQuery('article').length > 0 ){
+		article_selector = jQuery('article');
+		clearTimeout(article_resize_timeout);
+		article_resize_timeout = setTimeout(function() {
+			article_border(article_selector);
+		}, 100);
+	}
+	
 });
 
 /* Variables for SCROLL Events */
@@ -404,7 +436,7 @@ jQuery(window).on('scroll', function() {
 	}
 	
 	
-	/* run Counters on elements appear */
+	/* run Progress bars on elements appear */
 	if (jQuery('#skills-block').length > 0 && document.body.clientWidth > 1024 ) {
 		if(jQuery("#skills-block").offset().top < (jQuery(window).scrollTop() + jQuery(window).outerHeight()) && !progresses_finished && jQuery("#skills-block").offset().top + jQuery("#skills-block").outerHeight() > (jQuery(window).scrollTop() ) ) {
 			
@@ -415,7 +447,7 @@ jQuery(window).on('scroll', function() {
 		} 
 	}
 	
-	/* run Counters on elements appear */
+	/* run Progress bars on elements appear */
 	if (jQuery('#skills-block').length > 0 && document.body.clientWidth > 1024 ) {
 		if(jQuery("#skills-block").offset().top < (jQuery(window).scrollTop() + jQuery(window).outerHeight()) && !progresses_2_finished && jQuery("#skills-block").offset().top + jQuery("#skills-block").outerHeight() > (jQuery(window).scrollTop() ) ) {
 			
@@ -432,7 +464,8 @@ jQuery(window).on('scroll', function() {
 	
 	if (currScroll > lastScrollTop){	// Scroll Down
 		if ( (jQuery(window).scrollTop() > menu_appear_height) && (jQuery(window).scrollTop() < menu_disappear_height) ) {	
-			if (!(jQuery('#site-header').hasClass('show')))		jQuery('#site-header').addClass('show');
+			if (!(jQuery('#site-header').hasClass('show')))	{	jQuery('#site-header').addClass('show'); }
+			
 		} else {
 			if ( (jQuery('#site-header').hasClass('show')) && !jQuery('#site-header #mob-menu-switch').hasClass('active') )		jQuery('#site-header').removeClass('show');
 		}
@@ -450,6 +483,17 @@ jQuery(window).on('scroll', function() {
 	
 });
 
+
+function article_border(article_selector){
+	article_selector.each(function(){
+		header = jQuery(this).find('.entry-header');
+		content = jQuery(this).find('.entry-content');
+		
+		header.css('height', 'auto');
+		max_height = max_height_of_two(header,content);
+		header.height(max_height);
+	});
+}
 
 /* counter Functions */	
 jQuery.fn.extend({	
@@ -498,7 +542,6 @@ jQuery.fn.extend({
 		interval = typeof(interval) != 'undefined' ? interval : 5;
 		var counterElement = jQuery(this);
 		var final_number = parseInt(counterElement.attr('aria-valuenow'));
-		//alert(final_number);
 		var showing_number = 0;
 		function updateCounter()
 		{
