@@ -96,18 +96,23 @@ button:focus,html input[type="button"]:focus,input[type="reset"]:focus,input[typ
 	border: 2px solid #333;
 }
 .contact-form input[type="text"],
-.contact-form input[type="email"] {
+.contact-form input[type="email"],
+.comment-form input[type="text"],
+.comment-form input[type="email"] {
 	background: none;
 	color: #333;
 	border: 1px solid #fff;
 }
-.contact-form textarea {
+.contact-form textarea,
+.comment-form textarea {
 	background: none;
 	color: #333;
 	border: 1px solid #fff;
 }
 .contact-form input:focus,
-.contact-form textarea:focus {
+.contact-form textarea:focus,
+.comment-form input:focus,
+.comment-form textarea:focus {
 	border: 1px solid #333;
 }
 
@@ -265,4 +270,22 @@ a.social-link:hover .fa{ color:#666; }
 	border-bottom: 1px solid #333;
 }
 
+.post-navigation .nav-previous .meta-nav {
+	background-position:-120px -60px;
+}
+.post-navigation .nav-previous a:hover .meta-nav {
+	background-position:-120px 0;
+}
+.post-navigation .nav-next .meta-nav {
+	background-position:-55px -60px;
+}
+.post-navigation .nav-next a:hover .meta-nav {
+	background-position:-55px 0;
+}
+.post-navigation .meta-text {
+	color:#666;
+}
+.post-navigation a:hover .meta-text {
+	color:#333;
+}
 /* Contact form */

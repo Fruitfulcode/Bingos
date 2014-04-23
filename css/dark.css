@@ -78,18 +78,23 @@ button:focus,html input[type="button"]:focus,input[type="reset"]:focus,input[typ
 	border: 2px solid #fff;
 }
 .contact-form input[type="text"],
-.contact-form input[type="email"] {
+.contact-form input[type="email"],
+.comment-form input[type="text"],
+.comment-form input[type="email"] {
 	background: none;
 	color: #fff;
 	border: 1px solid #202020;
 }
-.contact-form textarea {
+.contact-form textarea,
+.comment-form textarea {
 	background: none;
 	color: #fff;
 	border: 1px solid #202020;
 }
 .contact-form input:focus,
-.contact-form textarea:focus {
+.contact-form textarea:focus,
+.comment-form input:focus,
+.comment-form textarea:focus {
 	border: 1px solid #fff;
 }
 

@@ -139,12 +139,26 @@ jQuery(document).ready(function($) {
 		mouseDrag:		false,
 		touchDrag:		false,
 		autoPlay:		false, 
-		/* stopOnHover:	true,  */
 		singleItem : true,
 		transitionStyle : "fade",  
 		responsiveBaseWidth: "#testimonials .container",
 		
 		theme:			"testimonials-theme",
+		
+		slideSpeed:		200
+		
+	});
+	
+	$(".entry-thumbnail.owl-carousel").owlCarousel({
+		navigation :	false,
+		pagination :	true,
+		mouseDrag:		false,
+		touchDrag:		false,
+		autoPlay:		false, 
+		singleItem : true,
+		transitionStyle : "fade",  
+				
+		theme:			"post-gallery",
 		
 		slideSpeed:		200
 		
@@ -156,7 +170,6 @@ jQuery(document).ready(function($) {
 		mouseDrag:		false,
 		touchDrag:		false,
 		autoPlay:		false, 
-		/* stopOnHover:	true,  */
 		singleItem : true,
 		transitionStyle : "fade",
 		
@@ -192,10 +205,10 @@ jQuery(document).ready(function($) {
     });
 		
 	/* Focus on contact form */
-	$('.contact-form input[type="text"], .contact-form input[type="email"], .contact-form textarea').focusin(function(){
+	$('.contact-form input[type="text"], .contact-form input[type="email"], .contact-form textarea, .comment-form input[type="text"], .comment-form input[type="email"], .comment-form textarea').focusin(function(){
 		$(this).parent().addClass('focus');
 	});
-	$('.contact-form input[type="text"], .contact-form input[type="email"], .contact-form textarea').focusout(function(){
+	$('.contact-form input[type="text"], .contact-form input[type="email"], .contact-form textarea, .comment-form input[type="text"], .comment-form input[type="email"], .comment-form textarea').focusout(function(){
 		$(this).parent().removeClass('focus-error').removeClass('focus');
 	});
 
