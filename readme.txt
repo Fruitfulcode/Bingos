@@ -26,3 +26,6 @@ http://jqueryvalidation.org/
 
 Bootstrap-select
 http://silviomoreto.github.io/bootstrap-select/
+
+jPlayer
+http://www.jplayer.org/

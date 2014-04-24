@@ -340,10 +340,25 @@ jQuery(document).ready(function($) {
 		});
 	} */
 	
+	
+	$("#jplayer_1").jPlayer({
+        ready: function () {
+          $(this).jPlayer("setMedia", {
+            title: "Looking for the summer",
+            mp3: "audio/summer.mp3"
+          });
+        },
+        swfPath: "js/jplayer/Jplayer.swf",
+		solution: "html,flash",
+        supplied: "mp3"
+    });
+	
+	
 	/* Mobile devices */
 	if( isMobile.any() ) {
 		$('#container').removeClass('not-mobile');
 	};
+	
 	
 	
 	

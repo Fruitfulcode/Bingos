@@ -478,9 +478,7 @@ q:after {
 }
 
 blockquote {
-	font-size: 18px;
-	font-style: italic;
-	font-weight: 300;
+	font-size: 24px;
 	margin: 24px 35px;
 }
 
@@ -2204,6 +2202,7 @@ article.image-inside a.thumbnail-link:hover .thumb-overlay {
 	width:100%;
 	overflow:hidden;
 	margin-bottom:35px;
+	position:relative;
 }
 .entry-thumbnail a.thumbnail-link {
 	float:left;
@@ -2243,6 +2242,56 @@ a.thumbnail-link:hover .thumb-overlay {
 	text-align: center;
 	text-transform: lowercase;
 }
+article.quote .entry-header {
+	border:0;
+}
+article.quote .entry-header .quote-sign {
+	border-bottom:0;
+	background-repeat:no-repeat;
+	background-position:center center;
+	height:67px;
+	
+	background-image:url('../images/post-quote-dark.png');
+}
+article.quote blockquote {
+	margin: 0;
+}
+article.quote blockquote p {
+	text-align: justify;
+	margin:0 0 15px;
+	padding-bottom:18px;
+	background-repeat: repeat-x;
+	background-position: 0 bottom;
+	
+	background-image: url("../images/double-underline-dark.png");
+}
+article.quote blockquote cite {
+	margin-right: 0;
+}
+article.link .entry-header {
+	border:0;
+}
+article.link .entry-header .link-sign {
+	border-bottom:0;
+	background-repeat:no-repeat;
+	background-position:center center;
+	height:92px;
+	
+	background-image:url('../images/post-link-dark.png');
+}
+article.link .entry-content {
+	padding-top: 20px;
+}
+article.link .entry-content a {
+	padding: 0 0 18px;
+	font-family: 'opensans-regular', sans-serif;
+	font-size: 24px;
+	line-height: 24px;
+	background-repeat: repeat-x;
+	background-position: 0 bottom;
+	background-image: url("../images/double-underline-dark.png");
+}
+
 .entry-meta div {
 	padding: 20px 5px;
 }
@@ -3102,6 +3151,8 @@ and (max-width:767px) {
 	
 	#blog-recent { padding-bottom:0; }
 	#blog-recent .chapter-title { margin: 0 0 78px; }
+	
+	article { padding-bottom:64px; }
 	
 	.entry-title {
 		font-size: 30px;
