@@ -3,8 +3,7 @@
 <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Benign : Responsive HTML5 Template</title>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width">
-	
+	<meta name="viewport" content="width=device-width, user-scalable=0">
 	<meta name="description" content="">
     <link rel="shortcut icon" href="" type="image/x-icon">
 	<link rel="stylesheet" id="font-style-css" href="fonts/fonts.css" type="text/css" media="all">
@@ -61,16 +60,31 @@
 								<div class="menu-container">
 									<ul id="menu-mainmenu" class="menu">
 										<li><a href="index.html#about-us">about</a></li>
-										<li><a href="index.html#services">Services</a>
-											<ul class="sub-menu">
-												<li><a href="web-elements.html">Web elements</a></li>
-											</ul>
-										</li>
+										<li><a href="index.html#services">Services</a></li>
 										<li><a href="index.html#works">Works</a></li>
-										<li><a href="index.html#price-block">Price</a>
-										</li>
+										<li><a href="index.html#price-block">Price</a></li>
 										<li><a href="blog.html">blog</a></li>
 										<li><a href="index.html#contacts-block">Contacts</a></li>
+										<li><a href="web-elements.html">extras</a>
+											<ul class="sub-menu">
+												<li><a href="web-elements.html#headings-block">headings</a></li>
+												<li><a href="web-elements.html#heading-styles-block">heading styles</a></li>
+												<li><a href="web-elements.html#accordion-block">accordion</a></li>
+												<li><a href="web-elements.html#toggles-block">toggles</a></li>
+												<li><a href="web-elements.html#tabs-block">tabs</a></li>
+												<li><a href="web-elements.html#buttons-block">buttons</a></li>
+												<li><a href="web-elements.html#navigation-block">navigation buttons</a></li>
+												<li><a href="web-elements.html#blockquotes-block">blockquotes</a></li>
+												<li><a href="web-elements.html#blockquotes-block">testimonials</a></li>
+												<li><a href="web-elements.html#alerts-block">alert boxes</a></li>
+												<li><a href="web-elements.html#lists-block">lists</a></li>
+												<li><a href="web-elements.html#pagination-block">pagination</a></li>
+												<li><a href="web-elements.html#progress-block">progress bars</a></li>
+												<li><a href="web-elements.html#tables-block">tables</a></li>
+												<li><a href="web-elements.html#forms-block">forms</a></li>
+												<li><a href="web-elements.html#pricing-tables">pricing tables</a></li>
+											</ul>
+										</li>
 									</ul>	
 								</div>					
 							</nav><!-- .main-navigation -->
@@ -89,12 +103,9 @@
 						<a href="index.html#about-us">About</a>
 						<span class="submenu-button"></span>
 					</li>
-					<li class="menu-item-has-children">
+					<li>
 						<a href="index.html#services">Services</a>
 						<span class="submenu-button"></span>
-						<ul class="sub-menu">
-							<li><a href="web-elements.html">Web elements</a></li>
-						</ul>
 					</li>
 					<li>
 						<a href="index.html#works">Works</a>
@@ -111,6 +122,28 @@
 					<li>
 						<a href="index.html#contacts-block">Contacts</a>
 						<span class="submenu-button"></span>
+					</li>
+					<li class="menu-item-has-children">
+						<a href="web-elements.html">extras</a>
+						<span class="submenu-button"></span>
+						<ul class="sub-menu">
+							<li><a href="web-elements.html#headings-block">headings</a></li>
+							<li><a href="web-elements.html#heading-styles-block">heading styles</a></li>
+							<li><a href="web-elements.html#accordion-block">accordion</a></li>
+							<li><a href="web-elements.html#toggles-block">toggles</a></li>
+							<li><a href="web-elements.html#tabs-block">tabs</a></li>
+							<li><a href="web-elements.html#buttons-block">buttons</a></li>
+							<li><a href="web-elements.html#navigation-block">navigation buttons</a></li>
+							<li><a href="web-elements.html#blockquotes-block">blockquotes</a></li>
+							<li><a href="web-elements.html#blockquotes-block">testimonials</a></li>
+							<li><a href="web-elements.html#alerts-block">alert boxes</a></li>
+							<li><a href="web-elements.html#lists-block">lists</a></li>
+							<li><a href="web-elements.html#pagination-block">pagination</a></li>
+							<li><a href="web-elements.html#progress-block">progress bars</a></li>
+							<li><a href="web-elements.html#tables-block">tables</a></li>
+							<li><a href="web-elements.html#forms-block">forms</a></li>
+							<li><a href="web-elements.html#pricing-tables">pricing tables</a></li>
+						</ul>
 					</li>
 				</ul>
 			</div>	
@@ -167,7 +200,7 @@
 						</div><!-- end .row -->
 						
 						<div class="row elements-block">
-							<div class="col-lg-4 col-md-6 col-xs-12">
+							<div id="accordion-block" class="col-lg-4 col-md-6 col-xs-12">
 								<h2 class="section-title">accordion</h2>
 								
 								<div class="panel-group" id="accordion_1" class="accordion">
@@ -217,7 +250,7 @@
 								
 
 							</div><!-- end .col -->
-							<div class="col-lg-4 col-md-6 col-xs-12">
+							<div id="toggles-block" class="col-lg-4 col-md-6 col-xs-12">
 								<h2 class="section-title">toggles</h2>
 																
 								<div class="panel-group toggles">
@@ -280,7 +313,7 @@
 								</div><!-- .toggles -->
 							</div><!-- end .col -->
 							
-							<div class="col-lg-offset-1 col-lg-3 col-md-6 col-xs-12">
+							<div id="tabs-block" class="col-lg-offset-1 col-lg-3 col-md-6 col-xs-12">
 								<h2 class="section-title">tabs</h2>
 								
 								<ul class="nav nav-tabs" id="my-tab-list">
@@ -306,15 +339,15 @@
 						</div><!-- end .row -->
 						
 						<div class="row elements-block">
-							<div class="col-md-4 col-xs-12">
+							<div id="buttons-block" class="col-md-4 col-xs-12">
 								<h2 class="section-title">buttons</h2>
 								
-								<p>		<a class="double-button" href="#"><span>small button</span></a>		</p>
+								<p>		<a class="double-button small" href="#"><span>small button</span></a>		</p>
 								<p>		<a class="double-button middle" href="#"><span>middle button</span></a>		</p>
 								<p>		<a class="double-button big" href="#"><span>big button</span></a>		</p>
 							</div><!-- end .col -->
 								
-							<div class="col-md-8 col-xs-12">
+							<div id="navigation-block" class="col-md-8 col-xs-12">
 								<h2 class="section-title">navigation buttons</h2>
 								
 								<div class="col-sm-4 col-xs-5">
@@ -351,7 +384,7 @@
 							
 						</div><!-- end .row -->	
 						
-						<div class="row elements-block">
+						<div id="blockquotes-block" class="row elements-block">
 							<h2 class="section-title" style="text-align:center;">blockquotes & testimonials</h2>
 							
 							<div class="col-md-6 col-xs-12">
@@ -375,7 +408,7 @@
 							
 						</div><!-- end .row -->	
 						
-						<div class="row elements-block">
+						<div id="alerts-block" class="row elements-block">
 							<h2 class="section-title">alert boxes</h2>
 							
 							<div class="col-md-6 col-xs-12">
@@ -398,7 +431,7 @@
 							
 						</div><!-- end .row -->	
 						
-						<div class="row elements-block" id="lists-block">
+						<div id="lists-block" class="row elements-block">
 							<h2 class="section-title">lists</h2>
 								
 							<div class="col-md-3 col-xs-6">
@@ -437,56 +470,60 @@
 						
 						<div class="row elements-block">
 							<div class="col-md-5 col-xs-12">
-								<h2 class="section-title">pagination</h2>
+								<div id="pagination-block">
+									<h2 class="section-title">pagination</h2>
+									
+									<ul class="pagination">
+									  <li><a href="#">previous</a></li>
+									  <li><a href="#">1</a></li>
+									  <li><a href="#">2</a></li>
+									  <li><a href="#">3</a></li>
+									  <li><a href="#">4</a></li>
+									  <li><a href="#">5</a></li>
+									  <li><a href="#">next</a></li>
+									</ul>
+								</div>
 								
-								<ul class="pagination">
-								  <li><a href="#">previous</a></li>
-								  <li><a href="#">1</a></li>
-								  <li><a href="#">2</a></li>
-								  <li><a href="#">3</a></li>
-								  <li><a href="#">4</a></li>
-								  <li><a href="#">5</a></li>
-								  <li><a href="#">next</a></li>
-								</ul>
-								
-								<h2 class="section-title" style="margin-top:65px;">progress bar</h2>
-								
-								<div id="skills-block">
-									<span class="progress-title">photoshop</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" aria-valuenow="86" aria-valuemin="0" aria-valuemax="100" style="width: 86%;">
-											<span class="sr-only">86%</span>
+								<div id="progress-block">
+									<h2 class="section-title" style="margin-top:65px;">progress bars</h2>
+									
+									<div id="skills-block">
+										<span class="progress-title">photoshop</span>
+										<div class="progress">
+											<div class="progress-bar" role="progressbar" aria-valuenow="86" aria-valuemin="0" aria-valuemax="100" style="width: 86%;">
+												<span class="sr-only">86%</span>
+											</div>
 										</div>
-									</div>
-									<span class="progress-title">illustrator</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" aria-valuenow="76" aria-valuemin="0" aria-valuemax="100" style="width: 76%;">
-											<span class="sr-only">76%</span>
+										<span class="progress-title">illustrator</span>
+										<div class="progress">
+											<div class="progress-bar" role="progressbar" aria-valuenow="76" aria-valuemin="0" aria-valuemax="100" style="width: 76%;">
+												<span class="sr-only">76%</span>
+											</div>
 										</div>
-									</div>
-									<span class="progress-title">html & css</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" style="width: 65%;">
-											<span class="sr-only">65%</span>
+										<span class="progress-title">html & css</span>
+										<div class="progress">
+											<div class="progress-bar" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" style="width: 65%;">
+												<span class="sr-only">65%</span>
+											</div>
 										</div>
-									</div>
-									<span class="progress-title">javascript</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">
-											<span class="sr-only">50%</span>
+										<span class="progress-title">javascript</span>
+										<div class="progress">
+											<div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">
+												<span class="sr-only">50%</span>
+											</div>
 										</div>
-									</div>
-									<span class="progress-title">wordpress</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100" style="width: 92%;">
-											<span class="sr-only">92%</span>
+										<span class="progress-title">wordpress</span>
+										<div class="progress">
+											<div class="progress-bar" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100" style="width: 92%;">
+												<span class="sr-only">92%</span>
+											</div>
 										</div>
 									</div>
 								</div>
 
 							</div><!-- end .col -->
 								
-							<div class="col-md-offset-1 col-md-6 col-xs-offset-0  col-xs-12">
+							<div id="tables-block" class="col-md-offset-1 col-md-6 col-xs-offset-0  col-xs-12">
 								<h2 class="section-title">tables</h2>
 								
 								<table>
@@ -541,11 +578,11 @@
 							
 						</div><!-- end .row -->	
 	
-						<div class="row elements-block">
+						<div id="forms-block" class="row elements-block">
 							<h2 class="section-title">forms</h2>
 							
 							
-								<form action="" method="post" id="test-form" class="contact-form">
+								<form action="" method="post" id="test-form" class="contact-form clearfix">
 									<div class="col-md-6 col-xs-12">
 										<div class="form-row">
 											<label for="text-field">text: </label>
@@ -569,18 +606,7 @@
 												<textarea name="text-area" id="text-area" cols="40" rows="6" required></textarea>
 											</div>
 										</div>
-										
-										
-										
-										
-										<div class="input-submit-wrapper">
-											<input type="submit" value="Send message" id="submit" >
-										</div>
-										
-										<div id="form-status"></div>
 									</div><!-- end .col -->
-									
-									
 									
 									<div class="col-md-offset-1 col-md-5 col-xs-12">
 										<div>
@@ -607,6 +633,16 @@
 										</div>
 										
 									</div><!-- end .col -->
+									
+									<div class="clear"></div>
+									
+									<div class="col-md-6 col-xs-12">
+										<div class="input-submit-wrapper">
+											<input type="submit" value="Send message" id="submit" >
+										</div>
+										
+										<div id="form-status"></div>
+									</div><!-- end .col -->
 								</form>
 							
 							
@@ -618,7 +654,7 @@
 							
 						</div><!-- end .row -->	
 	
-						<div class="row elements-block">
+						<div id="pricing-tables" class="row elements-block">
 							<h2 class="section-title">pricing tables</h2>
 							
 							<div class="price-packet col-sm-6 col-md-3">

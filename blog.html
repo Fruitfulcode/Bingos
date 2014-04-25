@@ -3,8 +3,7 @@
 <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Benign : Responsive HTML5 Template</title>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width">
-	
+	<meta name="viewport" content="width=device-width, user-scalable=0">
 	<meta name="description" content="">
     <link rel="shortcut icon" href="" type="image/x-icon">
 	<link rel="stylesheet" id="font-style-css" href="fonts/fonts.css" type="text/css" media="all">
@@ -38,6 +37,8 @@
 </head>
 <body class="blog">
 	
+	
+	
 	<div id="container" class="not-mobile">
 		<div id="header-image-container">
 			<div id="header-top-image"></div>
@@ -49,28 +50,43 @@
 			<div id="main-header">
 				<div class="container">
 					<div class="row">
-						<div class="col-lg-5 col-md-5 col-xs-9">
+						<div class="col-lg-4 col-md-4 col-xs-9">
 							<!-- Site logo -->
 							<a href="index.html" id="site-logo"><img src="images/logo-benign-white.png" alt="logo"/></a>
 							
 						</div>
 						
-						<div class="col-lg-7 col-md-7 col-xs-3">
+						<div class="col-lg-8 col-md-8 col-xs-3">
 							<!-- Main menu -->
 							<nav role="navigation" class="main-navigation"> 
 								<div class="menu-container">
 									<ul id="menu-mainmenu" class="menu">
 										<li><a href="index.html#about-us">about</a></li>
-										<li><a href="index.html#services">Services</a>
-											<ul class="sub-menu">
-												<li><a href="web-elements.html">Web elements</a></li>
-											</ul>
-										</li>
+										<li><a href="index.html#services">Services</a></li>
 										<li><a href="index.html#works">Works</a></li>
-										<li><a href="index.html#price-block">Price</a>
-										</li>
+										<li><a href="index.html#price-block">Price</a></li>
 										<li><a href="blog.html">blog</a></li>
 										<li><a href="index.html#contacts-block">Contacts</a></li>
+										<li><a href="web-elements.html">extras</a>
+											<ul class="sub-menu">
+												<li><a href="web-elements.html#headings-block">headings</a></li>
+												<li><a href="web-elements.html#heading-styles-block">heading styles</a></li>
+												<li><a href="web-elements.html#accordion-block">accordion</a></li>
+												<li><a href="web-elements.html#toggles-block">toggles</a></li>
+												<li><a href="web-elements.html#tabs-block">tabs</a></li>
+												<li><a href="web-elements.html#buttons-block">buttons</a></li>
+												<li><a href="web-elements.html#navigation-block">navigation buttons</a></li>
+												<li><a href="web-elements.html#blockquotes-block">blockquotes</a></li>
+												<li><a href="web-elements.html#blockquotes-block">testimonials</a></li>
+												<li><a href="web-elements.html#alerts-block">alert boxes</a></li>
+												<li><a href="web-elements.html#lists-block">lists</a></li>
+												<li><a href="web-elements.html#pagination-block">pagination</a></li>
+												<li><a href="web-elements.html#progress-block">progress bars</a></li>
+												<li><a href="web-elements.html#tables-block">tables</a></li>
+												<li><a href="web-elements.html#forms-block">forms</a></li>
+												<li><a href="web-elements.html#pricing-tables">pricing tables</a></li>
+											</ul>
+										</li>
 									</ul>	
 								</div>					
 							</nav><!-- .main-navigation -->
@@ -89,12 +105,9 @@
 						<a href="index.html#about-us">About</a>
 						<span class="submenu-button"></span>
 					</li>
-					<li class="menu-item-has-children">
+					<li>
 						<a href="index.html#services">Services</a>
 						<span class="submenu-button"></span>
-						<ul class="sub-menu">
-							<li><a href="web-elements.html">Web elements</a></li>
-						</ul>
 					</li>
 					<li>
 						<a href="index.html#works">Works</a>
@@ -111,6 +124,28 @@
 					<li>
 						<a href="index.html#contacts-block">Contacts</a>
 						<span class="submenu-button"></span>
+					</li>
+					<li class="menu-item-has-children">
+						<a href="web-elements.html">extras</a>
+						<span class="submenu-button"></span>
+						<ul class="sub-menu">
+							<li><a href="web-elements.html#headings-block">headings</a></li>
+							<li><a href="web-elements.html#heading-styles-block">heading styles</a></li>
+							<li><a href="web-elements.html#accordion-block">accordion</a></li>
+							<li><a href="web-elements.html#toggles-block">toggles</a></li>
+							<li><a href="web-elements.html#tabs-block">tabs</a></li>
+							<li><a href="web-elements.html#buttons-block">buttons</a></li>
+							<li><a href="web-elements.html#navigation-block">navigation buttons</a></li>
+							<li><a href="web-elements.html#blockquotes-block">blockquotes</a></li>
+							<li><a href="web-elements.html#blockquotes-block">testimonials</a></li>
+							<li><a href="web-elements.html#alerts-block">alert boxes</a></li>
+							<li><a href="web-elements.html#lists-block">lists</a></li>
+							<li><a href="web-elements.html#pagination-block">pagination</a></li>
+							<li><a href="web-elements.html#progress-block">progress bars</a></li>
+							<li><a href="web-elements.html#tables-block">tables</a></li>
+							<li><a href="web-elements.html#forms-block">forms</a></li>
+							<li><a href="web-elements.html#pricing-tables">pricing tables</a></li>
+						</ul>
 					</li>
 				</ul>
 			</div>	
@@ -438,11 +473,8 @@
 									
 									<article class="post">
 										<div class="entry-thumbnail">
-											<a href="post6.html" class="thumbnail-link">
-												<img src="images/post-feature-6.jpg" alt="Featured Image">		
-												<div class="thumb-overlay"></div>
-											</a>
 											
+											<img src="images/post-feature-6.jpg" alt="Featured Image">		
 											<div id="jplayer_1" class="jp-jplayer"></div>
 											
 											<div id="jp_container_1" class="jp-audio">
@@ -507,7 +539,7 @@
 														
 														<div class="categories-links">
 															<ul>
-																<li><a href="#" title="View all posts in Design" rel="category tag">audio</a></li>
+																<li><a href="#" title="View all posts in Audio" rel="category tag">audio</a></li>
 															</ul>
 														</div>
 														
@@ -521,7 +553,7 @@
 										
 											</div>
 											
-											<div class="col-md-9 col-sm-8 col-xs-12">
+											<div class="col-md-9 col-sm-8 col-xs-8">
 												<div class="entry-content">
 													<h3 class="entry-title">
 														<a href="post6.html">audio post with a featured image.</a>
@@ -551,7 +583,7 @@
 										
 											</div>
 											
-											<div class="col-md-9 col-sm-8 col-xs-12">
+											<div class="col-md-9 col-sm-8 col-xs-8">
 												<div class="entry-content">
 													<blockquote>
 														<p>
@@ -593,13 +625,12 @@
 														
 														<div class="categories-links">
 															<ul>
-																<li><a href="#" title="View all posts in Design" rel="category tag">audio</a></li>
+																<li><a href="#" title="View all posts in Audio" rel="category tag">audio</a></li>
 															</ul>
 														</div>
 														
 														<div class="tag-links">
-															<a href="#" rel="tag">audio</a>, 
-															<a href="#" rel="tag">post</a>
+															<a href="#" rel="tag">soundcloud</a>
 														</div>
 														
 													</div><!-- .entry-meta -->
@@ -607,7 +638,7 @@
 										
 											</div>
 											
-											<div class="col-md-9 col-sm-8 col-xs-12">
+											<div class="col-md-9 col-sm-8 col-xs-8">
 												<div class="entry-content">
 													<h3 class="entry-title">
 														<a href="post7.html">soundcloud post.</a>
@@ -637,7 +668,7 @@
 										
 											</div>
 											
-											<div class="col-md-9 col-sm-8 col-xs-12">
+											<div class="col-md-9 col-sm-8 col-xs-8">
 												<div class="entry-content">
 													<a href="https://vimeo.com" target="_blank">https://vimeo.com</a>
 												</div>
@@ -647,7 +678,7 @@
 									
 									<article class="post">
 										<div class="entry-thumbnail">
-											<iframe src="//player.vimeo.com/video/90802912?title=0&amp;byline=0&amp;portrait=0&amp;badge=0" width="846" height="356" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+											<iframe src="//player.vimeo.com/video/92179785?title=0&amp;byline=0&amp;portrait=0" width="848" height="477" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 										</div>
 										
 										<div class="row">
@@ -671,12 +702,12 @@
 														
 														<div class="categories-links">
 															<ul>
-																<li><a href="#" title="View all posts in Design" rel="category tag">audio</a></li>
+																<li><a href="#" title="View all posts in Video" rel="category tag">video</a></li>
 															</ul>
 														</div>
 														
 														<div class="tag-links">
-															<a href="#" rel="tag">audio</a>, 
+															<a href="#" rel="tag">video</a>, 
 															<a href="#" rel="tag">post</a>
 														</div>
 														
@@ -685,7 +716,7 @@
 										
 											</div>
 											
-											<div class="col-md-9 col-sm-8 col-xs-12">
+											<div class="col-md-9 col-sm-8 col-xs-8">
 												<div class="entry-content">
 													<h3 class="entry-title">
 														<a href="post8.html">video post.</a>

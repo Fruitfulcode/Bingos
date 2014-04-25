@@ -2,6 +2,9 @@
 var menu_appear_height;
 var menu_disappear_height;
 
+/* Focus variable - check if input focused */
+var input_focused = false;
+
 /* Smooth Scroll Settings for Desktop */
 $(function(){
 	
@@ -207,12 +210,22 @@ jQuery(document).ready(function($) {
 	/* Focus on contact form */
 	$('.contact-form input[type="text"], .contact-form input[type="email"], .contact-form textarea, .comment-form input[type="text"], .comment-form input[type="email"], .comment-form textarea').focusin(function(){
 		$(this).parent().addClass('focus');
+		input_focused = true;
 	});
 	$('.contact-form input[type="text"], .contact-form input[type="email"], .contact-form textarea, .comment-form input[type="text"], .comment-form input[type="email"], .comment-form textarea').focusout(function(){
 		$(this).parent().removeClass('focus-error').removeClass('focus');
+		input_focused = false;
 	});
 
 	/*== Mobile menu ==*/
+	/* 
+	window_height = document.documentElement.clientHeight;
+	header_height = $('#site-header').height();
+	window_height = window_height - header_height;
+	
+	$('#hidden-mobile-menu').css('max-height',window_height);
+	 */
+	
 	/* Mobile menu switch */
 	$('a#mob-menu-switch').on("click", function(e){
 		if ( $('#menu-mobilemenu').hasClass('active') ){
@@ -375,6 +388,9 @@ var isMobile = {
     iOS: function() {
         return navigator.userAgent.match(/iPhone|iPad|iPod/i);
     },
+	iPhone: function() {
+        return navigator.userAgent.match(/iPhone/i);
+    },
     Opera: function() {
         return navigator.userAgent.match(/Opera Mini/i);
     },
@@ -498,16 +514,13 @@ jQuery(window).on('scroll', function() {
 			if ( (jQuery('#site-header').hasClass('show')) && !jQuery('#site-header #mob-menu-switch').hasClass('active') )		jQuery('#site-header').removeClass('show');
 		}
 	} else { 	// Scroll UP
-		if (jQuery(window).scrollTop() > menu_appear_height)  {	
+		if (input_focused == false && jQuery(window).scrollTop() > menu_appear_height)  {	
 			if (!(jQuery('#site-header').hasClass('show')))		jQuery('#site-header').addClass('show');
 		} else {
 			if ( (jQuery('#site-header').hasClass('show')) && !jQuery('#site-header #mob-menu-switch').hasClass('active') )		jQuery('#site-header').removeClass('show');
 		}
 	}
 	lastScrollTop = currScroll;
-	
-	
-	
 	
 });
 
