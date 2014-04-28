@@ -72,7 +72,7 @@
 		// if true the item's slices will also animate the opacity value
 		optOpacity : false,
 		// amount (%) to translate both slices - adjust as necessary
-		translateFactor : 230,
+		translateFactor : 100,
 		// maximum possible angle
 		maxAngle : 25,
 		// maximum possible scale
@@ -80,7 +80,7 @@
 		// slideshow on / off
 		autoplay : false,
 		// keyboard navigation
-		keyboard : true,
+		keyboard : false,
 		// time between transitions
 		interval : 4000,
 		// callbacks
