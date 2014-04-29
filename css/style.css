@@ -636,7 +636,7 @@ li a:active { text-decoration:none; }
 	padding:7px 16px;
 }
 
-.double-button.middle span {
+.double-button.medium span {
 	font-size:22px;
 	line-height:26px;
 	padding:15px 24px;
@@ -1049,6 +1049,8 @@ body .panel-title a{
 .column-right {
 	padding-left:40px;
 }
+
+/* === Slides === */
 
 
 /* === Slider ===*/
@@ -1494,7 +1496,7 @@ header#site-header {
 	top:0;
 	opacity:0;
 	filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
-	
+	visibility:hidden;
 	width:100%;
 	z-index:99999;
 	
@@ -1508,6 +1510,7 @@ header#site-header {
 header#site-header.show {
 	opacity:1;
 	filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+	visibility:visible;
 }
 
 #site-logo {
@@ -2594,12 +2597,12 @@ a.thumbnail-link:hover .flickr {
 #tweets-carousel {
 	padding: 103px 10%;
 }
-/* #tweets-carousel .tweet-block{
+#tweets-carousel .block-with-quotes{
 	display:none;
 }
-#tweets-carousel .tweet-block.on{
+#tweets-carousel .block-with-quotes.on{
 	display:block;
-} */
+}
 #twitter-block .quote-open,
 #twitter-block .quote-close {
 	width: 28px;
