@@ -1,4 +1,5 @@
-$.noConflict();
+//$.noConflict();
+
 /* Variables for Heights */
 var menu_appear_height;
 var menu_disappear_height;
@@ -71,6 +72,83 @@ jQuery.fn.extend({
 	
 });
 
+/* FadeIn / FadeOut */
+(function($) {
+    var default_fade_config = {
+        fadeIn: 1000,
+        stay: 5000,
+        fadeOut: 1000
+    };
+
+	
+	
+	function hide_elements($elements) {
+        $elements.hide();
+    }
+	
+    function fade(index, $elements, config) {
+        $elements.eq(index)
+          .fadeTo(config.fadeIn,1)
+          .delay(config.stay)
+          .fadeTo(config.fadeOut, 0, function() {
+              fade((index + 1) % $elements.length, $elements, config);
+          });
+    }
+
+    $.fn.fadeLoop = function(config) {     
+		//set_height_elements(this);
+		//hide_elements(this);
+        fade(0, this, $.extend({}, default_fade_config, config));
+        return this;
+    };
+	
+	/* Testimonials */
+	
+	var default_testimon_config = {
+        autoplay: false,
+        pagination: true
+    };
+	
+	function testimonialChange(index, $elements, config) {
+        $elements.eq(index)
+          .fadeIn(config.fadeIn)
+          .delay(config.stay)
+          .fadeOut(config.fadeOut, function() {
+              fade((index + 1) % $elements.length, $elements, config);
+          });
+    }
+	
+	function testimonialLoop(index, $elements, config) {
+        $elements.eq(index)
+          .fadeIn(config.fadeIn)
+          .delay(config.stay)
+          .fadeOut(config.fadeOut, function() {
+              fade((index + 1) % $elements.length, $elements, config);
+          });
+    }
+	
+	$.fn.testimonialInit = function(config) {     
+		//set_height_elements(this);
+		//hide_elements(this);
+		var head = jQuery("head");
+		var viewport = '<meta name="viewport" content="width=640">';
+		if( isMobile.iPhone() ) {
+			head.append(viewport);
+		}
+		
+        testimonialChange(0, this, $.extend({}, default_testimon_config, config));
+        return this;
+    };
+
+}(jQuery));
+
+function set_height_elements($elements) {
+	$elements.css('display','block');
+	var max_height = max_height_calc($elements);
+	$elements.css('display','');
+	//alert(max_height);
+	padding_height_set($elements,max_height);
+}
 
 // find max height of blocks
 function max_height_calc(selector) {
@@ -98,6 +176,19 @@ function height_set(selector,height) {
 		jQuery(this).css("height", height + "px");
 	});
 }
+
+// padding set for equal height
+function padding_height_set(selector,max_height) {
+	selector.each(function(){
+		var cur_height = jQuery(this).height();
+		var padding = (cur_height <= max_height) ? (max_height-cur_height)/2 : false ;
+		if (padding) {
+			jQuery(this).css("padding-top", padding + "px");
+			jQuery(this).css("padding-bottom", padding + "px");
+		}
+	});
+}
+
 
 /* isotop resize relayout timeout */
 function isotope_relayout(selector){
@@ -218,6 +309,15 @@ var isMobile = {
 				"max-height":"none"
 			});
 		}
+		
+		
+		/* Tweets fadein/fadeout init */
+		if ($("#tweets-carousel").length ) {
+			$('#tweets-carousel .block-with-quotes').fadeLoop({fadeIn: 500, stay: 4000, fadeOut: 500});
+		}
+			
+		var $testimonils_selector = $('#testimonial-slider .slides li');
+		//set_height_elements($testimonils_selector);
    })
 })(jQuery);   
 
@@ -342,9 +442,7 @@ jQuery(document).ready(function($) {
 		/* slideSpeed:		300, */
 		dragBeforeAnimFinish: false
 	});
-
-	
-
+	/* 
 	$(".entry-thumbnail.owl-carousel").owlCarousel({
 		navigation :	false,
 		pagination :	true,
@@ -358,11 +456,60 @@ jQuery(document).ready(function($) {
 		
 		slideSpeed:		200
 		
-	});
+	}); 
+	 */
 	 
-	if ($("#tweets-carousel").length ) 		showTweets();
-
+	/* $(".entry-thumbnail.slides").owlCarousel({
+		navigation :	false,
+		pagination :	true,
+		mouseDrag:		false,
+		touchDrag:		false,
+		autoPlay:		false, 
+		singleItem : true,
+		transitionStyle : "fade",  
+				
+		theme:			"post-gallery",
+		
+		slideSpeed:		200
+		
+	});  */
 	
+	/* $("#testimonial-slider").slidesjs({
+		height: 270,
+		pagination: {
+          effect: "fade"
+        },
+        effect: {
+          fade: {
+            speed: 400
+          }
+        }
+	}); */
+	
+	
+	if ($("#testimonial-slider").length){
+		$("#testimonial-slider").flexslider({
+			//smoothHeight:	true,
+			directionNav:	false,
+			touch:	false,
+			animation: "fade",
+			slideshow:	false,
+			slideshowSpeed:	4000,
+			animationSpeed:	1000
+		});
+	}
+	
+	/* if ($("#tweets-carousel").length){
+		$('#tweets-carousel').flexslider({
+			directionNav:	false,
+			
+			touch:	false,
+			animation: "fade",
+			slideshow:	false,
+			slideshowSpeed:	4000,
+			animationSpeed:	1000
+		});
+	} */
 	
 	/* Validation of Contact Form */
 	$('#submit').click(function(){

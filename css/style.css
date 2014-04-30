@@ -162,9 +162,6 @@ b, strong {
 dfn, cite, em, i {
     font-style:italic;
 }
-blockquote {
-    margin:0 1.5em;
-}
 address {
     margin:0 0 1.5em;
 }
@@ -2120,9 +2117,13 @@ ul.isotope-option li.option-select {
 	background-image:url("../images/testimonials.jpg");
 	text-align:center;
 }
-#testimonial-carousel {
+#testimonial-slider {
 	padding:0 2%;
 }
+#testimonial-slider blockquote {
+	margin:0;
+}
+#testimonial-slider .flex-control-nav {margin-top: 50px; }
 
 .testimonials-theme .owl-controls {
 	margin:50px 0 0;
@@ -2596,12 +2597,24 @@ a.thumbnail-link:hover .flickr {
 }
 #tweets-carousel {
 	padding: 103px 10%;
+	position:relative;
 }
-#tweets-carousel .block-with-quotes{
-	display:none;
+#tweets-carousel:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
 }
-#tweets-carousel .block-with-quotes.on{
-	display:block;
+#tweets-carousel .block-with-quotes {
+	width: 100%;
+	float: left;
+	margin-right: -100%;
+	position: relative;
+	opacity: 0;
+	display: block;
+	z-index: 1;
 }
 #twitter-block .quote-open,
 #twitter-block .quote-close {
