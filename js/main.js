@@ -80,73 +80,74 @@ jQuery.fn.extend({
         fadeOut: 1000
     };
 
-	
-	
-	function hide_elements($elements) {
-        $elements.hide();
-    }
-	
     function fade(index, $elements, config) {
         $elements.eq(index)
-          .fadeTo(config.fadeIn,1)
-          .delay(config.stay)
-          .fadeTo(config.fadeOut, 0, function() {
-              fade((index + 1) % $elements.length, $elements, config);
-          });
-    }
-
+		.fadeTo(config.fadeIn,1)
+		.delay(config.stay)
+		.fadeTo(config.fadeOut, 0, function() {
+		  fade((index + 1) % $elements.length, $elements, config);
+		});
+	} 
+    
+	
     $.fn.fadeLoop = function(config) {     
-		//set_height_elements(this);
-		//hide_elements(this);
-        fade(0, this, $.extend({}, default_fade_config, config));
-        return this;
-    };
-	
-	/* Testimonials */
-	
-	var default_testimon_config = {
-        autoplay: false,
-        pagination: true
-    };
-	
-	function testimonialChange(index, $elements, config) {
-        $elements.eq(index)
-          .fadeIn(config.fadeIn)
-          .delay(config.stay)
-          .fadeOut(config.fadeOut, function() {
-              fade((index + 1) % $elements.length, $elements, config);
-          });
-    }
-	
-	function testimonialLoop(index, $elements, config) {
-        $elements.eq(index)
-          .fadeIn(config.fadeIn)
-          .delay(config.stay)
-          .fadeOut(config.fadeOut, function() {
-              fade((index + 1) % $elements.length, $elements, config);
-          });
-    }
-	
-	$.fn.testimonialInit = function(config) {     
-		//set_height_elements(this);
-		//hide_elements(this);
-		var head = jQuery("head");
-		var viewport = '<meta name="viewport" content="width=640">';
-		if( isMobile.iPhone() ) {
-			head.append(viewport);
-		}
 		
-        testimonialChange(0, this, $.extend({}, default_testimon_config, config));
-        return this;
+		$(this).each(function(){
+			var fadeSlides = $(this).find('.fade-slide');
+			
+			fade(0, fadeSlides, $.extend({}, default_fade_config, config));
+			return this;
+		});
     };
+	
+	/* Dots slider */
+	var default_dots_config = {
+        fadeIn: 1000,
+        stay: 5000,
+        fadeOut: 1000
+    };
+	
+	function showOne(index, $elements, config) {
+        $elements.eq(index)
+		.fadeTo(config.fadeIn,1);
+	} 
+	
+	$.fn.dotsSlider = function(config) {     
+		
+		$(this).each(function(){
+			
+			var dotsSlides = $(this).find('.slide');
+			var slidesNum = dotsSlides.length;
+			
+			//alert(slidesNum);
+			var dotsBlock = '<ul class="dots-nav">';
+			var i=1;
+			while(i <= slidesNum){
+				if (i==1){
+					dotsBlock += '<li><a class="active" href="#">' + i + '</a></li>';
+				} else {
+					dotsBlock += '<li><a href="#">' + i + '</a></li>';
+				}
+				i++;
+			}
+			dotsBlock += '</ul>';
+			
+			$(this).append(dotsBlock);
+			
+			showOne(0, dotsSlides, $.extend({}, default_fade_config, config));
+			
+			return this;
+			
+		});
+    }; 
+	
 
 }(jQuery));
 
-function set_height_elements($elements) {
-	$elements.css('display','block');
+function set_height_elements_via_padding($elements) {
+	//$elements.css('display','block');
 	var max_height = max_height_calc($elements);
-	$elements.css('display','');
-	//alert(max_height);
+	//$elements.css('display','');
 	padding_height_set($elements,max_height);
 }
 
@@ -313,7 +314,14 @@ var isMobile = {
 		
 		/* Tweets fadein/fadeout init */
 		if ($("#tweets-carousel").length ) {
-			$('#tweets-carousel .block-with-quotes').fadeLoop({fadeIn: 500, stay: 4000, fadeOut: 500});
+			// set equal height to tweets
+			set_height_elements_via_padding($('#tweets-carousel .block-with-quotes'));
+			// Fade in / fade out tweets
+			$('#tweets-carousel').fadeLoop({
+				fadeIn: 500, 
+				stay: 4000, 
+				fadeOut: 500
+			});
 		}
 			
 		var $testimonils_selector = $('#testimonial-slider .slides li');
@@ -345,6 +353,8 @@ function showTweets() {
 }
 
 jQuery(document).ready(function($) {
+	
+	
 	
 	if ( $('#slider').length ) {
 		/* Slider initialization */
@@ -459,20 +469,13 @@ jQuery(document).ready(function($) {
 	}); 
 	 */
 	 
-	/* $(".entry-thumbnail.slides").owlCarousel({
-		navigation :	false,
-		pagination :	true,
-		mouseDrag:		false,
-		touchDrag:		false,
-		autoPlay:		false, 
-		singleItem : true,
-		transitionStyle : "fade",  
-				
-		theme:			"post-gallery",
-		
-		slideSpeed:		200
-		
-	});  */
+	if ($(".entry-thumbnail.slider-dots").length){
+		$(".entry-thumbnail.slider-dots").dotsSlider({
+			fadeIn: 500, 
+			stay: 4000, 
+			fadeOut: 500
+		}); 
+	}
 	
 	/* $("#testimonial-slider").slidesjs({
 		height: 270,
@@ -488,16 +491,18 @@ jQuery(document).ready(function($) {
 	
 	
 	if ($("#testimonial-slider").length){
-		$("#testimonial-slider").flexslider({
-			//smoothHeight:	true,
-			directionNav:	false,
-			touch:	false,
-			animation: "fade",
-			slideshow:	false,
-			slideshowSpeed:	4000,
-			animationSpeed:	1000
-		});
+		$("#testimonial-slider").dotsSlider({
+			fadeIn: 500, 
+			stay: 4000, 
+			fadeOut: 500
+		}); 
 	}
+	
+	
+	
+
+	
+	
 	
 	/* if ($("#tweets-carousel").length){
 		$('#tweets-carousel').flexslider({
@@ -689,6 +694,39 @@ jQuery(document).ready(function($) {
 	if( isMobile.any() ) {
 		$('#container').removeClass('not-mobile');
 	};
+	
+	
+	/* Part of dotsSlider - Should be at the end of Document.ready */
+	$('.dots-nav li a').on("click", function(e){
+		if (!($(this).hasClass('active'))) {
+			/* Config speed*/
+			fadeIn_time = 500;
+			fadeOut_time = 500;
+			
+			/* Vars */
+			index = parseInt($(this).html());
+			index = index - 1;
+			var pastActive = $(this).closest('.dots-nav').find('a.active');
+			var sliderBlock = $(this).closest('.slider-dots');
+			var dotsSlides = sliderBlock.find('.slide');
+			var slidesNum = dotsSlides.length;
+			
+			/* Remove class .active */
+			pastActive.removeClass('active');
+			
+			/* Hide current */
+			dotsSlides.each(function(){
+				var opacity_val = $(this).css('opacity');
+				if (opacity_val == '1') $(this).fadeTo(fadeOut_time,0);
+			});
+			
+			/* Show selected */
+			dotsSlides.eq(index).delay(fadeOut_time).fadeTo(fadeIn_time,1);
+			
+			$(this).addClass('active');
+		}
+		e.preventDefault();
+	}); 
 	
 }); // end of document.ready
 
