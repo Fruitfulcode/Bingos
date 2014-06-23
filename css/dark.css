@@ -169,7 +169,8 @@ ul.list-stars li {
 .main-navigation ul ul {
 	background:none #fff;
 }
-.main-navigation ul li:hover > a {
+.not-mobile .main-navigation ul li:hover > a,
+.main-navigation ul li.hover > a {
 	background:none repeat scroll 0 0 #ccc;
     color:#202020;
 }

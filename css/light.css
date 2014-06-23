@@ -186,7 +186,8 @@ ul.list-stars li {
 .main-navigation ul ul {
 	background:none #333333;
 }
-.main-navigation ul li:hover > a {
+.not-mobile .main-navigation ul li:hover > a,
+.main-navigation ul li.hover > a  {
 	background:none repeat scroll 0 0 #ccc;
     color:#333;
 }

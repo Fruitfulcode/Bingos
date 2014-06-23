@@ -14,7 +14,7 @@ html {
     ms-text-size-adjust:100%;
     overflow:auto;
     webkit-text-size-adjust:100%;
-	min-width:640px;
+	/* min-width:640px; */
 }
 body {
     font-size:14px;
@@ -1701,12 +1701,14 @@ header#site-header.show {
 	-ms-transition: all 0.2s ease-in-out; 
 	transition: all 0.2s ease-in-out;	
 }
-.main-navigation ul li:hover > ul {
+.not-mobile .main-navigation ul li:hover > ul,
+.main-navigation ul li.hover > ul {
     margin:0;
 	opacity:1;
 	filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
 	visibility:visible;
 }
+
 .menu-toggle {
     cursor:pointer;
 }
@@ -3020,6 +3022,18 @@ and (max-width:760px) {
 }
 
 @media only screen 
+and (max-width:1200px) {
+
+	body .background-fix {
+		background-position: center center;
+		background-attachment: scroll;
+		-webkit-background-size: auto; 
+		-moz-background-size: auto;
+		background-size: auto; 
+	}
+}
+
+@media only screen 
 and (min-width:992px)
 and (max-width:1200px) {
 	
@@ -3033,18 +3047,6 @@ and (max-width:1200px) {
 @media only screen 
 and (max-width:991px) {
 
-	body .background-fix {
-		background-position: center center;
-		background-attachment: scroll;
-		-webkit-background-size: auto; 
-		-moz-background-size: auto;
-		background-size: auto; 
-	}
-	
-	#site-logo {
-		height:80px;
-	}
-
 	.sl-slider .slide-title {
 		height: 456px;
 	}
@@ -3053,8 +3055,7 @@ and (max-width:991px) {
 		line-height: 120px;
 		word-wrap: break-word;
 	}
-	a#mob-menu-switch {display:block;}
-	nav.main-navigation{display:none;}
+	
 	
 	.owl-item .about-person {	bottom: 0;	}
 	
@@ -3104,6 +3105,19 @@ and (max-width:991px) {
 }
 
 @media only screen 
+and (min-width:1024px)
+and (max-width:1200px) {
+	#works #isotope-wrapper {width:1024px; margin:0 auto;}
+	.isotope .isotope-item img { width: 341.333333px; }
+}
+
+@media only screen 
+and (min-width:768px)
+and (max-width:1023px) {
+	#works #isotope-wrapper {width:760px; margin:0 auto;}
+}
+
+@media only screen 
 and (min-width:768px)
 and (max-width:991px) {
 
@@ -3119,12 +3133,20 @@ and (max-width:991px) {
 	#blog-recent .column-right { padding-left:15px;	}
 	
 	#container-404 { padding-bottom:200px; }
+	
+	.main-navigation a { padding:11px 3px; }
 }
 
 @media only screen 
 and (max-width:767px) {
 	
 	body, span { font-size:20px; }
+	
+	a#mob-menu-switch {display:block;}
+	nav.main-navigation{display:none;}
+	#site-logo { height:80px; }
+	
+	
 	
 	ul.list-arrows li,
 	ul.list-pluses li,
