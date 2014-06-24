@@ -424,7 +424,7 @@ jQuery(document).ready(function($) {
 		itemsDesktop : [1199,4],
 		itemsDesktopSmall : [979,3],
 		itemsTablet :	[768,2],
-		itemsMobile :	[630,1],
+		itemsMobile :	[620,1],
 		itemsScaleUp :	false,
 		pagination :	false,
 		
@@ -436,9 +436,16 @@ jQuery(document).ready(function($) {
 		dragBeforeAnimFinish: false
 	});
 
-	if (document.body.clientWidth < 650 && $('#team-carousel .owl-wrapper').length ){
-		$('#team-carousel .owl-wrapper').css({ "-webkit-transform" : "translate3d(-480px, 0px, 0px)","-webkit-transition" : "all 200ms ease", "transition" : "all 200ms ease" });
+	if ($('#team-carousel .owl-wrapper').length ) {
+		if (document.body.clientWidth < 480 ) {
+			$('#team-carousel .owl-wrapper').css({ "-webkit-transform" : "translate3d(-280px, 0px, 0px)","-webkit-transition" : "all 200ms ease", "transition" : "all 200ms ease" });
+		} else if (document.body.clientWidth < 640 ) {
+			$('#team-carousel .owl-wrapper').css({ "-webkit-transform" : "translate3d(-400px, 0px, 0px)","-webkit-transition" : "all 200ms ease", "transition" : "all 200ms ease" });
+		} else if (document.body.clientWidth < 768 ) {
+			//$('#team-carousel .owl-wrapper').css({ "-webkit-transform" : "translate3d(-480px, 0px, 0px)","-webkit-transition" : "all 200ms ease", "transition" : "all 200ms ease" });
+		} 
 	}
+	
 
 	$("#services-carousel").owlCarousel({
 		singleItem : true,
@@ -613,10 +620,10 @@ jQuery(document).ready(function($) {
 	});
 	/* Hide mobile menu after click */
 	$('#menu-mobilemenu li a').on("click", function(e){
-		if ( $('#menu-mobilemenu').hasClass('active') ){
-			$('#menu-mobilemenu').removeClass('active');
+		if ( $('#hidden-mobile-menu').hasClass('active') ){
+			$('#hidden-mobile-menu').removeClass('active');
 			$('#mob-menu-switch').removeClass('active');
-			$('#menu-mobilemenu').slideUp(0);
+			$('#hidden-mobile-menu').slideUp(0);
 		}
 	});
 	

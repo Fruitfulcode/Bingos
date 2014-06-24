@@ -130,7 +130,8 @@ button:focus,html input[type="button"]:focus,input[type="reset"]:focus,input[typ
 }
 /* Lists */	
 ul.list-arrows li {
-	background:url("../images/li-arrow-white.png") no-repeat 0 4px transparent;
+	background-image:url("../images/li-arrow-white.png");
+	background-image: -Webkit-image-set(url('../images/li-arrow-white.png') 1x, url('../images/li-arrow-white@2x.png') 2x);
 }
 ul.list-pluses li {
 	background:url("../images/li-plus-white.png") no-repeat 0 4px transparent;
