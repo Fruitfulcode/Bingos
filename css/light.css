@@ -213,7 +213,7 @@ ul.list-stars li {
 
 /* Services */
 .services-theme .owl-controls .owl-buttons div {
-	background-color: #fff;
+	/* background-color: #fff; */
 }
 .services-theme .owl-controls .owl-buttons div.owl-prev{
 	background-position: -120px 0;

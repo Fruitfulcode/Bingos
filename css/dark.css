@@ -196,7 +196,7 @@ ul.list-stars li {
 
 /* Services */
 .services-theme .owl-controls .owl-buttons div {
-	background-color: #202020;
+	/* background-color: #202020; */
 }
 .services-theme .owl-controls .owl-buttons div.owl-prev{
 	background-position: -120px -120px;
