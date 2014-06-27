@@ -524,7 +524,7 @@ blockquote b {
 .block-with-quotes:before{
 	content:"";
 	display:block;
-	width: 28px;
+	width: 29px;
 	height: 18px;
 	margin: 0 auto;
 }
@@ -768,15 +768,25 @@ li a:active { text-decoration:none; }
 .title-underlined  {
 	display:inline-block;
 	text-align:center;
-}
-.title-underlined span {
-	display:inline-block;
-	margin:0 15px 7px;
+	position: relative;
+	padding: 0 15px 16px;
+	
 	font-size:36px;
-	line-height:56px;
+	line-height:36px;
 	font-family:'opensans-regular', sans-serif;
 	text-transform:uppercase;
 }
+.title-underlined:before {
+	content: " ";
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	left: 15px;
+	right: 15px;
+	bottom: 7px;
+	background-color: transparent;
+}
+
 .title-corner {
 	position:relative;
 	display:inline-block;
@@ -812,7 +822,9 @@ li a:active { text-decoration:none; }
 	font-family:'opensans-regular', sans-serif;
 	text-transform:uppercase;
 	background: url(../images/title-pattern.png) no-repeat center bottom transparent;
+	background-image: -Webkit-image-set(url('../images/title-pattern.png') 1x, url('../images/title-pattern@2x.png') 2x); 
 }
+
 .section-title {
 	/* line-height:36px; */
 	margin-bottom:65px;
@@ -1842,7 +1854,8 @@ a#mob-menu-switch.active {
 	width:114px;
 	height:114px;
 	background-image: url("../images/menu-arrow-white.png");
-	background-image: -Webkit-image-set(url('../images/menu-arrow-white.png') 1x, url('../images/menu-arrow-white@2x.png') 2x);
+	/* arr-right-small-gray.png */
+	/* background-image: -Webkit-image-set(url('../images/menu-arrow-white.png') 1x, url('../images/menu-arrow-white@2x.png') 2x); */
 	background-position: center center;
 	background-repeat: no-repeat;
 	cursor:pointer;
@@ -3490,7 +3503,7 @@ and (max-width:639px) {
 	.price-table h4.dollars { font-size: 74px; line-height: 74px; padding: 0; }
 	.price-table p.per-month { font-size: 28px; line-height: 28px; }
 	
-	#testimonial-slider { padding: 0; }
+	#testimonial-slider { padding: 0; padding-bottom: 60px; }
 	blockquote p,
 	.block-with-quotes p { font-size: 20px; line-height: 31px; }
 	blockquote cite, blockquote small { font-size: 20px;}
@@ -3656,5 +3669,9 @@ and (max-width:479px) {
 	}
 	.tweet-bird-overlay { background-size: contain; -moz-background-size: contain; -webkit-background-size: contain; }
 	.contact-info p { font-size: 18px; }
+	
+	#testimonial-slider { padding: 0; padding-bottom: 70px; }
+	
+	a.social-link { margin: 0 6px; }
 	
 }

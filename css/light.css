@@ -140,6 +140,16 @@ button:focus,html input[type="button"]:focus,input[type="reset"]:focus,input[typ
 
 /* Titles */
 .title-underlined  {
+	
+}
+.title-underlined:before {
+	border-bottom: 1px solid #333;
+}
+
+
+
+
+.title-underlined  {
 	border-bottom:8px solid #333;
 }
 .title-underlined span {
