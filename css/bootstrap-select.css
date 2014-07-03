@@ -92,11 +92,17 @@
 	background-repeat: no-repeat;
 	background-color: transparent;
 	
-	background-position: center -612px;
-	background-image: url(../images/menu-arrows.png);
+	background-image: url(../images/small-arrows.png);
+	background-image: -Webkit-image-set(url('../images/small-arrows.png') 1x, url('../images/small-arrows@2x.png') 2x); 
+	
+	background-position: center -384px;
+	opacity: 0.5;
+	filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+	
 }
 .bootstrap-select.open .btn .caret {
-	background-position: center -384px;
+	opacity: 1.0;
+	filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
 }
 
 .bootstrap-select.btn-group > .disabled,

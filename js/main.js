@@ -120,7 +120,7 @@ jQuery.fn.extend({
 			var slidesNum = dotsSlides.length;
 			
 			//alert(slidesNum);
-			var dotsBlock = '<ul class="dots-nav">';
+			var dotsBlock = '<ul class="dots-nav white">';
 			var i=1;
 			while(i <= slidesNum){
 				if (i==1){
