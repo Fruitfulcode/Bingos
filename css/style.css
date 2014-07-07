@@ -1809,12 +1809,33 @@ a#mob-menu-switch.active {
 	-webkit-transform: rotate(90deg);
 }
 
+#mob-menu-alt-switch {
+	display: none;
+	width: 80px;
+	height: 80px;
+	position: fixed;
+	top: 0;
+	right: 15px;
+	
+	background-image:url("../images/menu-switch-120-gray.png");
+	background-repeat:no-repeat;
+	background-position: center;
+	
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	-pie-background: cover;
+	
+	z-index: 99999;
+}
+
 #hidden-mobile-menu {
 	position: fixed;
 	top:80px;
 	left:0;
 	width:100%;
-	z-index:999;
+	z-index:9991;
 	overflow-y:scroll;
 }
 #menu-mobilemenu {
@@ -1882,9 +1903,8 @@ a#mob-menu-switch.active {
 	right:0;
 	width:114px;
 	height:114px;
-	background-image: url("../images/menu-arrow-white.png");
-	/* arr-right-small-gray.png */
-	/* background-image: -Webkit-image-set(url('../images/menu-arrow-white.png') 1x, url('../images/menu-arrow-white@2x.png') 2x); */
+	background-image: url("../images/arr-right-small-white.png");
+	background-image: -Webkit-image-set(url('../images/arr-right-small-white.png') 1x, url('../images/arr-right-small-white@2x.png') 2x); 
 	background-position: center center;
 	background-repeat: no-repeat;
 	cursor:pointer;
@@ -3091,6 +3111,22 @@ and (min-width:992px) {
 	}
 }
 
+/* Preloader */
+#qLoverlay {
+	background: #202020;
+}
+#qLbar { display: none; }
+#qLpercentage {
+	height: 56px !important;
+	width: 120px !important;
+	font-size: 3em;
+	left: 50%;
+	margin-top: -56px !important;
+	margin-left: -60px !important;
+	
+	color: rgb(255, 255, 255);
+}
+
 @media only screen 
 and (min-width:1900px) {
 	#works #isotope-wrapper {width:1900px; margin:0 auto;}
@@ -3238,6 +3274,7 @@ and (max-width:767px) {
 	body { font-size:20px; }
 	
 	a#mob-menu-switch {display:block;}
+	#mob-menu-alt-switch.active { 	display: block; }
 	nav.main-navigation{display:none;}
 	#site-logo { height:80px; }
 	
@@ -3373,14 +3410,32 @@ and (max-width:767px) {
 		-ms-transition: none;
 	}
 	ul.isotope-option li.option-select a { 
+		position: relative;
 		padding:10px 52px 10px 0;
-		background-image:url(../images/menu-arrows-dark.png);
+	}
+	ul.isotope-option li.option-select a:after { 
+		content: ' ';
+		display: block;
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 44px;
+		height: 44px;
+		opacity: 0.5;
 		background-repeat:no-repeat;
 		background-color:transparent;
-		background-position: right -37px;
+		background-position: center;
+		background-image: url('../images/arr-right-small-gray.png');
 	}
-	ul.isotope-option li.option-select a:hover { background-position: right -151px; }
-	ul.isotope-option li.option-select a.active	{ background-position: right -264px; color:#000; }
+	ul.isotope-option li.option-select a:hover:after { opacity: 1; }
+	ul.isotope-option li.option-select a.active	{ color:#000; }
+	ul.isotope-option li.option-select a.active:after { 
+		opacity: 1;
+		-webkit-transform: rotate(90deg);
+		-moz-transform: rotate(90deg);
+		-o-transform: rotate(90deg);
+		-ms-transform: rotate(90deg);
+		transform: rotate(90deg); }
 	#hidden-works-menu-container{
 		position:relative;
 	}
@@ -3494,6 +3549,8 @@ and (max-width:639px) {
 	
 	#site-logo { height: 48px; }
 	a#mob-menu-switch { width:48px; height:48px; }
+	#mob-menu-alt-switch { width: 48px; height: 48px;}
+	
 	#hidden-mobile-menu { top: 48px; }
 	
 	
@@ -3525,6 +3582,7 @@ and (max-width:639px) {
 	.section-title { margin-bottom: 20px; }
 	#isotope-category-menu { margin-bottom: 20px; }
 	ul.isotope-option li a { padding: 10px 0; font-size: 22px; line-height: 22px; }
+	ul.isotope-option li.option-select a:after {  width: 42px; 	height: 42px; }
 	
 	.price-table h4.packet-title { font-size: 36px;  line-height: 36px; padding: 30px 0 28px; }
 	.price-table ul li {  font-size: 36px; line-height: 36px; padding: 26px 0; }
@@ -3620,6 +3678,7 @@ and (max-width:479px) {
 	#hidden-works-menu-container ul li a	{ font-size: 24px; line-height: 24px; padding: 12px 0; }
 	#hidden-mobile-menu li.menu-item-has-children .submenu-button { width: 48px; height: 48px;}
 	#hidden-mobile-menu ul.sub-menu > li > a { padding: 8px 0; font-size: 18px; line-height: 18px;}
+	#mob-menu-alt-switch { right: 8px; }
 	
 	ul.list-arrows li, 
 	ul.list-pluses li, 
@@ -3672,6 +3731,7 @@ and (max-width:479px) {
 		max-height: 125px;
 	}
 	ul.isotope-option li a { padding: 10px 0; font-size: 20px; line-height: 20px; }
+	ul.isotope-option li.option-select a:after {  width: 40px; 	height: 40px; }
 	
 	.price-packet { margin-bottom: 50px; }
 	.price-table h4.packet-title { font-size: 24px; line-height: 24px; padding: 26px 0 24px; }

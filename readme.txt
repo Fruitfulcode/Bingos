@@ -29,3 +29,6 @@ http://silviomoreto.github.io/bootstrap-select/
 
 jPlayer
 http://www.jplayer.org/
+
+QueryLoader2 – Preloader
+http://www.gayadesign.com/diy/queryloader2-preload-your-images-with-ease/

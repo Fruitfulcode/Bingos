@@ -279,6 +279,7 @@ ul.list-pluses li {
 /*=== Header ===*/
 .separator-horizontal-line {
 	background: url(../images/hor-black-arrowed-line.png) no-repeat center top transparent;
+	background-image: -Webkit-image-set(url('../images/hor-black-arrowed-line.png') 1x, url('../images/hor-black-arrowed-line@2x.png') 2x);
 }
 #site-logo {
 	color:#202020;
@@ -377,4 +378,13 @@ a.social-link:hover .fa{ color:#666; }
 }
 .entry-meta div {
 	border-bottom: 1px solid #fff;
+}
+
+
+/* Preloader */
+#qLoverlay {
+	background: #202020 !important;
+}
+#qLpercentage {
+	color: rgb(255, 255, 255) !important;
 }
