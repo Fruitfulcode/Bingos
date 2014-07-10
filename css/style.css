@@ -595,62 +595,99 @@ li a:focus,
 li a:active { text-decoration:none; }
 
 
-/* Buttons */
+/* ==Buttons== */
 .double-button {
 	display:inline-block;
+	position: relative;
+	z-index: 1;
 	padding:5px;
-}
-.double-button.white {
-	border:3px solid #ffffff;
-}
-.double-button span {
-	display:inline-block;
+	padding:14px 22px;
+	
 	font-family:'opensans-light', sans-serif;
 	font-size:18px;
-	line-height:20px;
-	margin:0;
-	padding:7px 16px;
+	line-height:18px;
 	text-transform:lowercase;
+	text-decoration: none;
+	
 	-webkit-transition: all 0.4s;
 	-moz-transition: all 0.4s;
 	-ms-transition: all 0.4s;
 	-o-transition: all 0.4s;
 	transition: all 0.4s;
+	
+	color: #333;
+	border: 3px solid #333;
 }
-.double-button.white span {
-	color:#ffffff;
+.double-button:hover,
+#blog-recent a.double-button:hover {
+	color: #fff;
+	text-decoration: none;
+}
+.double-button:before {
+	content: ' ';
+	position: absolute;
+	z-index: -1;
+	display:block;
+	margin:0;
+	top: 5px;
+	bottom: 5px;
+	left: 5px;
+	right: 5px;
+	
+	-webkit-transition: all 0.4s;
+	-moz-transition: all 0.4s;
+	-ms-transition: all 0.4s;
+	-o-transition: all 0.4s;
+	transition: all 0.4s;
+	
+	border: 1px solid #333;
+}
+.double-button:hover:before {
+	background: #333;
+}
+
+
+/* .white */
+.double-button.white {
+	border:3px solid #ffffff;
+	color: #fff;
+}
+.double-button.white:hover {
+	color: #333;
+}
+.double-button.white:before {
+	background: transparent;
 	border:1px solid #ffffff;
 }
-.double-button.white:hover span {
+.double-button.white:hover:before {
 	background: #ffffff;
-	color:#333333;
 }
 
-
+/* sizes */
 .double-button.small {
-	padding:5px;
-}
-.double-button.small span {
+	padding:14px 22px;
 	font-size:18px;
-	line-height:20px;
-	padding:7px 16px;
+	line-height:18px;
 }
 
-.double-button.medium span {
+.double-button.medium {
 	font-size:22px;
-	line-height:26px;
-	padding:15px 24px;
+	line-height:22px;
+	padding:23px 30px;
 }
 .double-button.big {
-	padding:6px;
-}
-.double-button.big span {
 	font-size:33px;
 	line-height:33px;
-	padding:21px 36px;
+	padding:28px 43px;
+}
+.double-button.big:before {
+	top: 6px;
+	bottom: 6px;
+	left: 6px;
+	right: 6px;
 }
 
-/* Alerts */
+/* ==Alerts== */
 .alert {
 	padding: 6px;
 	margin-bottom: 15px;
@@ -1368,14 +1405,6 @@ body .panel-title a{
 	position: relative;
 	z-index: 100;
 }
-.sl-slider .double-button {
-	position: relative;
-}
-.sl-slider .double-button span {
-	padding: 17px 23px;
-	font-size: 22px;
-    line-height: 22px;
-}
 .sl-slider p {
 	font-size:36px;
 	line-height: 36px;
@@ -1410,11 +1439,11 @@ body .panel-title a{
 	animation: scaleUp 1s ease-in-out both;
 }
 .sl-trans-elems a.double-button{
-	-webkit-animation: fadeIn 1s linear 1s both;
+	/* -webkit-animation: fadeIn 1s linear 1s both;
 	-moz-animation: fadeIn 1s linear 1s both;
 	-o-animation: fadeIn 1s linear 1s both;
 	-ms-animation: fadeIn 1s linear 1s both;
-	animation: fadeIn 1s linear 1s both;
+	animation: fadeIn 1s linear 1s both; */
 }
 .sl-trans-back-elems h2{
 	-webkit-animation: scaleDown 1s ease-in-out both;
@@ -1431,11 +1460,11 @@ body .panel-title a{
 	animation: fadeOut 1s linear both;
 }
 .sl-trans-back-elems a.double-button{
-	-webkit-animation: fadeOut 1s linear both;
+	/* -webkit-animation: fadeOut 1s linear both;
 	-moz-animation: fadeOut 1s linear both;
 	-o-animation: fadeOut 1s linear both;
 	-ms-animation: fadeOut 1s linear both;
-	animation: fadeOut 1s linear both;
+	animation: fadeOut 1s linear both; */
 }
 
 @-webkit-keyframes roll{
@@ -3101,9 +3130,9 @@ and (min-width:992px) {
 		line-height:19px;
 	}
 	.price-packet#most-popular .double-button span {
-		padding: 9px 19px;
+		/* padding: 9px 19px;
 		font-size:19px;
-		line-height:19px;
+		line-height:19px; */
 	}
 	
 	.owl-item:hover > div > .about-person{
@@ -3293,12 +3322,13 @@ and (max-width:767px) {
 		padding: 1px 0 5px;
 	}
 	.double-button,
-	.input-submit-wrapper 	{ padding: 6px; }
-	.double-button span,
-	button,html input[type="button"],input[type="reset"],input[type="submit"] 	{
+	.input-submit-wrapper 	{ /* padding: 6px; */ }
+	.double-button,
+	input[type="submit"],
+	button,html input[type="button"],input[type="reset"] 	{
 		font-size:33px;
-		line-height:35px;
-		padding:20px 33px;
+		line-height:33px;
+		padding:27px 38px;
 	}
 	
 	#about-us .double-button { float: none;	}
@@ -3611,8 +3641,8 @@ and (max-width:639px) {
 	input[type="reset"], 
 	input[type="submit"] {
 		font-size: 30px;
-		line-height: 32px;
-		padding: 18px 30px;
+		line-height: 30px;
+		padding: 23px 35px;
 	}
 	
 	
@@ -3688,16 +3718,13 @@ and (max-width:479px) {
 		padding: 3px 0 0px 30px;
 	}
 	button, 
-	.double-button span, 
+	.double-button, 
 	html input[type="button"], 
 	input[type="reset"], 
 	input[type="submit"] {
-		/* font-size: 25px;
-		line-height: 28px;
-		padding: 12px 20px; */
 		font-size: 22px;
-		line-height: 24px;
-		padding: 12px 14px;
+		line-height: 22px;
+		padding: 17px 19px;
 	}
 	
 	#team-carousel {

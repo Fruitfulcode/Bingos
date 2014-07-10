@@ -422,6 +422,36 @@ jQuery(document).ready(function($) {
 		});
 	}
 	
+	// Bind click handler to Button
+	// so we can get a fancy scroll animation
+	$('#slider .double-button').click(function(e){
+		topMenuHeight = $('#site-header').height();
+		var href = $(this).attr("href"),
+		  offsetTop = href === "#" ? 0 : $(href).offset().top+1;
+		$('html, body').stop().animate({ 
+		  scrollTop: offsetTop
+		}, 300);
+		e.preventDefault();
+	});
+	
+	$('.main-navigation .menu li a').click(function(e){
+		topMenuHeight = $('#site-header').height();
+		var href = $(this).attr("href");
+		href_array = href.split('#');
+		if ( href === "#" ) { // top of page
+			offsetTop = 0;
+		} else if ( href_array[0].length > 0 ) { // another html page
+			return; 
+		} else if ( href_array[1].length > 0 ) {
+			offsetTop = $('#'+href_array[1]).offset().top+1; // offset of block on current page
+		} else {
+			return; // incorrect href
+		}
+		$('html, body').stop().animate({ 
+		  scrollTop: offsetTop
+		}, 300);
+		e.preventDefault();
+	});
 	
 
 	/* Carousel initialozation */

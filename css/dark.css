@@ -40,16 +40,21 @@ table tfoot td div {
 
 /* Buttons */
 .double-button {
+	color: #fff;
 	border:3px solid #fff;
 }
-.double-button span {
-	color:#fff;
-	border:1px solid #fff;
+.double-button:before {
+	border: 1px solid #fff;
 }
-.double-button:hover span {
-	background: #fff;
-	color:#333;
+.double-button:hover,
+#blog-recent a.double-button:hover {
+	color: #333;
 }
+.double-button:hover:before {
+	background: #fff;	
+}
+
+
 .input-submit-wrapper {
 	border: 2px solid #fff;
 }
