@@ -245,6 +245,12 @@ ul.list-pluses li {
 	color:#fff;
 	/* background-image:url(../images/logo-benign-white.png); */
 }
+#site-header.show-top #main-header {
+	background: transparent;
+}
+#site-header.show-top.show #main-header {
+	background: #333;
+}
 #main-header {
 	background: #333333;
 	color:#ffffff;

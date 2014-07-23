@@ -290,7 +290,7 @@ var isMobile = {
 		page_height = page_height - header_image_height - 50;
 		
 		if ( page_height < $(window).outerHeight() || (page_height - 30 < iPhone_height) ) {
-			$('#site-header').css({ 
+			/* $('#site-header').css({ 
 				"position":"relative", 
 				"visibility":"visible",
 				"opacity":"1",
@@ -311,7 +311,7 @@ var isMobile = {
 			});
 			$('#menu-mobilemenu').css({ 
 				"max-height":"none"
-			});
+			}); */
 		}
 		
 		
@@ -355,6 +355,25 @@ function showTweets() {
 	tweet_timer = setInterval(showTweets, 5000);
 }
 
+/* Smooth Anchor Scroll */
+function smooth_anchor(selector){
+	var href = selector.attr("href");
+	href_array = href.split('#');
+	if ( href === "#" ) { // top of page
+		offsetTop = 0;
+	} else if ( href_array[0].length > 0 ) { // another html page
+		return false; 
+	} else if ( href_array[1].length > 0 ) {
+		offsetTop = jQuery('#'+href_array[1]).offset().top+1; // offset of block on current page
+	} else {
+		return false; // incorrect href
+	}
+	jQuery('html, body').stop().animate({ 
+	  scrollTop: offsetTop
+	}, 300);
+	return true;
+}
+
 jQuery(document).ready(function($) {
 
 	window.addEventListener('DOMContentLoaded', function() {
@@ -362,6 +381,22 @@ jQuery(document).ready(function($) {
 			percentage:	true
 		});
 	});
+	
+	/* On Orientation Change */
+	if (isMobile.any() )	{
+		window.addEventListener("orientationchange", function(){
+			if (jQuery('#hidden-works-menu').hasClass('active') ) {
+				jQuery('#hidden-works-menu').removeClass('active');
+				jQuery('li.option-select > a').removeClass('active');
+				jQuery('#hidden-works-menu').slideUp(0);
+			}
+			if (jQuery('#hidden-mobile-menu').hasClass('active') ) {
+				jQuery('#hidden-mobile-menu').removeClass('active');
+				jQuery('#mob-menu-switch').removeClass('active');
+				jQuery('#hidden-mobile-menu').slideUp(0);
+			}
+		});
+	}
 
 	if ( $('#slider').length ) {
 		/* Slider initialization */
@@ -425,32 +460,21 @@ jQuery(document).ready(function($) {
 	// Bind click handler to Button
 	// so we can get a fancy scroll animation
 	$('#slider .double-button').click(function(e){
-		topMenuHeight = $('#site-header').height();
-		var href = $(this).attr("href"),
-		  offsetTop = href === "#" ? 0 : $(href).offset().top+1;
-		$('html, body').stop().animate({ 
-		  scrollTop: offsetTop
-		}, 300);
-		e.preventDefault();
+		if (smooth_anchor($(this))) {
+			e.preventDefault();
+		}
 	});
 	
 	$('.main-navigation .menu li a').click(function(e){
-		topMenuHeight = $('#site-header').height();
-		var href = $(this).attr("href");
-		href_array = href.split('#');
-		if ( href === "#" ) { // top of page
-			offsetTop = 0;
-		} else if ( href_array[0].length > 0 ) { // another html page
-			return; 
-		} else if ( href_array[1].length > 0 ) {
-			offsetTop = $('#'+href_array[1]).offset().top+1; // offset of block on current page
-		} else {
-			return; // incorrect href
+		if (smooth_anchor($(this))) {
+			e.preventDefault();
 		}
-		$('html, body').stop().animate({ 
-		  scrollTop: offsetTop
-		}, 300);
-		e.preventDefault();
+	});
+	
+	$('#hidden-mobile-menu .nav-menu li a').click(function(e){
+		if (smooth_anchor($(this))) {
+			e.preventDefault();
+		}
 	});
 	
 
@@ -639,7 +663,9 @@ jQuery(document).ready(function($) {
 	$('#mob-menu-alt-switch').on("click", function(e){
 		$('#site-header').addClass('show');
 		$('#mob-menu-alt-switch').removeClass('active');
-		$('a#mob-menu-switch').click();
+		if ( $('nav.main-navigation').css('display') == 'none' ) {
+			$('a#mob-menu-switch').click();
+		}
 		e.preventDefault();
 	});
 	
@@ -744,7 +770,16 @@ jQuery(document).ready(function($) {
 	menu_appear_height = header_image_height + slider_height;
 	menu_disappear_height = menu_appear_height + 1200;
 	
-	
+	/* Menu on TOP without Slider */
+	if (header_image_height > 0 && slider_height == 0 ) {
+		jQuery('#site-header').addClass('show-top');
+		jQuery('#hidden-mobile-menu').addClass('absolute');
+		menu_appear_height = jQuery('#site-header').css('padding-top');
+		menu_appear_height = menu_appear_height.replace(/\D/g,'');
+		
+		//jQuery('#hidden-mobile-menu').addClass('relative');
+		//alert(menu_appear_height);
+	}
 	
 	
 	$("#jplayer_1").jPlayer({
@@ -824,11 +859,24 @@ jQuery(window).bind('resize', function() {
 			article_border(article_selector);
 		}, 100);
 	}
-	
+	/* Hide menus on not Mobile */
 	if (document.body.clientWidth > 758 && jQuery('#hidden-mobile-menu').hasClass('active')) {
 		jQuery('#hidden-mobile-menu').removeClass('active');
 		jQuery('#mob-menu-switch').removeClass('active');
 		jQuery('#hidden-mobile-menu').slideUp(0);
+	}
+	if (document.body.clientWidth > 758 && jQuery('#hidden-works-menu').hasClass('active')) {
+		jQuery('#hidden-works-menu').removeClass('active');
+		jQuery('li.option-select > a').removeClass('active');
+		jQuery('#hidden-works-menu').slideUp(0);
+	}
+	
+	
+	/* Menu on TOP without Slider */
+	if (!(jQuery('#slider').length) ) {
+		menu_appear_height = jQuery('#site-header').css('padding-top');
+		menu_appear_height = menu_appear_height.replace(/\D/g,'');
+		//alert(menu_appear_height);
 	}
 		
 });
@@ -882,6 +930,7 @@ jQuery(window).on('scroll', function() {
 		if ( (jQuery(window).scrollTop() > menu_appear_height) && (jQuery(window).scrollTop() < menu_disappear_height) ) {	
 			if (!(jQuery('#site-header').hasClass('show')))	{	
 				jQuery('#site-header').addClass('show'); 
+				
 			}
 		} else {
 			if ( (jQuery('#site-header').hasClass('show')) && !jQuery('#site-header #mob-menu-switch').hasClass('active') )	{	
@@ -896,6 +945,10 @@ jQuery(window).on('scroll', function() {
 				jQuery('#mob-menu-alt-switch').addClass('active');
 			}
 		}
+		
+		if ( (jQuery(window).scrollTop() > menu_appear_height) ) {	
+			jQuery('#hidden-mobile-menu').removeClass('absolute');
+		}
 	} else { 	// Scroll UP
 		if (input_focused == false && jQuery(window).scrollTop() > menu_appear_height)  {	
 			if (!(jQuery('#site-header').hasClass('show')))	{
@@ -903,7 +956,9 @@ jQuery(window).on('scroll', function() {
 				jQuery('#mob-menu-alt-switch').removeClass('active');
 			}
 		} else {
-			if ( (jQuery('#site-header').hasClass('show')) && !jQuery('#site-header #mob-menu-switch').hasClass('active') )	{
+			jQuery('#hidden-mobile-menu').addClass('absolute');
+			// && !jQuery('#site-header #mob-menu-switch').hasClass('active')
+			if ( (jQuery('#site-header').hasClass('show'))  )	{
 				jQuery('#site-header').removeClass('show');
 			}
 		}
