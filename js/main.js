@@ -272,49 +272,9 @@ var isMobile = {
 		/* Article border */
 		if ( $('article').length > 0 ){
 			article_selector = jQuery('article');
-			
 			article_border(article_selector);
-			
 		}
-		
-		
-		/* Menu if page height is small */
-		var page_height = $('body').height();
-		var header_image_height = 0; 
-		if (jQuery('#header-top-image').length)	{ header_image_height = jQuery('#header-top-image').height(); }
-		var iPhone_height = 0;
-		
-		if ( 'devicePixelRatio' in window && window.devicePixelRatio > 1.8 ) { // Detecting iPhone with Retina height
-			iPhone_height = $(window).outerHeight() * 2 + 60; 
-		}
-		page_height = page_height - header_image_height - 50;
-		
-		if ( page_height < $(window).outerHeight() || (page_height - 30 < iPhone_height) ) {
-			/* $('#site-header').css({ 
-				"position":"relative", 
-				"visibility":"visible",
-				"opacity":"1",
-				"filter":"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)",
-				"margin-top":"27px",
-				"margin-bottom":"0",
-				"transition":"none",
-				"-webkit-transition":"none",
-				"-moz-transition":"none",
-				"-khtml-transition":"none",
-				"-o-transition":"none",
-				"-ms-transition":"none"
-			});
-			$('#hidden-mobile-menu').css({ 
-				"position":"relative", 
-				"top":"0",
-				"overflow-y":"auto"
-			});
-			$('#menu-mobilemenu').css({ 
-				"max-height":"none"
-			}); */
-		}
-		
-		
+				
 		/* Tweets fadein/fadeout init */
 		if ($("#tweets-carousel").length ) {
 			// set equal height to tweets
@@ -328,7 +288,6 @@ var isMobile = {
 		}
 			
 		var $testimonils_selector = $('#testimonial-slider .slides li');
-		//set_height_elements($testimonils_selector);
    })
 })(jQuery);   
 
@@ -487,12 +446,8 @@ jQuery(document).ready(function($) {
 		itemsMobile :	[620,1],
 		itemsScaleUp :	false,
 		pagination :	false,
-		
 		dragBeforeAnimFinish: false,
-		
 		theme:			"team-theme",
-		
-		/* slideSpeed:		300, */
 		dragBeforeAnimFinish: false
 	});
 
@@ -514,29 +469,10 @@ jQuery(document).ready(function($) {
 		pagination :	false,
 		touchDrag :		false,
 		mouseDrag :		false,
-		
 		theme:			"services-theme",
-		
-		/* slideSpeed:		300, */
 		dragBeforeAnimFinish: false
 	});
-	/* 
-	$(".entry-thumbnail.owl-carousel").owlCarousel({
-		navigation :	false,
-		pagination :	true,
-		mouseDrag:		false,
-		touchDrag:		false,
-		autoPlay:		false, 
-		singleItem : true,
-		transitionStyle : "fade",  
-				
-		theme:			"post-gallery",
-		
-		slideSpeed:		200
-		
-	}); 
-	 */
-	 
+		 
 	if ($(".entry-thumbnail.slider-dots").length){
 		$(".entry-thumbnail.slider-dots").dotsSlider({
 			fadeIn: 500, 
@@ -545,19 +481,6 @@ jQuery(document).ready(function($) {
 		}); 
 	}
 	
-	/* $("#testimonial-slider").slidesjs({
-		height: 270,
-		pagination: {
-          effect: "fade"
-        },
-        effect: {
-          fade: {
-            speed: 400
-          }
-        }
-	}); */
-	
-	
 	if ($("#testimonial-slider").length){
 		$("#testimonial-slider").dotsSlider({
 			fadeIn: 500, 
@@ -565,19 +488,7 @@ jQuery(document).ready(function($) {
 			fadeOut: 500
 		}); 
 	}
-	
-	/* if ($("#tweets-carousel").length){
-		$('#tweets-carousel').flexslider({
-			directionNav:	false,
-			
-			touch:	false,
-			animation: "fade",
-			slideshow:	false,
-			slideshowSpeed:	4000,
-			animationSpeed:	1000
-		});
-	} */
-	
+		
 	/* Validation of Contact Form */
 	$('#submit').click(function(){
         if ($("#contact-form").length ) {
@@ -638,14 +549,7 @@ jQuery(document).ready(function($) {
 	});
 	
 	/*== Mobile menu ==*/
-	/* 
-	window_height = document.documentElement.clientHeight;
-	header_height = $('#site-header').height();
-	window_height = window_height - header_height;
-	
-	$('#hidden-mobile-menu').css('max-height',window_height);
-	 */
-	
+		
 	/* Mobile menu switch */
 	$('a#mob-menu-switch').on("click", function(e){
 		if ( $('#hidden-mobile-menu').hasClass('active') ){
@@ -776,9 +680,6 @@ jQuery(document).ready(function($) {
 		jQuery('#hidden-mobile-menu').addClass('absolute');
 		menu_appear_height = jQuery('#site-header').css('padding-top');
 		menu_appear_height = menu_appear_height.replace(/\D/g,'');
-		
-		//jQuery('#hidden-mobile-menu').addClass('relative');
-		//alert(menu_appear_height);
 	}
 	
 	
@@ -832,6 +733,23 @@ jQuery(document).ready(function($) {
 		}
 		e.preventDefault();
 	}); 
+	
+	/* run Header animation on appear */
+	if (jQuery('.with-animation').length && !isMobile.any() ) {
+		jQuery('.with-animation')
+			  .scrolledIntoView()
+			  .on('scrolledin', function () { 
+				  if (!jQuery(this).hasClass('was-animated')) {
+					  jQuery(this).addClass('animated fadeInDown');
+					  jQuery(this).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+						  jQuery(this).removeClass('animated fadeInDown');
+					  });
+					  jQuery(this).addClass('was-animated');
+				  }
+			  })
+			  .on('scrolledout', function () { // out 
+			  });
+	}
 	
 }); // end of document.ready
 
@@ -887,6 +805,8 @@ var progresses_finished = false;
 var progresses_2_finished = false;
 var lastScrollTop = 0;
 
+
+
 jQuery(window).on('scroll', function() {	
 	/* run Counters on elements appear */
 	if (jQuery('.counter-number').length > 0 && !isMobile.any() ) {
@@ -899,28 +819,28 @@ jQuery(window).on('scroll', function() {
 		} 
 	}
 	
-	
 	/* run Progress bars on elements appear */
 	if (jQuery('#skills-block').length > 0 && !isMobile.any() ) {
 		if(jQuery("#skills-block").offset().top < (jQuery(window).scrollTop() + jQuery(window).outerHeight()) && !progresses_finished && jQuery("#skills-block").offset().top + jQuery("#skills-block").outerHeight() > (jQuery(window).scrollTop() ) ) {
 			
 			jQuery('.progress-bar').each(function(){
 				jQuery(this).children('.sr-only').percentCounter(20);
+				jQuery(this).styleCounter(20);
 			});
 			progresses_finished = true;		
 		} 
 	}
 	
 	/* run Progress bars on elements appear */
-	if (jQuery('#skills-block').length > 0 && !isMobile.any() ) {
+	/* if (jQuery('#skills-block').length > 0 && !isMobile.any() ) {
 		if(jQuery("#skills-block").offset().top < (jQuery(window).scrollTop() + jQuery(window).outerHeight()) && !progresses_2_finished && jQuery("#skills-block").offset().top + jQuery("#skills-block").outerHeight() > (jQuery(window).scrollTop() ) ) {
 			
 			jQuery('.progress-bar').each(function(){
-				jQuery(this).styleCounter(20);
+				
 			});
 			progresses_2_finished = true;		
 		} 
-	}
+	} */
 	
 	
 	/* Show / Hide Header */
