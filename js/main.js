@@ -235,13 +235,20 @@ var isMobile = {
     }
 };
 
+// Detects IE
+var isIE = {
+    any: function() {
+        return navigator.userAgent.match(/MSIE/i);
+    }
+};
+
 /* Smooth Scroll Settings for Desktop */
 (function($){
 	
 	var $window = $(window);		//Window object
 	
-	var scrollTime = 0.25;	//1.2		//Scroll time
-	var scrollDistance = 180; //170		//Distance. Use smaller value for shorter scroll and greater value for longer scroll
+	var scrollTime = 0.5;	//1.2		//Scroll time
+	var scrollDistance = 150; //170		//Distance. Use smaller value for shorter scroll and greater value for longer scroll
 	if( !isMobile.any() ) {
 		$window.on("mousewheel DOMMouseScroll", function(event){
 			event.preventDefault();	
@@ -335,11 +342,18 @@ function smooth_anchor(selector){
 
 jQuery(document).ready(function($) {
 
-	window.addEventListener('DOMContentLoaded', function() {
+	if (isIE.any()) {
 		$("body").queryLoader2({
 			percentage:	true
 		});
-	});
+	} else {
+		window.addEventListener('DOMContentLoaded', function() {
+			$("body").queryLoader2({
+				percentage:	true
+			});
+		});
+	}
+	
 	
 	/* On Orientation Change */
 	if (isMobile.any() )	{
@@ -502,10 +516,10 @@ jQuery(document).ready(function($) {
 			});
 		}
 		
-		if ($("#test-form").length ) {
-			$("#test-form").validate({
+		if ($("#comment-form").length ) {
+			$("#comment-form").validate({
 				submitHandler: function() {
-					$.post("contact-test.php", $("#test-form").serialize(),  function(response) {
+					$.post("contact-test.php", $("#comment-form").serialize(),  function(response) {
 						$('#form-status').html(response);
 					});
 					return false;

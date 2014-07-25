@@ -384,6 +384,17 @@ a.social-link:hover .fa{ color:#666; }
 .entry-meta div {
 	border-bottom: 1px solid #fff;
 }
+.post-navigation .nav-previous .meta-nav {
+	background-image:url("../images/arr-left-big-white.png");
+	background-image: -Webkit-image-set(url('../images/arr-left-big-white.png') 1x, url('../images/arr-left-big-white@2x.png') 2x); 
+}
+.post-navigation .nav-next .meta-nav {
+	background-image:url("../images/arr-right-big-white.png");
+	background-image: -Webkit-image-set(url('../images/arr-right-big-white.png') 1x, url('../images/arr-right-big-white@2x.png') 2x); 
+}
+.post-navigation .meta-text {
+	color:#fff;
+}
 
 
 /* Preloader */
