@@ -338,7 +338,7 @@ function smooth_anchor(selector){
 	}
 	jQuery('html, body').stop().animate({ 
 	  scrollTop: offsetTop
-	}, 300);
+	}, 1000);
 	return true;
 }
 

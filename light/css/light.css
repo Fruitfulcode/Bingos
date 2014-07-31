@@ -23,8 +23,12 @@ p a:hover, p a:focus, p a:active {
 	text-decoration:underline;
 }
 
+a.double-underline {
+	background-image: url("../images/double-underline-dark.png");
+}
+
 table {     
-	background: #fff; 
+	background: transparent; 
 	border: 1px solid #333333;
 }
 table thead th, 
@@ -49,6 +53,7 @@ table tfoot td div {
 	border-top: 1px solid #333333;
 	background: #EBEBEB;
 } 
+
 /* Buttons */
 .double-button {
 	color: #333;
@@ -202,6 +207,7 @@ ul.list-pluses li {
 	background-image: -Webkit-image-set(url('../images/arr-circle-right-gray.png') 1x, url('../images/arr-circle-right-gray@2x.png') 2x);
 }
 
+/* Navigation */
 .dots-nav li a {
 	border: 3px solid #333;
 }
@@ -227,6 +233,101 @@ ul.list-pluses li {
 	border-color: #333;
 }
 
+/* Select */
+.bootstrap-select.btn-group .btn .caret {
+    background-position: center;
+}
+.bootstrap-select .btn {
+	color: #333;
+	background-color: #fff;
+	border-color: #666;
+}
+.bootstrap-select.open .dropdown-toggle {
+	color: #333;
+	border-color: #333;
+}
+.bootstrap-select.btn-group .dropdown-menu {
+	background-color: #fff;
+	border: 1px solid #333;
+}
+.dropdown-menu > li > a {
+	color: #333;
+}
+
+/* Alerts */
+.alert {
+	background: #fff;
+	color: #333;
+	border: 3px solid #333;
+}
+.alert div {
+	background: #fff;
+}
+.alert.alert-info div {
+	border: 1px solid #333;
+}
+.alert.alert-warning div {
+	background: #333;
+	color:#fff;
+	border: 1px solid #333;
+}
+.alert.alert-danger {
+	background:#333;
+}
+.alert.alert-danger div {
+	background: #333;
+	color:#fff;
+	border: 1px solid #fff;
+}
+
+/* Accordion */
+body .panel-title a {
+	color:#fff;
+	background-color:#333;
+	background-position:96% -144px;
+}
+.panel-group .panel {
+	border-color:#333;
+}
+.panel-group .panel-heading + .panel-collapse .panel-body {
+	border-top: 1px solid #333;
+}
+.panel-title a.collapsed {
+	background-position: 96% -259px;
+	color: #333;
+}
+.panel-title a:hover {
+	color:#fff;
+}
+.panel-title a.collapsed:hover {
+	color:#333;
+}
+
+/* Tabs */
+.nav-tabs { 
+	border-left: 1px solid #333;
+}
+.nav-tabs > li > a {
+	border: 1px solid #333;
+	border-left:0;
+}
+.nav-tabs > li.active > a, 
+.nav-tabs > li.active > a:hover, 
+.nav-tabs > li.active > a:focus {
+	color: #fff;
+	background-color: #333;
+	border: 1px solid #333;
+	border-left:0;
+}
+.nav > li > a:hover, 
+.nav > li > a:focus {
+	border: 1px solid #333;
+	border-left:0;
+}
+.nav > li > a:hover, .nav > li > a:focus {
+	background-color: #eee;
+}
+
 /* Progress bars */
 .progress {
     background-color: #eaeaea;
@@ -235,6 +336,9 @@ ul.list-pluses li {
 	background-color: #333;
 	color: #333;
 }
+#skills-block span.progress-title {
+	background-color:#fff;
+}
 
 /*=== Header ===*/
 .separator-horizontal-line {
@@ -242,8 +346,7 @@ ul.list-pluses li {
 	background-image: -Webkit-image-set(url('../images/hor-white-arrowed-line.png') 1x, url('../images/hor-white-arrowed-line@2x.png') 2x);
 }
 #site-logo {
-	color:#fff;
-	/* background-image:url(../images/logo-benign-white.png); */
+	background-image: url(../images/logo-white.png);
 }
 #site-header.show-top.show #main-header {
 	background: #333;
@@ -358,7 +461,15 @@ a.social-link:hover .fa{ color:#666; }
 .post-navigation .meta-text {
 	color:#333;
 }
-
+aside input[type="text"] {
+	border: 1px solid #707070;
+}
+input[type=text], input[type=email], input[type=url], textarea {
+	color: #333;
+}
+input[type=text]:focus, input[type=email]:focus, textarea:focus {
+	color: #333;
+}
 /* Contact form */
 
 /* Preloader */
