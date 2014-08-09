@@ -29,6 +29,7 @@
 	<script type="text/javascript" src="js/bootstrap-select.min.js"></script>
 	<script type="text/javascript" src="js/isotope/jquery.isotope.min.js"></script>
 	<script type="text/javascript" src="js/jquery.queryloader2.min.js"></script>
+	<script type="text/javascript" src="js/jquery.simplemodal.min.js"></script>
 	
 	<script type="text/javascript" src="js/slider/jquery.ba-cond.min.js"></script>
 	<script type="text/javascript" src="js/slider/jquery.slitslider.js"></script>
@@ -92,6 +93,8 @@
 		<!-- END SLIDER  -->
 		
 		<header id="site-header">
+			<a href="#" id="header-hide-btn"></a>
+			
 			<div id="main-header">
 				<div class="container">
 					<div class="row">
@@ -280,7 +283,7 @@
 			
 			<div id="team-carousel" class="owl-carousel">
 				<div>
-					<img src="images/team-1.png" alt=""/>
+					<img src="images/team-1.jpg" alt=""/>
 					<div class="about-person">
 						<h4 class="person-name">John Doe</h4>
 						<span class="profession">founder</span>
@@ -292,7 +295,7 @@
 					</div>
 				</div>
 				<div>
-					<img src="images/team-2.png" alt=""/>
+					<img src="images/team-2.jpg" alt=""/>
 					<div class="about-person">
 						<h4 class="person-name">Melissa Doe</h4>
 						<span class="profession">design</span>
@@ -304,7 +307,7 @@
 					</div>
 				</div>
 				<div>
-					<img src="images/team-3.png" alt=""/>
+					<img src="images/team-3.jpg" alt=""/>
 					<div class="about-person">
 						<h4 class="person-name">John Doe</h4>
 						<span class="profession">developer</span>
@@ -316,7 +319,7 @@
 					</div>
 				</div>
 				<div>
-					<img src="images/team-4.png" alt=""/>
+					<img src="images/team-4.jpg" alt=""/>
 					<div class="about-person">
 						<h4 class="person-name">Caroline Smith</h4>
 						<span class="profession">developer</span>
@@ -328,7 +331,7 @@
 					</div>
 				</div>
 				<div>
-					<img src="images/team-5.png" alt=""/>
+					<img src="images/team-5.jpg" alt=""/>
 					<div class="about-person">
 						<h4 class="person-name">Robert Doe</h4>
 						<span class="profession">developer</span>
@@ -340,7 +343,7 @@
 					</div>
 				</div>
 				<div>
-					<img src="images/team-6.png" alt=""/>
+					<img src="images/team-6.jpg" alt=""/>
 					<div class="about-person">
 						<h4 class="person-name">Melissa Doe</h4>
 						<span class="profession">design</span>
@@ -352,7 +355,7 @@
 					</div>
 				</div>
 				<div>
-					<img src="images/team-7.png" alt=""/>
+					<img src="images/team-7.jpg" alt=""/>
 					<div class="about-person">
 						<h4 class="person-name">John Doe</h4>
 						<span class="profession">founder</span>
@@ -364,7 +367,7 @@
 					</div>
 				</div>
 				<div>
-					<img src="images/team-8.png" alt=""/>
+					<img src="images/team-8.jpg" alt=""/>
 					<div class="about-person">
 						<h4 class="person-name">John Doe</h4>
 						<span class="profession">developer</span>
@@ -376,7 +379,7 @@
 					</div>
 				</div>
 				<div>
-					<img src="images/team-9.png" alt=""/>
+					<img src="images/team-9.jpg" alt=""/>
 					<div class="about-person">
 						<h4 class="person-name">Caroline Smith</h4>
 						<span class="profession">developer</span>
@@ -388,7 +391,7 @@
 					</div>
 				</div>
 				<div>
-					<img src="images/team-10.png" alt=""/>
+					<img src="images/team-10.jpg" alt=""/>
 					<div class="about-person">
 						<h4 class="person-name">Robert Doe</h4>
 						<span class="profession">developer</span>
@@ -400,7 +403,7 @@
 					</div>
 				</div>
 				<div>
-					<img src="images/team-11.png" alt=""/>
+					<img src="images/team-11.jpg" alt=""/>
 					<div class="about-person">
 						<h4 class="person-name">Melissa Doe</h4>
 						<span class="profession">design</span>
@@ -704,7 +707,7 @@
 					<div class="isotope-item web-design development">
 						<img src="images/work1.jpg" alt=""/>
 						<div class="link-overlay">
-							<a class="double-button white" href="#">view more</a>
+							<a class="double-button white" href="#portfolio-1">view more</a>
 							<h4 class="overlay-title">Melissa Doe “City”</h4>
 							<p class="work-category">web design, development</p>
 						</div>
@@ -712,7 +715,7 @@
 					<div class="isotope-item web-design logo wordpress-themes">
 						<img src="images/work2.jpg" alt=""/>
 						<div class="link-overlay">
-							<a class="double-button white" href="#">view more</a>
+							<a class="double-button white" href="#portfolio-2">view more</a>
 							<h4 class="overlay-title">Melissa Doe “iMac”</h4>
 							<p class="work-category">web design, logo, wordpress themes</p>
 						</div>
@@ -720,7 +723,7 @@
 					<div class="isotope-item illustrations development">
 						<img src="images/work3.jpg" alt=""/>
 						<div class="link-overlay">
-							<a class="double-button white" href="#">view more</a>
+							<a class="double-button white" href="#portfolio-3">view more</a>
 							<h4 class="overlay-title">John Doe “Water”</h4>
 							<p class="work-category">illustrations, development</p>
 						</div>
@@ -728,7 +731,7 @@
 					<div class="isotope-item illustrations logo wordpress-themes">
 						<img src="images/work4.jpg" alt=""/>
 						<div class="link-overlay">
-							<a class="double-button white" href="#">view more</a>
+							<a class="double-button white" href="#portfolio-4">view more</a>
 							<h4 class="overlay-title">Robert Doe “Cup”</h4>
 							<p class="work-category">illustrations, logo, wordpress themes</p>
 						</div>
@@ -736,7 +739,7 @@
 					<div class="isotope-item illustrations development">
 						<img src="images/work5.jpg" alt=""/>
 						<div class="link-overlay">
-							<a class="double-button white" href="#">view more</a>
+							<a class="double-button white" href="#portfolio-5">view more</a>
 							<h4 class="overlay-title">John Doe “Road”</h4>
 							<p class="work-category">illustrations, development</p>
 						</div>
@@ -744,7 +747,7 @@
 					<div class="isotope-item web-design development">
 						<img src="images/work6.jpg" alt=""/>
 						<div class="link-overlay">
-							<a class="double-button white" href="#">view more</a>
+							<a class="double-button white" href="#portfolio-6">view more</a>
 							<h4 class="overlay-title">Melissa Doe “Weather”</h4>
 							<p class="work-category">web design, development</p>
 						</div>
@@ -752,7 +755,7 @@
 					<div class="isotope-item illustrations wordpress-themes">
 						<img src="images/work7.jpg" alt=""/>
 						<div class="link-overlay">
-							<a class="double-button white" href="#">view more</a>
+							<a class="double-button white" href="#portfolio-7">view more</a>
 							<h4 class="overlay-title">Robert Doe “Worktable”</h4>
 							<p class="work-category">illustrations, wordpress themes</p>
 						</div>
@@ -760,7 +763,7 @@
 					<div class="isotope-item logo wordpress-themes">
 						<img src="images/work8.jpg" alt=""/>
 						<div class="link-overlay">
-							<a class="double-button white" href="#">view more</a>
+							<a class="double-button white" href="#portfolio-8">view more</a>
 							<h4 class="overlay-title">Melissa Doe “Gadgets”</h4>
 							<p class="work-category">logo, wordpress themes</p>
 						</div>
@@ -768,7 +771,7 @@
 					<div class="isotope-item web-design logo wordpress-themes">
 						<img src="images/work9.jpg" alt=""/>
 						<div class="link-overlay">
-							<a class="double-button white" href="#">view more</a>
+							<a class="double-button white" href="#portfolio-9">view more</a>
 							<h4 class="overlay-title">Melissa Doe “Skate”</h4>
 							<p class="work-category">web design, logo, wordpress themes</p>
 						</div>
@@ -776,7 +779,7 @@
 					<div class="isotope-item illustrations development">
 						<img src="images/work10.jpg" alt=""/>
 						<div class="link-overlay">
-							<a class="double-button white" href="#">view more</a>
+							<a class="double-button white" href="#portfolio-10">view more</a>
 							<h4 class="overlay-title">John Doe “Applications”</h4>
 							<p class="work-category">illustrations, development</p>
 						</div>
@@ -784,6 +787,340 @@
 					
 				</div><!-- end #isotope-wrapper -->
 			</div><!-- end #isotope-container -->
+			
+			<div id="porfolio-container">
+				<div id="portfolio-1" class="portfolio clearfix">
+					<div class="portfolio-thumbnail slider-dots">
+						<div class="slide">
+							<img src="images/portfolio-1.jpg" alt="Featured Image">
+						</div>
+						<div class="slide">
+							<img src="images/portfolio-2.jpg" alt="Featured Image">
+						</div>
+						<div class="slide">
+							<img src="images/portfolio-3.jpg" alt="Featured Image">
+						</div>
+					</div>
+					
+					<div class="portfolio-left">
+						<h3 class="porfolio-title">Melissa Doe “City”</h3>
+						<p class="portfolio-category">web design, development</p>
+						<p class="portfolio-descr">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse consectetur tempor felis id ornare. Nullam faucibus blandit nunc, ut ullamcorper turpis. Nullam sed enim nec sem vehicula commodo. Praesent ultricies ullamcorper ipsum ut adipiscing. Etiam laoreet consequat arcu ac ornare. Praesent ornare, nisi eu euismod tristique, odio leo pulvinar lorem, vitae tincidunt metus eros fringilla libero.</p>
+					</div>
+					
+					<div class="portfolio-right">
+						<a href="#" class="portfolio-link">http://themeforest.net/</a>
+						<div class="clear"></div>
+						<p class="share-text">share it with your friends:</p>
+						<div class="social-links">
+							<a class="social-link" href="#"><i class="fa fa-twitter"></i></a>
+							<a class="social-link" href="#"><i class="fa fa-facebook"></i></a>
+							<a class="social-link" href="#"><i class="fa fa-google-plus"></i></a>
+							<a class="social-link" href="#"><i class="fa fa-youtube"></i></a>
+							<a class="social-link" href="#"><i class="fa fa-pinterest"></i></a>
+						</div>
+					</div>
+				</div>
+				
+				<div id="portfolio-2" class="portfolio clearfix">
+					<div class="portfolio-thumbnail slider-dots">
+						<div class="slide">
+							<img src="images/portfolio-2.jpg" alt="Featured Image">
+						</div>
+						<div class="slide">
+							<img src="images/portfolio-3.jpg" alt="Featured Image">
+						</div>
+						<div class="slide">
+							<img src="images/portfolio-4.jpg" alt="Featured Image">
+						</div>
+					</div>
+					
+					<div class="portfolio-left">
+						<h3 class="porfolio-title">Melissa Doe “iMac”</h3>
+						<p class="portfolio-category">web design, logo, wordpress themes</p>
+						<p class="portfolio-descr">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse consectetur tempor felis id ornare. Nullam faucibus blandit nunc, ut ullamcorper turpis. Nullam sed enim nec sem vehicula commodo. Praesent ultricies ullamcorper ipsum ut adipiscing. Etiam laoreet consequat arcu ac ornare. Praesent ornare, nisi eu euismod tristique, odio leo pulvinar lorem, vitae tincidunt metus eros fringilla libero.</p>
+					</div>
+					
+					<div class="portfolio-right">
+						<a href="#" class="portfolio-link">http://themeforest.net/</a>
+						<div class="clear"></div>
+						<p class="share-text">share it with your friends:</p>
+						<div class="social-links">
+							<a class="social-link" href="#"><i class="fa fa-twitter"></i></a>
+							<a class="social-link" href="#"><i class="fa fa-facebook"></i></a>
+							<a class="social-link" href="#"><i class="fa fa-google-plus"></i></a>
+							<a class="social-link" href="#"><i class="fa fa-youtube"></i></a>
+							<a class="social-link" href="#"><i class="fa fa-pinterest"></i></a>
+						</div>
+					</div>
+				</div>
+				
+				<div id="portfolio-3" class="portfolio clearfix">
+					<div class="portfolio-thumbnail slider-dots">
+						<div class="slide">
+							<img src="images/portfolio-3.jpg" alt="Featured Image">
+						</div>
+						<div class="slide">
+							<img src="images/portfolio-4.jpg" alt="Featured Image">
+						</div>
+						<div class="slide">
+							<img src="images/portfolio-5.jpg" alt="Featured Image">
+						</div>
+					</div>
+					
+					<div class="portfolio-left">
+						<h3 class="porfolio-title">John Doe “Water”</h3>
+						<p class="portfolio-category">illustrations, development</p>
+						<p class="portfolio-descr">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse consectetur tempor felis id ornare. Nullam faucibus blandit nunc, ut ullamcorper turpis. Nullam sed enim nec sem vehicula commodo. Praesent ultricies ullamcorper ipsum ut adipiscing. Etiam laoreet consequat arcu ac ornare. Praesent ornare, nisi eu euismod tristique, odio leo pulvinar lorem, vitae tincidunt metus eros fringilla libero.</p>
+					</div>
+					
+					<div class="portfolio-right">
+						<a href="#" class="portfolio-link">http://themeforest.net/</a>
+						<div class="clear"></div>
+						<p class="share-text">share it with your friends:</p>
+						<div class="social-links">
+							<a class="social-link" href="#"><i class="fa fa-twitter"></i></a>
+							<a class="social-link" href="#"><i class="fa fa-facebook"></i></a>
+							<a class="social-link" href="#"><i class="fa fa-google-plus"></i></a>
+							<a class="social-link" href="#"><i class="fa fa-youtube"></i></a>
+							<a class="social-link" href="#"><i class="fa fa-pinterest"></i></a>
+						</div>
+					</div>
+				</div>
+				
+				<div id="portfolio-4" class="portfolio clearfix">
+					<div class="portfolio-thumbnail slider-dots">
+						<div class="slide">
+							<img src="images/portfolio-4.jpg" alt="Featured Image">
+						</div>
+						<div class="slide">
+							<img src="images/portfolio-5.jpg" alt="Featured Image">
+						</div>
+						<div class="slide">
+							<img src="images/portfolio-6.jpg" alt="Featured Image">
+						</div>
+					</div>
+					
+					<div class="portfolio-left">
+						<h3 class="porfolio-title">Robert Doe “Cup”</h3>
+						<p class="portfolio-category">illustrations, logo, wordpress themes</p>
+						<p class="portfolio-descr">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse consectetur tempor felis id ornare. Nullam faucibus blandit nunc, ut ullamcorper turpis. Nullam sed enim nec sem vehicula commodo. Praesent ultricies ullamcorper ipsum ut adipiscing. Etiam laoreet consequat arcu ac ornare. Praesent ornare, nisi eu euismod tristique, odio leo pulvinar lorem, vitae tincidunt metus eros fringilla libero.</p>
+					</div>
+					
+					<div class="portfolio-right">
+						<a href="#" class="portfolio-link">http://themeforest.net/</a>
+						<div class="clear"></div>
+						<p class="share-text">share it with your friends:</p>
+						<div class="social-links">
+							<a class="social-link" href="#"><i class="fa fa-twitter"></i></a>
+							<a class="social-link" href="#"><i class="fa fa-facebook"></i></a>
+							<a class="social-link" href="#"><i class="fa fa-google-plus"></i></a>
+							<a class="social-link" href="#"><i class="fa fa-youtube"></i></a>
+							<a class="social-link" href="#"><i class="fa fa-pinterest"></i></a>
+						</div>
+					</div>
+				</div>
+				
+				<div id="portfolio-5" class="portfolio clearfix">
+					<div class="portfolio-thumbnail slider-dots">
+						<div class="slide">
+							<img src="images/portfolio-6.jpg" alt="Featured Image">
+						</div>
+						<div class="slide">
+							<img src="images/portfolio-1.jpg" alt="Featured Image">
+						</div>
+						<div class="slide">
+							<img src="images/portfolio-2.jpg" alt="Featured Image">
+						</div>
+					</div>
+					
+					<div class="portfolio-left">
+						<h3 class="porfolio-title">John Doe “Road”</h3>
+						<p class="portfolio-category">illustrations, development</p>
+						<p class="portfolio-descr">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse consectetur tempor felis id ornare. Nullam faucibus blandit nunc, ut ullamcorper turpis. Nullam sed enim nec sem vehicula commodo. Praesent ultricies ullamcorper ipsum ut adipiscing. Etiam laoreet consequat arcu ac ornare. Praesent ornare, nisi eu euismod tristique, odio leo pulvinar lorem, vitae tincidunt metus eros fringilla libero.</p>
+					</div>
+					
+					<div class="portfolio-right">
+						<a href="#" class="portfolio-link">http://themeforest.net/</a>
+						<div class="clear"></div>
+						<p class="share-text">share it with your friends:</p>
+						<div class="social-links">
+							<a class="social-link" href="#"><i class="fa fa-twitter"></i></a>
+							<a class="social-link" href="#"><i class="fa fa-facebook"></i></a>
+							<a class="social-link" href="#"><i class="fa fa-google-plus"></i></a>
+							<a class="social-link" href="#"><i class="fa fa-youtube"></i></a>
+							<a class="social-link" href="#"><i class="fa fa-pinterest"></i></a>
+						</div>
+					</div>
+				</div>
+				
+				<div id="portfolio-6" class="portfolio clearfix">
+					<div class="portfolio-thumbnail slider-dots">
+						<div class="slide">
+							<img src="images/portfolio-6.jpg" alt="Featured Image">
+						</div>
+						<div class="slide">
+							<img src="images/portfolio-5.jpg" alt="Featured Image">
+						</div>
+						<div class="slide">
+							<img src="images/portfolio-4.jpg" alt="Featured Image">
+						</div>
+					</div>
+					
+					<div class="portfolio-left">
+						<h3 class="porfolio-title">Melissa Doe “Weather”</h3>
+						<p class="portfolio-category">web design, development</p>
+						<p class="portfolio-descr">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse consectetur tempor felis id ornare. Nullam faucibus blandit nunc, ut ullamcorper turpis. Nullam sed enim nec sem vehicula commodo. Praesent ultricies ullamcorper ipsum ut adipiscing. Etiam laoreet consequat arcu ac ornare. Praesent ornare, nisi eu euismod tristique, odio leo pulvinar lorem, vitae tincidunt metus eros fringilla libero.</p>
+					</div>
+					
+					<div class="portfolio-right">
+						<a href="#" class="portfolio-link">http://themeforest.net/</a>
+						<div class="clear"></div>
+						<p class="share-text">share it with your friends:</p>
+						<div class="social-links">
+							<a class="social-link" href="#"><i class="fa fa-twitter"></i></a>
+							<a class="social-link" href="#"><i class="fa fa-facebook"></i></a>
+							<a class="social-link" href="#"><i class="fa fa-google-plus"></i></a>
+							<a class="social-link" href="#"><i class="fa fa-youtube"></i></a>
+							<a class="social-link" href="#"><i class="fa fa-pinterest"></i></a>
+						</div>
+					</div>
+				</div>
+				
+				<div id="portfolio-7" class="portfolio clearfix">
+					<div class="portfolio-thumbnail slider-dots">
+						<div class="slide">
+							<img src="images/portfolio-5.jpg" alt="Featured Image">
+						</div>
+						<div class="slide">
+							<img src="images/portfolio-4.jpg" alt="Featured Image">
+						</div>
+						<div class="slide">
+							<img src="images/portfolio-3.jpg" alt="Featured Image">
+						</div>
+					</div>
+					
+					<div class="portfolio-left">
+						<h3 class="porfolio-title">Robert Doe “Worktable”</h3>
+						<p class="portfolio-category">illustrations, wordpress themes</p>
+						<p class="portfolio-descr">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse consectetur tempor felis id ornare. Nullam faucibus blandit nunc, ut ullamcorper turpis. Nullam sed enim nec sem vehicula commodo. Praesent ultricies ullamcorper ipsum ut adipiscing. Etiam laoreet consequat arcu ac ornare. Praesent ornare, nisi eu euismod tristique, odio leo pulvinar lorem, vitae tincidunt metus eros fringilla libero.</p>
+					</div>
+					
+					<div class="portfolio-right">
+						<a href="#" class="portfolio-link">http://themeforest.net/</a>
+						<div class="clear"></div>
+						<p class="share-text">share it with your friends:</p>
+						<div class="social-links">
+							<a class="social-link" href="#"><i class="fa fa-twitter"></i></a>
+							<a class="social-link" href="#"><i class="fa fa-facebook"></i></a>
+							<a class="social-link" href="#"><i class="fa fa-google-plus"></i></a>
+							<a class="social-link" href="#"><i class="fa fa-youtube"></i></a>
+							<a class="social-link" href="#"><i class="fa fa-pinterest"></i></a>
+						</div>
+					</div>
+				</div>
+				
+				<div id="portfolio-8" class="portfolio clearfix">
+					<div class="portfolio-thumbnail slider-dots">
+						<div class="slide">
+							<img src="images/portfolio-4.jpg" alt="Featured Image">
+						</div>
+						<div class="slide">
+							<img src="images/portfolio-3.jpg" alt="Featured Image">
+						</div>
+						<div class="slide">
+							<img src="images/portfolio-2.jpg" alt="Featured Image">
+						</div>
+					</div>
+					
+					<div class="portfolio-left">
+						<h3 class="porfolio-title">Melissa Doe “Gadgets”</h3>
+						<p class="portfolio-category">logo, wordpress themes</p>
+						<p class="portfolio-descr">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse consectetur tempor felis id ornare. Nullam faucibus blandit nunc, ut ullamcorper turpis. Nullam sed enim nec sem vehicula commodo. Praesent ultricies ullamcorper ipsum ut adipiscing. Etiam laoreet consequat arcu ac ornare. Praesent ornare, nisi eu euismod tristique, odio leo pulvinar lorem, vitae tincidunt metus eros fringilla libero.</p>
+					</div>
+					
+					<div class="portfolio-right">
+						<a href="#" class="portfolio-link">http://themeforest.net/</a>
+						<div class="clear"></div>
+						<p class="share-text">share it with your friends:</p>
+						<div class="social-links">
+							<a class="social-link" href="#"><i class="fa fa-twitter"></i></a>
+							<a class="social-link" href="#"><i class="fa fa-facebook"></i></a>
+							<a class="social-link" href="#"><i class="fa fa-google-plus"></i></a>
+							<a class="social-link" href="#"><i class="fa fa-youtube"></i></a>
+							<a class="social-link" href="#"><i class="fa fa-pinterest"></i></a>
+						</div>
+					</div>
+				</div>
+				
+				<div id="portfolio-9" class="portfolio clearfix">
+					<div class="portfolio-thumbnail slider-dots">
+						<div class="slide">
+							<img src="images/portfolio-3.jpg" alt="Featured Image">
+						</div>
+						<div class="slide">
+							<img src="images/portfolio-2.jpg" alt="Featured Image">
+						</div>
+						<div class="slide">
+							<img src="images/portfolio-1.jpg" alt="Featured Image">
+						</div>
+					</div>
+					
+					<div class="portfolio-left">
+						<h3 class="porfolio-title">Melissa Doe “Skate”</h3>
+						<p class="portfolio-category">web design, logo, wordpress themes</p>
+						<p class="portfolio-descr">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse consectetur tempor felis id ornare. Nullam faucibus blandit nunc, ut ullamcorper turpis. Nullam sed enim nec sem vehicula commodo. Praesent ultricies ullamcorper ipsum ut adipiscing. Etiam laoreet consequat arcu ac ornare. Praesent ornare, nisi eu euismod tristique, odio leo pulvinar lorem, vitae tincidunt metus eros fringilla libero.</p>
+					</div>
+					
+					<div class="portfolio-right">
+						<a href="#" class="portfolio-link">http://themeforest.net/</a>
+						<div class="clear"></div>
+						<p class="share-text">share it with your friends:</p>
+						<div class="social-links">
+							<a class="social-link" href="#"><i class="fa fa-twitter"></i></a>
+							<a class="social-link" href="#"><i class="fa fa-facebook"></i></a>
+							<a class="social-link" href="#"><i class="fa fa-google-plus"></i></a>
+							<a class="social-link" href="#"><i class="fa fa-youtube"></i></a>
+							<a class="social-link" href="#"><i class="fa fa-pinterest"></i></a>
+						</div>
+					</div>
+				</div>
+				
+				<div id="portfolio-10" class="portfolio clearfix">
+					<div class="portfolio-thumbnail slider-dots">
+						<div class="slide">
+							<img src="images/portfolio-2.jpg" alt="Featured Image">
+						</div>
+						<div class="slide">
+							<img src="images/portfolio-1.jpg" alt="Featured Image">
+						</div>
+						<div class="slide">
+							<img src="images/portfolio-6.jpg" alt="Featured Image">
+						</div>
+					</div>
+					
+					<div class="portfolio-left">
+						<h3 class="porfolio-title">John Doe “Applications”</h3>
+						<p class="portfolio-category">illustrations, development</p>
+						<p class="portfolio-descr">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse consectetur tempor felis id ornare. Nullam faucibus blandit nunc, ut ullamcorper turpis. Nullam sed enim nec sem vehicula commodo. Praesent ultricies ullamcorper ipsum ut adipiscing. Etiam laoreet consequat arcu ac ornare. Praesent ornare, nisi eu euismod tristique, odio leo pulvinar lorem, vitae tincidunt metus eros fringilla libero.</p>
+					</div>
+					
+					<div class="portfolio-right">
+						<a href="#" class="portfolio-link">http://themeforest.net/</a>
+						<div class="clear"></div>
+						<p class="share-text">share it with your friends:</p>
+						<div class="social-links">
+							<a class="social-link" href="#"><i class="fa fa-twitter"></i></a>
+							<a class="social-link" href="#"><i class="fa fa-facebook"></i></a>
+							<a class="social-link" href="#"><i class="fa fa-google-plus"></i></a>
+							<a class="social-link" href="#"><i class="fa fa-youtube"></i></a>
+							<a class="social-link" href="#"><i class="fa fa-pinterest"></i></a>
+						</div>
+					</div>
+				</div>
+				
+				
+			</div><!-- end #portfolio-container -->
 		</div><!-- end #works -->
 		
 		<!-- Price -->

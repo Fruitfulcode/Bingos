@@ -32,3 +32,6 @@ http://www.jplayer.org/
 
 QueryLoader2 – Preloader
 http://www.gayadesign.com/diy/queryloader2-preload-your-images-with-ease/
+
+Simplemodal
+https://github.com/ericmmartin/simplemodal

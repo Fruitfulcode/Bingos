@@ -344,6 +344,9 @@ ul.list-pluses li {
 #site-header.show-top #site-logo {
 	background-image:url(../images/logo-white.png);
 }
+#site-header.show-top #mob-menu-switch {
+	background-image: url("../images/menu-switch-120.png");
+}
 #main-header {
 	background: #fff;
 	color:#202020;
@@ -386,7 +389,68 @@ ul.list-pluses li {
     color:#202020;
 }
 #mob-menu-alt-switch {
-	background-image:url("../images/menu-switch-120.png");
+	border-color: #fff;
+	background: #333;
+}
+#mob-menu-alt-switch::before {
+	border-color: #fff;
+}
+#mob-menu-alt-switch::after {
+	background-image:url("../images/menu-alt-switch-white.png");
+}
+#header-hide-btn {
+	background-color: #333;
+}
+#header-hide-btn::after {
+	background-image: url("../images/menu-alt-switch-white.png");
+}
+a#mob-menu-switch {
+	background-image: url("../images/menu-switch-120-gray.png");
+}
+#hidden-mobile-menu ul li {
+	background: #fff;
+}
+#hidden-mobile-menu ul li a {
+	color: #333;
+}
+#hidden-mobile-menu ul.sub-menu > li {
+	border-top: 1px solid #333;
+}
+#hidden-mobile-menu li.menu-item-has-children .submenu-button {
+	background-image: url("../images/arr-right-small-gray.png");
+	background-image: -Webkit-image-set(url('../images/arr-right-small-gray.png') 1x, url('../images/arr-right-small-gray@2x.png') 2x);
+}
+ul.isotope-option li.option-select a:after {
+	background-image: url('../images/arr-right-small-white.png');
+}
+
+
+#simplemodal-overlay{
+	background-color: #fff;
+}
+#simplemodal-container a.modalCloseImg {
+	background: url(../images/modal-close-white.png) no-repeat center center;
+}
+.portfolio {
+	background: #333;
+}
+.portfolio-link {
+	background-image: url(../images/portfolio-link-white.png);
+	background-image: -Webkit-image-set(url('../images/portfolio-link-white.png') 1x, url('../images/portfolio-link-white@2x.png') 2x); 
+}
+.portfolio .social-link:hover .fa {
+	color: #fff;
+}
+
+.portfolio .dots-nav.white li a {
+	border: 3px solid #333;
+}
+.portfolio .dots-nav.white li a:before {
+	border: 1px solid #333;
+}
+.portfolio .dots-nav.white li a.active:before,
+.portfolio .dots-nav.white li a:hover:before {
+	background-color: #333;
 }
 
 /* About Us */
@@ -475,6 +539,18 @@ input[type=text], input[type=email], input[type=url], textarea {
 input[type=text]:focus, input[type=email]:focus, textarea:focus {
 	color: #fff;
 }
+article.quote blockquote p {
+	background-image: url("../images/double-underline-white.png");
+}
+.widget-flickr-profile .thumb-overlay {
+	background: #fff;
+	background: rgba(255,255,255,0.6);
+}
+.widget-latest-posts .thumb-overlay {
+	color: #333;
+	background: #fff;
+	background: rgba(255,255,255,0.6);
+}
 
 
 /* Preloader */
@@ -483,4 +559,9 @@ input[type=text]:focus, input[type=email]:focus, textarea:focus {
 }
 #qLpercentage {
 	color: rgb(255, 255, 255) !important;
+}
+
+@media only screen 
+and (max-width:767px) {
+	ul.isotope-option li.option-select a.active { color: #fff; 	}
 }
